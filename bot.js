@@ -52,26 +52,6 @@ bot.on("guildDelete", guild => {
 });
 
 
-/*bot.on('guildMemberUpdate', (before, after) => {
-  var nicknames = [
-    'CUTIEE',
-    'Cuter than Hayl',
-    'Omggg how are you this cute <3',
-    'Actually the Cutest'
-  ];
-  console.log(`User was updated!`);
-  if (before.id == '133350262420013056'){
-    if(after.nickname == 'null')return;
-    if(before.nickname != after.nickname) {
-      console.log(`SMH JARED`);
-      var name = nicknames[Math.floor(Math.random() * nicknames.length)];
-      after.setNickname(name);
-      var channel1 = '374179059212484610';
-      before.guild.channels.get(channel1).send("Smh <@133350262420013056> just admit it, you\'re cuter");
-    }
-  }
-})*/
-
 
 bot.on("message", async message => {
   if(message.author.bot) return;
