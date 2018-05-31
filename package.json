@@ -1,20 +1,19 @@
 {
-  "name": "noot",
-  "version": "1.0.0",
-  "description": "",
+  "name": "Test",
+  "description": "Test",
+  "version": "0.0.0",
   "main": "bot.js",
   "scripts": {
-    "start": "node bot.js",
+    "start": "node bot.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.2.1",
-    "heroku-logger": "0.3.0",
+    "discord.io": "2.5.3",
+    "request": "2.81.0",
+    "heroku-logger": "0.3.0"
+   
   },
   "engines": {
-   "node": "8.6.0",
-    "npm": "5.3.0",
-},
+   "node": "6.11.4",
+    "npm": "3.10.3"
+}
 }
