@@ -57,37 +57,5 @@ bot.on("guildDelete", guild => {
 
 
 
-bot.on("message", async message => {
-  if(message.author.bot) return;
-  if(message.content.indexOf(config.prefix) !== 0) return;
-  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
-
-  if(command === "ping") {
-    const m = await message.channel.send("Ping?");
-    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
-  }
-
-  if (command === ('listservers')) {
-    var servers = "";
-    var no = 1;
-    var guilds = bot.guilds.array();
-    for (var i = 0; i < guilds.length; i++) {
-        var guildname = guilds[i].name.replace('@', '@ ');
-        servers += `${no}. ${guildname}\n`;
-        no++;
-    }
-    message.channel.send(servers);
-  }
-
-
-  if (command === ('dm')) {
-    var userID = '258827398282346499';
-    message.guild.members.get(userID).send('u lost the game ;) ');
-  }
-
-
-//https://discordapp.com/oauth2/authorize?client_id=438485530812874752&scope=bot&permissions=8
-});
 bot.login(process.env.BOT_TOKEN);
 //bot.login(config.token);
