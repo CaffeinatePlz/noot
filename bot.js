@@ -85,5 +85,5 @@ bot.on("message", async message => {
 
 //https://discordapp.com/oauth2/authorize?client_id=438485530812874752&scope=bot&permissions=8
 });
-
-bot.login(config.token);
+bot.login(process.env.BOT_TOKEN);
+//bot.login(config.token);
