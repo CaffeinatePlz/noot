@@ -1,5 +1,9 @@
 const Discord = require("discord.js");
-const bot = new Discord.Client();
+const logger = require('heroku-logger')
+const bot = new Discord.Client({
+   token: process.env.BOT_TOKEN,
+   autorun: true
+});
 const config = require("./config.json");
 require("./functions.js")(bot);
 bot.commands = new Discord.Collection();
