@@ -1,5 +1,9 @@
 const Discord = require("discord.js");
-const bot = new Discord.Client();
+const logger = require('heroku-logger')
+const bot = new Discord.Client({
+   token: process.env.BOT_TOKEN,
+   autorun: true
+});
 const config = require("./config.json");
 require("./functions.js")(bot);
 bot.commands = new Discord.Collection();
@@ -51,8 +55,6 @@ bot.on("guildDelete", guild => {
   bot.user.setGame(`on ${bot.guilds.size} servers`);
 });
 
-
-
 bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.content.indexOf(config.prefix) !== 0) return;
@@ -85,5 +87,6 @@ bot.on("message", async message => {
 
 //https://discordapp.com/oauth2/authorize?client_id=438485530812874752&scope=bot&permissions=8
 });
+
 bot.login(process.env.BOT_TOKEN);
 //bot.login(config.token);
