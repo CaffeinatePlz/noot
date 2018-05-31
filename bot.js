@@ -4,7 +4,7 @@ const bot = new Discord.Client({
    token: process.env.BOT_TOKEN,
    autorun: true
 });
-const config = require("./config.json");
+//const config = require("./config.json");
 require("./functions.js")(bot);
 bot.commands = new Discord.Collection();
 bot.events = new Discord.Collection();
@@ -57,8 +57,8 @@ bot.on("guildDelete", guild => {
 
 bot.on("message", async message => {
   if(message.author.bot) return;
-  if(message.content.indexOf(config.prefix) !== 0) return;
-  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+  if(message.content.indexOf("+") !== 0) return;
+  const args = message.content.slice(1).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 
   if(command === "ping") {
