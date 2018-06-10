@@ -6,7 +6,7 @@ module.exports = async (bot, message) => {
     if (message.author.bot) return;
     const message1 = message.content.toLowerCase();
     if (!message.content.startsWith("+")){
-      if(message1.includes("sleep")){
+      if(message1 == "sleep"||message1.includes("go to sleep")||message1.includes("need sleep")||message1.includes("needs sleep")){
         message.channel.send("Go to sleep!");
       }
       if(message1.includes("hayl")|message1.includes("hayley")){
@@ -20,7 +20,7 @@ module.exports = async (bot, message) => {
       if(message1.includes("gracious professionalism")||message1 == "gp"){
         message.channel.send("*CLAP CLAP* WOOOOOO!!!!!");
       }
-      if(message1.includes("garbage")||message1.includes("trash")||message1.includes("no me")||message1.includes("no u")||message1.includes("nay thee")){
+      if(message1.includes("garbage")||message1.includes("trash")||message1.includes("no me")||message1.includes("no u")||message1.includes("nay thee")||message1.includes("no  u")){
         message.channel.send(message.author + " , you're awesome :heart:");
       }
     }
