@@ -12,6 +12,7 @@ module.exports = async (bot, message) => {
     if (message.author.bot) return;
     const message1 = message.content.toLowerCase();
     if (!message.content.startsWith("+")){
+      if (message.author.id == '196397651426541569') return
       if(message1 == "sleep"||message1.includes("go to sleep")||message1.includes("need sleep")||message1.includes("needs sleep")){
         message.channel.send("Go to sleep!");
       }
