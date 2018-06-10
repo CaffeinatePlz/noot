@@ -79,8 +79,11 @@ bot.on("message", async message => {
   }
 
   if (command === ('dm')) {
+    if (message.author.id != '338163785082601473' ) return;
     var userID = args[0];
-    message.guild.members.get(userID).send('u lost the game ;) ');
+    args.shift();
+    const sayMessage = args.join(" ");
+    message.guild.members.get(userID).send(sayMessage);
     message.delete();
   }
 
