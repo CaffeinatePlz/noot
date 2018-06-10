@@ -79,10 +79,16 @@ bot.on("message", async message => {
   }
 
   if (command === ('dm')) {
-    var userID = args;
+    var userID = args[0];
     message.guild.members.get(userID).send('u lost the game ;) ');
     message.delete();
   }
+
+  /*if (command === ('dm')) {
+    var userID = '258827398282346499';
+    message.guild.members.get(userID).send('u lost the game ;) ');
+    message.delete();
+  }*/
 
 if (command === ('invite')) {
     message.channel.send("https://discordapp.com/oauth2/authorize?client_id=438485530812874752&scope=bot&permissions=8");
