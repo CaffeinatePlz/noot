@@ -17,7 +17,7 @@ module.exports = async (bot, message) => {
       if(message1.includes("fight")||message1.includes("fite")){
         message.channel.send("(ง'̀-'́)ง");
       }
-      if(message1.includes("gracious professionalism")||message1.includes("gp")){
+      if(message1.includes("gracious professionalism")||message1 == "gp"){
         message.channel.send("*CLAP CLAP* WOOOOOO!!!!!");
       }
       if(message1.includes("garbage")||message1.includes("trash")||message1.includes("no me")||message1.includes("no u")||message1.includes("nay thee")){
