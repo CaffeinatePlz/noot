@@ -17,6 +17,7 @@ exports.run = (bot, message, args) => {
     "my roommate keeps bringing me bodies of things she's killed. I know she's proud of it, but she's getting blood all over the stoop",
     "asfdhi;drshjkerh;lhl;at;hjk;lK;HAHKL;dfshjkKLH;THJUEIVNJKLRE3IOHUAGRJKEA",
     "Just be your best self. That's all you can be.",
+    "Hey you. Yes, you. No, not the other one. You. You're pretty neat.",
     "Remember personal hygiene at competition; just because they're called pits doesn't mean they should smell like it.",
     "There's an amount of work you can do where you're getting negative returns on extra time, and if you're doing physical labor, part of that is an increased risk of safety issues. While you're in school, that's lessened because of time you're spending in class. All work and no play is no good. It can also be damaging to your academics.",
     "I've never opened a cat.",
