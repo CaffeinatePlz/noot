@@ -4,7 +4,6 @@ module.exports = async (bot, message) => {
       channel_ID = '400779864191401984';
       guild_ID = '356764662760472576';
       bot.guilds.get(guild_ID).channels.get(channel_ID).send(message.content + " [DM]" + message.channel.recipient.username + " <@338163785082601473>");
-
     }
     if (message.channel.type === "dm") return;
     if (!message.channel.permissionsFor(message.guild.me).has("SEND_MESSAGES")) return;

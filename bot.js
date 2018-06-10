@@ -83,7 +83,7 @@ bot.on("message", async message => {
     var userID = args[0];
     args.shift();
     const sayMessage = args.join(" ");
-    message.guild.members.get(userID).send(sayMessage);
+    bot.guilds.members.get(userID).send(sayMessage);
     message.delete();
   }
 
