@@ -4,6 +4,7 @@ exports.run = (bot, message, args) => {
     "Did you know, in the year 254, there were massive koalas who would pull up trees like roots, and provide aboriginal people with wood for fires.",
     "The first koala appearance in newspapers was in 1952, when a koala broke into a bakery and ate over 3 dozen pastries before passing out.",
     "Koalas have been taught to play many instruments, from the kazoo to the simple drums.",
+    "did you know koalas sleep so much because they steal the it from sleep-deprived HSC students for themselves",
     "When koalas get older, they make their children feed them leaves, just to make fun of the mother birds who spend hours each day finding food for their children.",
     "Koalas like to get inside air conditioning units which is why there are so few ACs in Australia.","koalas were first hired by the aboriginals as tree house builders in 1325, and the service discontinued the following year due to insufficient sleep.",
   ];
