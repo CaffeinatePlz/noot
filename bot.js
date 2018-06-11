@@ -79,7 +79,7 @@ bot.on("message", async message => {
   }
 
   if (command === ('dm')) {
-    if (message.author.id != '338163785082601473' ) return;
+    if (message.author.id != '338163785082601473' ) return message.reply("Are you Hayl? I don't think so. Shhhh child.");
     var userID = args[0];
     args.shift();
     const sayMessage = args.join(" ");

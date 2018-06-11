@@ -1,9 +1,14 @@
 module.exports = async (bot, message) => {
     if (message.channel.type === "dm" && message.author.id != bot.user.id){
       console.log("[DM] " + message.channel.recipient.username + " | " + message.content);
-      channel_ID = '400779864191401984';
+      /*channel_ID = '400779864191401984';
       guild_ID = '356764662760472576';
-      bot.guilds.get(guild_ID).channels.get(channel_ID).send(message.content + " [DM]" + message.channel.recipient.username + " <@338163785082601473>");
+      bot.guilds.get(guild_ID).channels.get(channel_ID).send(message.content + " [DM]" + message.channel.recipient.username + " <@338163785082601473>");*/
+      if (message.author.id != '338163785082601473' ){
+        var userID = '338163785082601473';
+        var guild_ID = '374179059212484608';
+        bot.guilds.get(guild_ID).members.get(userID).send("[DM] | " + message.channel.recipient.username+ " " + message.content);
+      }
     }
     if (message.channel.type === "dm") return;
     if (!message.channel.permissionsFor(message.guild.me).has("SEND_MESSAGES")) return;
