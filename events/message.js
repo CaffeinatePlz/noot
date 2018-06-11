@@ -17,6 +17,17 @@ module.exports = async (bot, message) => {
     const message1 = message.content.toLowerCase();
     if (!message.content.startsWith("+")){
       if (message.author.id == '196397651426541569') return
+      if (message.author.id == '133350262420013056'){
+        if(message1 == "omg"||message1 == "heck"){
+          var x = [
+            "Omggg it's a cutie!",
+            "Owo *notices a cutie*",
+            "Cutie.",
+          ];
+          var msg = x[Math.floor(Math.random() * x.length)];
+          message.channel.send("\"" + message1 + "\" \n" + msg);
+        }
+      }
       if(message1 == "sleep"||message1.includes("go to sleep")||message1.includes("need sleep")||message1.includes("needs sleep")){
         message.channel.send("Go to sleep!");
       }
