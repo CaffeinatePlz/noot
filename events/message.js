@@ -7,7 +7,7 @@ module.exports = async (bot, message) => {
       if (message.author.id != '338163785082601473' ){
         var userID = '338163785082601473';
         var guild_ID = '374179059212484608';
-        bot.guilds.get(guild_ID).members.get(userID).send("[DM] | " + message.channel.recipient.username+ " " + message.content);
+        bot.guilds.get(guild_ID).members.get(userID).send("[DM] | " + message.channel.recipient.username+ " | " + message.content);
       }
     }
     if (message.channel.type === "dm") return;
