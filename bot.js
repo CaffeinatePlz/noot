@@ -80,11 +80,20 @@ bot.on("message", async message => {
 
   if (command === ('dm')) {
     if (message.author.id != '338163785082601473' ) return message.reply("Are you Hayl? I don't think so. Shhhh child.");
-    var userID = args[0];
-    args.shift();
-    const sayMessage = args.join(" ");
-    message.guild.members.get(userID).send(sayMessage);
-    message.delete();
+    let person = message.mentions.users.first();
+    if (person != null){
+      var userID = args[0].replace('<@', '').replace('>', '').replace('!', '');
+      var x = args.shift();
+      const dm_message = args.join(" ");
+      message.guild.members.get(userID).send(sayMessage);
+      message.delete();
+    }else{
+      var userID1 = args[0];
+      args.shift();
+      const sayMessage = args.join(" ");
+      message.guild.members.get(userID1).send(sayMessage);
+      message.delete();
+    }
   }
 
   /*if (command === ('dm')) {

@@ -18,7 +18,7 @@ module.exports = async (bot, message) => {
     if (!message.content.startsWith("+")){
       if (message.author.id == '196397651426541569') return
       if (message.author.id == '133350262420013056'){
-        if(message1 == "omg"||message1 == "heck"){
+        if(message1 == "omg"||message1 == "heck"||message1 == "oh my god"||message1 == "omggg"||message1 == "omgg"||message1 == "stoppit"){
           var x = [
             "Omggg it's a cutie!",
             "Owo *notices a cutie*",
