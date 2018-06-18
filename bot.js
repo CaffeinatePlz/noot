@@ -85,7 +85,7 @@ bot.on("message", async message => {
       var userID = args[0].replace('<@', '').replace('>', '').replace('!', '');
       var x = args.shift();
       const dm_message = args.join(" ");
-      message.guild.members.get(userID).send(sayMessage);
+      message.guild.members.get(userID).send(dm_message);
       message.delete();
     }else{
       var userID1 = args[0];
