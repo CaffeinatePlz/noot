@@ -1,8 +1,14 @@
 exports.run = (bot, message, args) => {
   if (message.author.id == '338163785082601473' ){
-      const sayMessage = args.join(" ");
+    var channel_ID = args[0].replace('<#', '').replace('>', '').replace('!', '');
+    var x = args.shift();
+    const sayMessage = args.join(" ");
+    message.delete();
+    message.guild.channels.get(channel_ID).send(sayMessage)
+
+      /*const sayMessage = args.join(" ");
       message.delete();
-      message.channel.send(sayMessage);
+      message.channel.send(sayMessage);*/
   } else {
     message.channel.send( "No no no *YOU'RE* not allowed to do that! " + message.author);
   }
