@@ -102,7 +102,7 @@ bot.on("message", async message => {
     message.delete();
   }*/
 
-if (command === ('invite')) {
+  if (command === ('invite')) {
     message.channel.send("https://discordapp.com/oauth2/authorize?client_id=438485530812874752&scope=bot&permissions=8");
   }
 });

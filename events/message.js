@@ -23,6 +23,7 @@ module.exports = async (bot, message) => {
             "Omggg it's a cutie!",
             "Owo *notices a cutie*",
             "Cutie.",
+            "Aaaaahhh you're so cute omg!",
           ];
           var msg = x[Math.floor(Math.random() * x.length)];
           message.channel.send("\"" + message1 + "\" \n" + msg);
@@ -42,7 +43,7 @@ module.exports = async (bot, message) => {
       if(message1.includes("gracious professionalism")||message1 == "gp"){
         message.channel.send("*CLAP CLAP* WOOOOOO!!!!!");
       }
-      if(message1.includes("garbage")||message1.includes("trash")||message1.includes("no me")||message1.includes("no u")||message1.includes("nay thee")||message1.includes("no  u")){
+      if(message1.includes("garbage")||message1.includes("trash")||message1.includes("no me")||message1.includes("no u")||message1.includes("no you")||message1.includes("no, you")||message1.includes("nay thee")||message1.includes("no  u")||message1.includes("no. u")||message1.includes("no\nu")){
         message.channel.send(message.author + " , you're awesome :heart:");
       }
     }
