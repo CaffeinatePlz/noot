@@ -6,6 +6,7 @@ exports.run = (bot, message, args) => {
     message.channel.send( "No no no *YOU'RE* not allowed to do that! " + message.author);
   }else{
     message.guild.members.get(authorID).setNickname(new_name);
+    message.channel.send( "Nickname set!");
   }
 };
 
