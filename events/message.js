@@ -44,8 +44,9 @@ module.exports = async (bot, message) => {
         message.channel.send("*CLAP CLAP* WOOOOOO!!!!!");
       }
       if(message1.includes("garbage")||message1.includes("trash")||message1.includes("no me")||message1.includes("no u")||message1.includes("no you")||message1.includes("no, you")||message1.includes("nay thee")||message1.includes("no  u")||message1.includes("no. u")||message1.includes("no, u")||message1.includes("no\nu")){
-        if (!message.guild.id == '374179059212484608') return;
-        message.channel.send(message.author + " , you're awesome :heart:");
+        if (message.guild.id == '374179059212484608'){
+          message.channel.send(message.author + " , you're awesome! :heart:");
+        }
       }
     }
     bot.processMessage(message);
