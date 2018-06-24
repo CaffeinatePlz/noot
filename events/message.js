@@ -35,7 +35,7 @@ module.exports = async (bot, message) => {
       if(message1.includes("hayl")|message1.includes("hayley")){
         channel_ID = '400779864191401984';
         guild_ID = '356764662760472576';
-        bot.guilds.get(guild_ID).channels.get(channel_ID).send(message.content + " [" + message.channel.name + "]" + " <@338163785082601473>");
+        bot.guilds.get(guild_ID).channels.get(channel_ID).send(message.content + " [" + message.channel.name + ", " + message.author.username +"]" + " <@338163785082601473>");
       }
       if(message1.includes("fight")||message1.includes("fite")){
         message.channel.send("(ง'̀-'́)ง");
