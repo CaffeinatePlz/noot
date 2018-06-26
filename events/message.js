@@ -45,10 +45,10 @@ module.exports = async (bot, message) => {
       }
       if(message1.includes("garbage")||message1.includes("trash")||message1.includes("no me")||message1.includes("no u")||message1.includes("no you")||message1.includes("no, you")||message1.includes("nay thee")||message1.includes("no  u")||message1.includes("no. u")||message1.includes("no, u")||message1.includes("no\nu")){
         if (message.guild.id == '374179059212484608'){
-          if (!message.author.id == '338163785082601473'){
-            message.channel.send(message.author + " , you're awesome! :heart:");
-          }else{
+          if (message.author.id == '338163785082601473'){
             message.channel.send("~~ew it's hayl~~");
+          }else{
+            message.channel.send(message.author + " , you're awesome! :heart:");
           }
         }
       }
