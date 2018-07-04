@@ -4,7 +4,8 @@ exports.run = (bot, message, args) => {
 
 		for (i=0; i<=Math.floor(bot.commands.size/24); i++) {
 			var helpbox = new Discord.RichEmbed();
-			helpbox.setTitle("Command List")
+			helpbox.setAuthor(client.user.username,client.user.avatarURL)
+      .setTitle("Command List")
   			.setDescription(`Use +help <commandname> for details`)
         .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)]);
 			if (i==Math.floor(bot.commands.size/24)){
