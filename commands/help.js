@@ -4,7 +4,7 @@ exports.run = (bot, message, args) => {
 
 		var intro = new Discord.RichEmbed();
 		intro.setTitle("Command List")
-			.setDescription(`Use ${bot.config.prefix}help <commandname> for details`)
+			.setDescription(`Use +help <commandname> for details`)
 			.setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)]);
 		message.channel.send({embed: intro})
 		for (i=0; i<=Math.floor(bot.commands.size/24); i++) {
@@ -32,7 +32,7 @@ exports.run = (bot, message, args) => {
 		var helpCommand = new Discord.RichEmbed();
 		helpCommand.setTitle(command.help.name)
 			.addField('Description', `${command.help.description}`)
-			.addField('Usage', `${bot.config.prefix}${command.help.usage}`)
+			.addField('Usage', `+${command.help.usage}`)
 			.setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
 		if (command.conf.aliases != "") {
 			helpCommand.addField('Aliases', `${command.conf.aliases.join(', ')}`)
