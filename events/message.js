@@ -59,7 +59,7 @@ module.exports = async (bot, message) => {
             message.channel.send("*CLAP CLAP* WOOOOOO!!!!!");
         }
 
-        if (textMessage.match(/(no|nay)([,.])?(\s)*(u|you|me|th(e)+)/)
+        if (textMessage.match(/(n\s?o|n\s?a\s?y)([,.])?\s*(u|y\s?o\s?u|m\s?e|t\s?h\s?(e\s?){2,})\s?/)
             || textMessage.includes("garbage") || textMessage.includes("trash")) {
             if (message.guild.id === HAYL_GUILD_ID) {
                 if (message.author.id === HAYL_ID) {
