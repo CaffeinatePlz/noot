@@ -62,11 +62,7 @@ module.exports = async (bot, message) => {
         if (textMessage.match(/(n\s?o|n\s?a\s?y)[,.]?\s*(u|y\s?o\s?u|m\s?e|t\s?h\s?(e\s?){2,})\s?/)
             || textMessage.includes("garbage") || textMessage.includes("trash")) {
             if (message.guild.id === HAYL_GUILD_ID) {
-                if (message.author.id === HAYL_ID) {
-                    message.channel.send("~~ew it's hayl~~");
-                } else {
-                    message.channel.send(message.author + " , you're awesome! :heart:");
-                }
+              message.channel.send(message.author + " , you're awesome! :heart:");
             }
         }
     }
