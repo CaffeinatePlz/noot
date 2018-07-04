@@ -2,14 +2,11 @@ exports.run = (bot, message, args) => {
 	const Discord = require('discord.js');
 	if (!args[0]) {
 
-		var intro = new Discord.RichEmbed();
-		intro.setTitle("Command List")
-			.setDescription(`Use +help <commandname> for details`)
-			.setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)]);
-		message.channel.send({embed: intro})
 		for (i=0; i<=Math.floor(bot.commands.size/24); i++) {
 			var helpbox = new Discord.RichEmbed();
-			helpbox.setColor(intro.color);
+			helpbox.setTitle("Command List")
+  			.setDescription(`Use +help <commandname> for details`)
+        .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)]);
 			if (i==Math.floor(bot.commands.size/24)){
 				x = bot.commands.size%24;
 			} else {
@@ -28,7 +25,7 @@ exports.run = (bot, message, args) => {
 		} else if (bot.aliases.has(args[0])) {
 			command = bot.commands.get(bot.aliases.get(args[0]));
 		};
-		if (!command) return message.reply(`That command doesn't seem to exist, nor is it an alias. Try again!`);
+		if (!command) return message.reply(`Are you sure that command exists?`);
 		var helpCommand = new Discord.RichEmbed();
 		helpCommand.setTitle(command.help.name)
 			.addField('Description', `${command.help.description}`)
@@ -45,12 +42,12 @@ exports.run = (bot, message, args) => {
 exports.conf = {
 	enabled: true,
 	guildOnly: false,
-	aliases: ['h', 'halp', '?'],
+	aliases: ['h', 'halp'],
 	botPerms: [],
 	memberPerms: []
 };
 exports.help = {
 	name: 'help',
-	description: 'Displays all the commands avaliable for your permission level',
+	description: 'Displays everything noot can do!',
 	usage: 'help <command [optional]>'
 };
