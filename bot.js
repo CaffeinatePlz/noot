@@ -108,6 +108,7 @@ bot.on("message", async message => {
   if (command === ('eval')) {
     if (!message.author.id == '397648295176044545') return;
     try {
+        code = args.join(" ");
        let ev = require('util').inspect(eval(code));
        if (ev.length > 1950) {
            ev = ev.substr(0, 1950);
