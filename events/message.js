@@ -63,7 +63,7 @@ module.exports = async (bot, message) => {
         }
 
 //        if (textMessage.match(/(n\s?o|n\s?a\s?y)[,.]?\s*(u|y\s?o\s?u|m\s?e|t\s?h\s?(e\s?){2,})\s?/)
-        if (textMessage.match(/(n\s?o|n\s?a\s?y)[,.]*[\n\s]+(u|y\s?o\s?u|m\s?e|t\s?h\s?(e\s?){2,})\s?/)
+        if (textMessage.match(/(n\s?o|n\s?a\s?y)()[,.\s\n]+)(u|y\s?o\s?u|m\s?e|t\s?h\s?(e\s?){2,})\s?/)
             ||textMessage.match(/no (u)+/) || textMessage.match(/no yo(u)+/) ||textMessage.match(/nay the(e)+/)
             || textMessage.includes("garbage") || textMessage.includes("trash")) {
             if (message.guild.id === HAYL_GUILD_ID) {
