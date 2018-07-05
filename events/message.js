@@ -38,7 +38,7 @@ module.exports = async (bot, message) => {
                 textMessage === "stoppit" || textMessage === "darnit" || textMessage === ">:0" ||
                 textMessage === "frick" || textMessage === "ahem" || textMessage === "wah" ||
                 textMessage === "no u" || textMessage === "what"|| textMessage === "god dammit" ||
-                textMessage === "ack" || textMessage === "aack") {
+                textMessage === "ack" || textMessage === "aack"||textMessage === "wha"||textMessage === "i swear to god") {
                 let msg = jaredResponses[Math.floor(Math.random() * jaredResponses.length)];
                 message.channel.send("\"" + message.content + "\" \n" + msg);
             }
@@ -63,10 +63,11 @@ module.exports = async (bot, message) => {
         }
 
 //        if (textMessage.match(/(n\s?o|n\s?a\s?y)[,.]?\s*(u|y\s?o\s?u|m\s?e|t\s?h\s?(e\s?){2,})\s?/)
-        if (textMessage.match(/no (u)+/) || textMessage.match(/no yo(u)+/) ||textMessage.match(/nay the(e)+/)
+        if (textMessage.match(/(n\s?o|n\s?a\s?y)[,.]*[\n\s]+(u|y\s?o\s?u|m\s?e|t\s?h\s?(e\s?){2,})\s?/)
+            ||textMessage.match(/no (u)+/) || textMessage.match(/no yo(u)+/) ||textMessage.match(/nay the(e)+/)
             || textMessage.includes("garbage") || textMessage.includes("trash")) {
             if (message.guild.id === HAYL_GUILD_ID) {
-              message.channel.send("**" + message.author.username + "**" + " , you're awesome! :heart:");
+              message.channel.send("**" + message.author.username + "**" + ", you're awesome! :heart:");
             }
         }
     }
