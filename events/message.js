@@ -66,7 +66,7 @@ module.exports = async (bot, message) => {
         if (textMessage.match(/no (u)+/) || textMessage.match(/no yo(u)+/) ||textMessage.match(/nay the(e)+/)
             || textMessage.includes("garbage") || textMessage.includes("trash")) {
             if (message.guild.id === HAYL_GUILD_ID) {
-              message.channel.send(message.author + " , you're awesome! :heart:");
+              message.channel.send("**" + message.author.username + "**" + " , you're awesome! :heart:");
             }
         }
     }
