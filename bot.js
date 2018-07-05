@@ -105,6 +105,20 @@ bot.on("message", async message => {
   if (command === ('invite')) {
     message.channel.send("https://discordapp.com/oauth2/authorize?client_id=438485530812874752&scope=bot&permissions=8");
   }
+  if (command === ('eval')) {
+    if (!message.author.id == '338163785082601473') return;
+    try {
+          const code = args.join(" ");
+          let evaled = eval(code);
+
+          if (typeof evaled !== "string")
+            evaled = require("util").inspect(evaled);
+
+          message.channel.send(clean(evaled), {code:"xl"});
+        } catch (err) {
+          message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
+        }
+  }
 });
 
 bot.login(process.env.BOT_TOKEN);
