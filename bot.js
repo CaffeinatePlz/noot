@@ -108,16 +108,18 @@ bot.on("message", async message => {
   if (command === ('eval')) {
     if (!message.author.id == '338163785082601473') return;
     try {
-          const code = args.join(" ");
-          let evaled = eval(code);
-
-          if (typeof evaled !== "string")
-            evaled = require("util").inspect(evaled);
-
-          message.channel.send(clean(evaled), {code:"xl"});
-        } catch (err) {
-          message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
-        }
+       let ev = require('util').inspect(eval(code));
+       if (ev.length > 1950) {
+           ev = ev.substr(0, 1950);
+       }
+       let token = auth.token.replace(/\./g, "\.")
+       let re = new RegExp(token, 'g')
+       ev = ev.replace(re, "*R-eD-Ac-Te-D-*");
+       message.channel.sendMessage("**Input:**```js\n"+code+"```**Eval:**```js\n"+ev+"```")
+       } catch(err) {
+           message.channel.sendMessage('```js\n'+err+"```")
+       }
+   }
   }
 });
 
