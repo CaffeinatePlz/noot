@@ -106,7 +106,8 @@ bot.on("message", async message => {
     message.channel.send("https://discordapp.com/oauth2/authorize?client_id=438485530812874752&scope=bot&permissions=8");
   }
   if (command === ('eval')) {
-    if (message.author.id != '338163785082601473') return;
+    if (message.author.id != '338163785082601473')
+      return message.reply( "No no no *YOU'RE* not allowed to do that! ");
     try {
         code = args.join(" ");
        let ev = require('util').inspect(eval(code));
