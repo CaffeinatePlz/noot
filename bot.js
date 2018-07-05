@@ -113,7 +113,6 @@ bot.on("message", async message => {
        if (ev.length > 1950) {
            ev = ev.substr(0, 1950);
        }
-       ev = ev.replace(re, "*R-eD-Ac-Te-D-*");
        message.channel.sendMessage("**Input:**```js\n"+code+"```**Eval:**```js\n"+ev+"```")
        } catch(err) {
            message.channel.sendMessage('```js\n'+err+"```")
