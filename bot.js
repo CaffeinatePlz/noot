@@ -118,8 +118,7 @@ bot.on("message", async message => {
            message.channel.sendMessage('```js\n'+err+"```")
        }
    }
-  }
-});
+  });
 
 bot.login(process.env.BOT_TOKEN);
 //bot.login(config.token);
