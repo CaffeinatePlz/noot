@@ -90,8 +90,8 @@ exports.run = (bot, message, args) => {
     "Habits of the heart and mind for a life of purpose will do you well.",
     "Always try starting. If you have to stop, that’s okay.",
     "You’re allowed to not be invincible. You just have to be the most genuine version of yourself",
-    "It’s ok to be scared. It means you care. And the fact you care says wonders."
-    "But phoenix’s burn before they can begin anew. And it’ll be hard, but you will keep going. There is more left of you"
+    "It’s ok to be scared. It means you care. And the fact you care says wonders.",
+    "But phoenix’s burn before they can begin anew. And it’ll be hard, but you will keep going. There is more left of you",
     "Sometimes we need to fall apart a little bit to get put back together.",
     "So until then just try to enjoy life a little. Watch something you enjoy, read a book, or cook. Life is still worth living and enjoying even through the hard times.",
     "You are powerful and strong. I believe in you!",
