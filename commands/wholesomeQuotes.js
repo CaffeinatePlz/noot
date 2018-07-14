@@ -106,7 +106,7 @@ if (x <= nickQuotes.length){
 exports.conf = {
 	enabled: true,
 	guildOnly: false,
-	aliases: [ 'wholesomequotes', 'wholesome'],
+	aliases: [ 'wholesomequotes', 'wholesome', 'wq'],
 	botPerms: [],
 	memberPerms: []
 };
