@@ -68,6 +68,7 @@ exports.run = (bot, message, args) => {
 
   var taeQuotes = [
     "I don't want a polaroid picture of your penis",
+    "hot potato pass it on! pass it on! pass it on! hot potato pass it on you are HOT",
     "Hey I follow YPP sometimes",
     "I want it to say noot noot if I noot it noot",
     "Yeah instead of water boarding I just use maple syrup",
@@ -98,14 +99,23 @@ exports.run = (bot, message, args) => {
     "You go up against your own mind every day. That is courage. That is resilience. And that is beautiful in an unbelievable way.",
   ];
 
+  var abbyQuotes = [
+    "psa if ur parents are shit u can dm me all ur achievements and I’ll be proud of u thanks",
+    "YALL ARE CUTE AND GOOD CANT PROVE ME WRONG",
+    "hi y’all are great people psa",
+    "hi psa that I’m proud of all of u\nlife can be a fucking pain in the ass sometimes so some days just getting out of bed and eating a meal is an achievement and if your having a day like that then hey I’m proud of u for waking up and giving it your all!",
+  ];
 
   var x = Math.floor(Math.random() * (nickQuotes.length + taeQuotes.length));
   if (x <= nickQuotes.length){
     var msg = nickQuotes[x];
     message.channel.send( "\""+ msg + "\"" + "\n*-THE Nick Hammes*");
-  }else{
+  }else if (x >nickQuotes.length && x<= taeQuotes.length){
     var msg = taeQuotes[(x-nickQuotes.length)];
     message.channel.send( "\""+ msg + "\"" + "\n*-Tae!*");
+  }else{
+    var msg = abbyQuotes[(x-nickQuotes.length-taeQuotes.length)];
+    message.channel.send( "\""+ msg + "\"" + "\n*-Abby!*");
   }
 };
 
