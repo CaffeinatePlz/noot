@@ -106,7 +106,7 @@ exports.run = (bot, message, args) => {
     "hi psa that I’m proud of all of u\nlife can be a fucking pain in the ass sometimes so some days just getting out of bed and eating a meal is an achievement and if your having a day like that then hey I’m proud of u for waking up and giving it your all!",
   ];
 
-
+/*
   var x = Math.floor(Math.random() * (nickQuotes.length + taeQuotes.length + abbyQuotes.length));
   if(x <= nickQuotes.length) {
     var msg = nickQuotes[x];
@@ -125,11 +125,11 @@ exports.run = (bot, message, args) => {
     message.channel.send( "\""+ msg + "\"" + "\n*-Abby!*");
     return;
   }
+*/
 
 
 
 
-/*
 var x = Math.floor(Math.random() * (nickQuotes.length + taeQuotes.length + abbyQuotes.length));
 if (x <= nickQuotes.length){
   var msg = nickQuotes[x];
@@ -142,7 +142,7 @@ if (x <= nickQuotes.length){
   message.channel.send( "\""+ msg + "\"" + "\n*-Abby!*");
 }
 };
-*/
+
 
 
 exports.conf = {
