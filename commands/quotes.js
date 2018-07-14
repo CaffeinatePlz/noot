@@ -110,7 +110,7 @@ exports.run = (bot, message, args) => {
   if (x <= nickQuotes.length){
     var msg = nickQuotes[x];
     message.channel.send( "\""+ msg + "\"" + "\n*-THE Nick Hammes*");
-  }else if (x >nickQuotes.length && x<= taeQuotes.length){
+  }else if (x >nickQuotes.length && x<= (nickQuotes.length+taeQuotes.length)){
     var msg = taeQuotes[(x-nickQuotes.length)];
     message.channel.send( "\""+ msg + "\"" + "\n*-Tae!*");
   }else{
