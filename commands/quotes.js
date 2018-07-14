@@ -102,6 +102,8 @@ exports.run = (bot, message, args) => {
   var abbyQuotes = [
     "psa if ur parents are shit u can dm me all ur achievements and I’ll be proud of u thanks",
     "YALL ARE CUTE AND GOOD CANT PROVE ME WRONG",
+    "You deserve all the kindness you can get",
+    "some days its just taking it step by step ig?\nlike just being able to get out of bed is something you should be proud of yourself for\nlife is hard\nlife is absolute bullshit at times\nyou just gotta take it step by step",
     "hi y’all are great people psa",
     "hi psa that I’m proud of all of u\nlife can be a fucking pain in the ass sometimes so some days just getting out of bed and eating a meal is an achievement and if your having a day like that then hey I’m proud of u for waking up and giving it your all!",
   ];
