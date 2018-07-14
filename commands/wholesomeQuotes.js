@@ -89,10 +89,10 @@ var x = Math.floor(Math.random() * (nickQuotes.length + taeQuotes.length + abbyQ
 if (x <= nickQuotes.length){
   var msg = nickQuotes[x];
   message.channel.send( "\""+ msg + "\"" + "\n*-THE Nick Hammes*");
-}else if (x >nickQuotes.length && x<= (nickQuotes.length+taeQuotes.length+otherQuotes.length)){
+}else if (x >nickQuotes.length && x<= (nickQuotes.length+taeQuotes.length)){
   var msg = taeQuotes[(x-nickQuotes.length)];
   message.channel.send( "\""+ msg + "\"" + "\n*-Tae!*");
-}else if(x >(nickQuotes.length+taeQuotes.length) && x<= (nickQuotes.length+taeQuotes.length+otherQuotes.length)){
+}else if(x >(nickQuotes.length+taeQuotes.length) && x<= (nickQuotes.length+taeQuotes.length+abbyQuotes.length)){
   var msg = abbyQuotes[(x-(nickQuotes.length+taeQuotes.length))];
   message.channel.send( "\""+ msg + "\"" + "\n*-Abby!*");
 }else{
