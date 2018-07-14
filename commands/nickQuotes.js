@@ -40,7 +40,7 @@ exports.run = (bot, message, args) => {
     "Build good robots by finding all the ways to build less good robots, and not doing those.",
     "Be honest and open. Let the chips fall where they may. I don't think you need to push on a particular outcome, once you do that.",
     "Your food might taste like fancy soap. But the key word is fancy.",
-    "Doing moderation in moderation is okay sometimes."
+    "Doing moderation in moderation is okay sometimes.",
     "Apply. What's the worst that happens, they tell you no?",
     "A lot of things in academics are not about intelligence, but rule following. And it's a shame, because being taught to follow rules can be fine, but knowing how and when not to follow them is a valuable thing educated out of too many people.",
     "I would expect someone really really good at following rules to be less successful than someone who knows how, but critically when, to play the game. Do your best, but always be skeptical, especially of what the scores, and success metrics others give you really mean.",

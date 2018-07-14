@@ -40,7 +40,7 @@ exports.run = (bot, message, args) => {
     "Build good robots by finding all the ways to build less good robots, and not doing those.",
     "Be honest and open. Let the chips fall where they may. I don't think you need to push on a particular outcome, once you do that.",
     "Your food might taste like fancy soap. But the key word is fancy.",
-    "Doing moderation in moderation is okay sometimes."
+    "Doing moderation in moderation is okay sometimes.",
     "Family doesn't mean just blood relatives. You can make family beyond simply having one.",
     "Your plans will change 10 times before you're 25, and that's okay.",
     "Honestly, I can mentor things I'm not great at. Less than half of it is knowing that thing. You can ask questions from a sincere place to critique designs.",
