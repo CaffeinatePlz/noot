@@ -114,7 +114,7 @@ exports.run = (bot, message, args) => {
     var msg = taeQuotes[(x-nickQuotes.length)];
     message.channel.send( "\""+ msg + "\"" + "\n*-Tae!*");
   }else{
-    var msg = abbyQuotes[(x-nickQuotes.length-taeQuotes.length)];
+    var msg = abbyQuotes[(x-(nickQuotes.length+taeQuotes.length))];
     message.channel.send( "\""+ msg + "\"" + "\n*-Abby!*");
   }
 };
