@@ -13,12 +13,10 @@ exports.run = (bot, message, args) => {
     "If you get a bunch of former FIRST students together, and they plan outreach, would they be the Alumninati?",
     "Just be your best self. That's all you can be.",
     "Hey you. Yes, you. No, not the other one. You. You're pretty neat.",
-    "Remember personal hygiene at competition; just because they're called pits doesn't mean they should smell like it.",
     "There's an amount of work you can do where you're getting negative returns on extra time, and if you're doing physical labor, part of that is an increased risk of safety issues. While you're in school, that's lessened because of time you're spending in class. All work and no play is no good. It can also be damaging to your academics.",
     "Fake it till you make it.",
     "Relationships simply are hard. but to me, that's a feature; it's rewarding doing hard things, especially when the outcome is so good",
     "Forget the haters.",
-    "Just because you can does not mean you should.",
     "Do your best, but in a sustainable way. Life's a marathon, not a sprint.",
     "Fail early, fail fast, fail often.",
     "We all fall short. A good friend is one who does their best, not one whose best is perfect.",
@@ -113,7 +111,7 @@ exports.conf = {
 
 
 exports.help = {
-	name: 'wholesome quote',
+	name: 'wholesomequote',
 	description: '<3',
 	usage: 'wholesomequote'
 };

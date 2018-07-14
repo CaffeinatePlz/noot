@@ -1,4 +1,12 @@
 exports.run = (bot, message, args) => {
+	const MarkovChain = require('markovchain');
+	const fs = require('fs');
+	const koalafacts = new MarkovChain(fs.readFileSync('./koalafacts.txt', 'utf8'));
+	message.channel.send(`${koalafacts.start("Did you know, ").end(".").process()}`);
+};
+
+
+/*exports.run = (bot, message, args) => {
   var koalaFacts = [
     "When koalas are born, their bones are filled with air, so if they fall out of their parent’s upside down pouches, they float gently to the ground.\n\nNot to be confused with their drop bear cousins with bones filled with lead",
     "Did you know, in the year 254, there were massive koalas who would pull up trees like roots, and provide aboriginal people with wood for fires.",
@@ -14,6 +22,7 @@ exports.run = (bot, message, args) => {
   var msg = koalaFacts[Math.floor(Math.random() * koalaFacts.length)];
   message.channel.send( "\""+ msg + "\"");
 };
+*/
 
 exports.conf = {
 	enabled: true,
