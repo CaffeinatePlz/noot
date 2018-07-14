@@ -100,7 +100,7 @@ exports.run = (bot, message, args) => {
 
 
   var x = Math.floor(Math.random() * (nickQuotes.length + taeQuotes.length));
-  if (x >= nickQuotes.length){
+  if (x <= nickQuotes.length){
     var msg = nickQuotes[x];
     message.channel.send( "\""+ msg + "\"" + "\n*-THE Nick Hammes*");
   }else{
