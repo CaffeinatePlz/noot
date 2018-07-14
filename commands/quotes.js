@@ -106,18 +106,43 @@ exports.run = (bot, message, args) => {
     "hi psa that I’m proud of all of u\nlife can be a fucking pain in the ass sometimes so some days just getting out of bed and eating a meal is an achievement and if your having a day like that then hey I’m proud of u for waking up and giving it your all!",
   ];
 
+
   var x = Math.floor(Math.random() * (nickQuotes.length + taeQuotes.length + abbyQuotes.length));
-  if (x <= nickQuotes.length){
+  if(x <= nickQuotes.length) {
     var msg = nickQuotes[x];
     message.channel.send( "\""+ msg + "\"" + "\n*-THE Nick Hammes*");
-  }else if (x >nickQuotes.length && x<= (nickQuotes.length+taeQuotes.length)){
+    return;
+  }
+  x -= nickQuotes.length;
+  if(x <= taeQuotes.length) {
     var msg = taeQuotes[(x-nickQuotes.length)];
     message.channel.send( "\""+ msg + "\"" + "\n*-Tae!*");
-  }else{
+    return;
+  }
+  x -= taeQuotes.length;
+  if(x <= abbyQuotes.length) {
     var msg = abbyQuotes[(x-(nickQuotes.length+taeQuotes.length))];
     message.channel.send( "\""+ msg + "\"" + "\n*-Abby!*");
+    return;
   }
+
+
+
+
+/*
+var x = Math.floor(Math.random() * (nickQuotes.length + taeQuotes.length + abbyQuotes.length));
+if (x <= nickQuotes.length){
+  var msg = nickQuotes[x];
+  message.channel.send( "\""+ msg + "\"" + "\n*-THE Nick Hammes*");
+}else if (x >nickQuotes.length && x<= (nickQuotes.length+taeQuotes.length)){
+  var msg = taeQuotes[(x-nickQuotes.length)];
+  message.channel.send( "\""+ msg + "\"" + "\n*-Tae!*");
+}else{
+  var msg = abbyQuotes[(x-(nickQuotes.length+taeQuotes.length))];
+  message.channel.send( "\""+ msg + "\"" + "\n*-Abby!*");
+}
 };
+*/
 
 
 exports.conf = {
