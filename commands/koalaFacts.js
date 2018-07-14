@@ -2,7 +2,7 @@ exports.run = (bot, message, args) => {
 	const MarkovChain = require('markovchain');
 	const fs = require('fs');
 	const koalafacts = new MarkovChain(fs.readFileSync('./commands/koalafacts.txt', 'utf8'));
-	message.channel.send(`${koalafacts.start("Did you know").end(" ").process()}`);
+	message.channel.send(`${koalafacts.start("Did you know, ").end(" ").process()}`);
 };
 
 
