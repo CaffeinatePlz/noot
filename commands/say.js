@@ -4,8 +4,7 @@ exports.run = (bot, message, args) => {
     var x = args.shift();
     const sayMessage = args.join(" ");
     message.delete();
-    message.guild.channels.get(channel_ID).send(sayMessage)
-
+    message.guild.channels.get(channel_ID).send(sayMessage);
       /*const sayMessage = args.join(" ");
       message.delete();
       message.channel.send(sayMessage);*/
