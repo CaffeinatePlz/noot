@@ -6,7 +6,7 @@ exports.run = (bot, message, args) => {
     "Koalas have been taught to play many instruments, from the kazoo to the simple drums.",
     "Koala fur is often used for oven mitts because they’re resistant to bushfires.",
     "Like Australia, koalas were made up by the British",
-    "did you know koalas sleep so much because they steal the it from sleep-deprived HSC students for themselves",
+    "Did you know, koalas sleep so much because they steal the it from sleep-deprived HSC students for themselves",
     "When koalas get older, they make their children feed them leaves, just to make fun of the mother birds who spend hours each day finding food for their children.",
     "Koalas like to get inside air conditioning units which is why there are so few ACs in Australia.","koalas were first hired by the aboriginals as tree house builders in 1325, and the service discontinued the following year due to insufficient sleep.",
   ];

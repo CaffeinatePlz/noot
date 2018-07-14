@@ -28,7 +28,8 @@ exports.run = (bot, message, args) => {
 		};
 		if (!command) return message.reply(`Are you sure that command exists?`);
 		var helpCommand = new Discord.RichEmbed();
-		helpCommand.setTitle(command.help.name)
+		helpCommand.setAuthor(bot.user.username,bot.user.avatarURL)
+			.setTitle(command.help.name)
 			.addField('Description', `${command.help.description}`)
 			.addField('Usage', `+${command.help.usage}`)
 			.setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])

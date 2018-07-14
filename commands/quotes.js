@@ -41,9 +41,6 @@ exports.run = (bot, message, args) => {
     "Be honest and open. Let the chips fall where they may. I don't think you need to push on a particular outcome, once you do that.",
     "Your food might taste like fancy soap. But the key word is fancy.",
     "Doing moderation in moderation is okay sometimes."
-    "Apply. What's the worst that happens, they tell you no?",
-    "A lot of things in academics are not about intelligence, but rule following. And it's a shame, because being taught to follow rules can be fine, but knowing how and when not to follow them is a valuable thing educated out of too many people.",
-    "I would expect someone really really good at following rules to be less successful than someone who knows how, but critically when, to play the game. Do your best, but always be skeptical, especially of what the scores, and success metrics others give you really mean.",
     "Family doesn't mean just blood relatives. You can make family beyond simply having one.",
     "Your plans will change 10 times before you're 25, and that's okay.",
     "Honestly, I can mentor things I'm not great at. Less than half of it is knowing that thing. You can ask questions from a sincere place to critique designs.",
@@ -62,27 +59,68 @@ exports.run = (bot, message, args) => {
     "There are good things about community colleges. There are good things about ivies. Those are obviously very different qualities. Heck, there are good things about trade schools. What you want is what makes them the best, not some objective third-party who doesn't know you, looking in and rating course content and student life metrics.",
     "\"major in something useful you like, and something you love\" is a good strategy.",
     "Don't be a workaholic.",
+    "Apply. What's the worst that happens, they tell you no?",
+    "A lot of things in academics are not about intelligence, but rule following. And it's a shame, because being taught to follow rules can be fine, but knowing how and when not to follow them is a valuable thing educated out of too many people.",
+    "I would expect someone really really good at following rules to be less successful than someone who knows how, but critically when, to play the game. Do your best, but always be skeptical, especially of what the scores, and success metrics others give you really mean.",
     "Everyone around you is getting better. You really do need to run to stay in place.",
     "I would put DL this way: if you win, you've clearly done something to earn it. If you didn't, that doesn't say anything about your deservingness.",
   ];
 
+  var taeQuotes = [
+    "I don't want a polaroid picture of your penis",
+    "Hey I follow YPP sometimes",
+    "I want it to say noot noot if I noot it noot",
+    "Yeah instead of water boarding I just use maple syrup",
+    "holy fuck I'm giong to unleash the wrath of several snails on Rhys and kboo and param",
+    "DO YOU WANNA GO TO JAIL FOR COCAINE TIMBITS",
+    "you're both amazing tho so shut the fuck up you twiddly twits",
+    "Courage doesn't have to be a roar. Sometimes it can just be the small voice at the end of the day saying 'I'll try again tomorrow'.",
+    "Canadians. Never. Lie.",
+    "You are loved. You are cared about. And our ears are open to listening to what you say, our arms are open for a hug, and our brain is here for compliments",
+    "sorry that's not like a computer browser you can't just download bi ness",
+    "my best pickup line? let's sex now",
+    "HOW DO I DOWNLOAD A PENIS",
+    "An octopus is just a wet spider",
+    "Someone once told me that kind of love is like jumping in front of a bus to fix a broken toe for someone else and just take away a smidge of their pain. And that analogy really stuck with me",
+    "The important part is that you’re willing to take that on and be there because you know the other person would do that for you",
+    "It’s ok to not have answers, but it’s important to walk with them and help them deduce the clues",
+    "You’re giving yourself up for the other person. But sometimes for your sake you’ve gotta just be there",
+    "Helping yourself is so much harder because you actually have to do the advice you’re given. It’s not that you’re incapable of knowing how to improve your daily life, it’s more that actually going out and doing the things takes mental effort",
+    "You do what you need to do for you. Do what makes you happy. And if you have to do things that don’t, make sure you’re going out and doing MORE things you do like to compensate",
+    "Habits of the heart and mind for a life of purpose will do you well.",
+    "Always try starting. If you have to stop, that’s okay.",
+    "You’re allowed to not be invincible. You just have to be the most genuine version of yourself",
+    "It’s ok to be scared. It means you care. And the fact you care says wonders."
+    "But phoenix’s burn before they can begin anew. And it’ll be hard, but you will keep going. There is more left of you"
+    "Sometimes we need to fall apart a little bit to get put back together.",
+    "So until then just try to enjoy life a little. Watch something you enjoy, read a book, or cook. Life is still worth living and enjoying even through the hard times.",
+    "You are powerful and strong. I believe in you!",
+    "You go up against your own mind every day. That is courage. That is resilience. And that is beautiful in an unbelievable way.",
+  ];
 
-  var msg = nickQuotes[Math.floor(Math.random() * nickQuotes.length)];
-  message.channel.send( "\""+ msg + "\"" + "\n*-THE Nick Hammes*");
+
+  var x = Math.floor(Math.random() * (nickQuotes.length + taeQuotes.length));
+  if (x >= nickQuotes.length){
+    var msg = nickQuotes[x];
+    message.channel.send( "\""+ msg + "\"" + "\n*-THE Nick Hammes*");
+  }else{
+    var msg = taeQuotes[(x-nickQuotes.length)];
+    message.channel.send( "\""+ msg + "\"" + "\n*-Tae!*");
+  }
 };
 
 
 exports.conf = {
 	enabled: true,
 	guildOnly: false,
-	aliases: ['nickquotes', 'nickQuotes'],
+	aliases: [ 'quotes'],
 	botPerms: [],
 	memberPerms: []
 };
 
 
 exports.help = {
-	name: 'nickquote',
-	description: 'Everyone needs some Nick wisdom.',
-	usage: 'nickquote'
+	name: 'quote',
+	description: 'Enjoy, no need to ask questions.',
+	usage: 'quote'
 };

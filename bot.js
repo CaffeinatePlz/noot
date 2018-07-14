@@ -96,11 +96,6 @@ bot.on("message", async message => {
     }
   }
 
-  /*if (command === ('dm')) {
-    var userID = '258827398282346499';
-    message.guild.members.get(userID).send('u lost the game ;) ');
-    message.delete();
-  }*/
 
   if (command === ('invite')) {
     message.channel.send("https://discordapp.com/oauth2/authorize?client_id=438485530812874752&scope=bot&permissions=8");
@@ -109,15 +104,15 @@ bot.on("message", async message => {
     if (message.author.id != '338163785082601473')
       return message.reply( "No no no *YOU'RE* not allowed to do that! ");
     try {
-        code = args.join(" ");
-       let ev = require('util').inspect(eval(code));
-       if (ev.length > 1950) {
-           ev = ev.substr(0, 1950);
-       }
-       message.channel.sendMessage("**Input:**```js\n"+code+"```**Eval:**```js\n"+ev+"```")
-       } catch(err) {
-           message.channel.sendMessage('```js\n'+err+"```")
-       }
+      code = args.join(" ");
+      let ev = require('util').inspect(eval(code));
+      if (ev.length > 1950) {
+         ev = ev.substr(0, 1950);
+      }
+      message.channel.sendMessage("**Input:**```js\n"+code+"```**Eval:**```js\n"+ev+"```")
+    } catch(err) {
+      message.channel.sendMessage('```js\n'+err+"```")
+    }
    }
   });
 
