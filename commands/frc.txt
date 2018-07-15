@@ -1,6 +1,6 @@
 FRC is the FIRST Robotics competition
 FRC teaches Gracious Professionalism to its participants
-
+FRC was founded by Dean Kamen and Woodie Flowers. Dean L. Kamen is an American engineer, inventor, and businessman. He is best known for his invention of the Segway.
 FRC is the flagship competition of FIRST.
 A large-scale robotics competition, FIRST® Robotics Competition brings together students and mentors to build robots that perform in a competitive but gracious environment against teams from all over the world.
 FRC is an international high school robotics competition. Each year, teams of high school students, coaches, and mentors work during a six-week period to build game-playing robots that weigh up to 120 pounds (54 kg).
