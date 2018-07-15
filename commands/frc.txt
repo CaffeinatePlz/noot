@@ -1,4 +1,6 @@
 FRC is the FIRST Robotics competition
+FRC teaches Gracious Professionalism to its participants
+
 The FIRST® Robotics Competition is the flagship competition of FIRST.
 A large-scale robotics competition, FIRST® Robotics Competition brings together students and mentors to build robots that perform in a competitive but gracious environment against teams from all over the world.
 The FIRST Robotics Competition is an international high school robotics competition. Each year, teams of high school students, coaches, and mentors work during a six-week period to build game-playing robots that weigh up to 120 pounds (54 kg).
@@ -9,7 +11,8 @@ The positive impact on FIRST Robotics Competition participants is gratifying and
 The FIRST Robotics Competition gives high school students and their adult mentors the opportunity to work and create together to solve a common problem.
 A big advantage to participating in FIRST is gaining access to millions in college scholarships made available by colleges, universities, and corporations who support FIRST. This is exclusive financial help open only to FIRST team members, giving them a competitive leg up on other students seeking educational funds.
 Join the conversation and help #makeitloud! It's easy to stay up-to-date on what is happening within the FIRST® community.
-Team 3132, The Thunder Down Under, is a FIRST Robotics team from Sydney Australia. They won the championships chairmans award in 2017.
-Team 1254, Teh Chezy Cakes
-The Couch Division
-The really cool thing about FIRST Robotics Competition is all skill levels are welcomed and needed, technical or non-technical. Read more about team basics, time frame, commitment, and skills required.
+FRC Team 3132, The Thunder Down Under, is a FIRST Robotics team from Sydney Australia. They won the championships chairmans award in 2017.
+FRC Team 1254, Teh Chezy Cakes
+The FRC Couch Division
+FRC Team 1678 Citrus Circuits from Davis, California
+The really cool thing about FRC is that all skill levels are welcomed and needed, technical or non-technical. Read more about team basics, time frame, commitment, and skills required.
