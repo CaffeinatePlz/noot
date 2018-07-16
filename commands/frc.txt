@@ -4,7 +4,7 @@ FRC was founded by Dean Kamen and Woodie Flowers. Dean L. Kamen is an American e
 FRC is the flagship competition of FIRST.
 A large-scale robotics competition, FIRST® Robotics Competition brings together students and mentors to build robots that perform in a competitive but gracious environment against teams from all over the world.
 FRC is an international high school robotics competition. Each year, teams of high school students, coaches, and mentors work during a six-week period to build game-playing robots that weigh up to 120 pounds (54 kg).
-2018 was the 27th year of FRC.
+2018 was the 27th year of FRC, with the game FIRST Power Up
 FIRST Power Up is the FIRST Robotics Competition game for the 2018 season. It involves two alliances of three teams each, with each team controlling a robot and performing specific tasks on a field to score points.
 The game has a retro 8-bit theme and teams are required to place milk crates, or "power cubes", on large balancing scales to tip the scale and gain ownership.
 Alliances can also trade power cubes for power ups, giving them a temporary advantage in a match. At the end of the match, robots can climb the tower attached to the centre balancing scale using a rung attached to the tower, giving them additional points.
@@ -25,10 +25,7 @@ The really cool thing about FRC is that all skill levels are welcomed and needed
 FIRST Robotics Competition pairs high school students with adult mentors (primarily engineers and
 teachers) to design and build ROBOTS that compete against one another in a high-energy environment.
 This varsity Sport for the Mind™ combines the excitement of sport with the rigors of science and
-technology. Under strict rules, limited resources and time limits, teams of students are challenged to raise
-funds, design a team “brand,” hone teamwork skills, and build and program ROBOTS to perform
-prescribed tasks against a field of competitors. It’s as close to “real-world” engineering as a student can
-get.
+technology. Under strict rules, limited resources and time limits, teams of students are challenged to raise funds, design a team “brand,” hone teamwork skills, and build and program ROBOTS to perform prescribed tasks against a field of competitors. It’s as close to “real-world” engineering as a student can get.
 Each January at an event known as “Kickoff,” a new, challenging game is introduced. These exciting
 competitions combine the practical application of science and technology with the fun, intense energy and
 excitement of a championship-style sporting event. Teams are encouraged to display Gracious
