@@ -14,6 +14,7 @@ exports.run = (bot, message, args) => {
 		"koalas were first hired by the aboriginals as tree house builders in 1325, and the service discontinued the following year due to insufficient sleep.",
 		"Did you know, koalas used to be able to breathe out fire, but this feature was disabled due to excessive bushfires during mating season, when the koalas were showing off their firebreathing skills.",
 		"Did you know, early koalas liked to hunt kangaroos, however they soon realised that their strong tails made them a formidable enemy. Ever since, they have passed down legends of the kangaroo slaying koalas, but have been too scared to try it themselves.",
+    "Did you know, koalas used to be amazing at running, until the British penal colony invaded their land. Ever since then, koalas have learned from this introduced and invasive species to procrastinate, which is why they now spend up to 22 hours a day sleeping in trees. Koalas are often known as the gods of procrastination, due to their natural habits involving only sleeping and eating.",
   ];
 
   var msg = koalaFacts[Math.floor(Math.random() * koalaFacts.length)];

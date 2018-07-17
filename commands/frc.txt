@@ -15,21 +15,25 @@ Combining the excitement of sport with the rigors of science and technology. We 
 FRC high-school student participants call it “the hardest fun you’ll ever have.”
 The positive impact on FRC participants is gratifying and well documented. Over 88% have more interest in doing well in school and 92% are more interested in attending college.
 The FIRST Robotics Competition gives high school students and their adult mentors the opportunity to work and create together to solve a common problem.
-A big advantage to participating in FIRST is gaining access to millions in college scholarships made available by colleges, universities, and corporations who support FIRST. This is exclusive financial help open only to FIRST team members, giving them a competitive leg up on other students seeking educational funds.
+A big advantage to participating in FIRST is gaining access to millions in college scholarships made available by colleges, universities, and corporations who support FIRST.
+This is exclusive financial help open only to FIRST team members, giving them a competitive leg up on other students seeking educational funds.
 Join the conversation and help #makeitloud! It's easy to stay up-to-date on what is happening within the FIRST® community.
 FRC Team 3132, The Thunder Down Under, is a FIRST Robotics team from Sydney Australia. They won the championships chairmans award in 2017.
 FRC Team 1254, Teh Chezy Cakes, from the FRC Couch Division
 FRC Team 1678 Citrus Circuits from Davis, California
 For FRC matches, please refer to The Blue Alliance
-The really cool thing about FRC is that all skill levels are welcomed and needed, technical or non-technical. Read more about team basics, time frame, commitment, and skills required.
+The really cool thing about FRC is that all skill levels are welcomed and needed, technical or non-technical.
+Read more about team basics, time frame, commitment, and skills required.
 FIRST Robotics Competition pairs high school students with adult mentors (primarily engineers and
 teachers) to design and build ROBOTS that compete against one another in a high-energy environment.
-This varsity Sport for the Mind™ combines the excitement of sport with the rigors of science and
-technology. Under strict rules, limited resources and time limits, teams of students are challenged to raise funds, design a team “brand,” hone teamwork skills, and build and program ROBOTS to perform prescribed tasks against a field of competitors. It’s as close to “real-world” engineering as a student can get.
-Each January at an event known as “Kickoff,” a new, challenging game is introduced. These exciting
-competitions combine the practical application of science and technology with the fun, intense energy and
-excitement of a championship-style sporting event. Teams are encouraged to display Gracious
-Professionalism®, help other teams, and cooperate while competing. This is known as Coopertition®.
+This varsity Sport for the Mind™ combines the excitement of sport with the rigors of science and technology.
+Under strict rules, limited resources and time limits, teams of students are challenged to raise funds, design a team “brand,” hone teamwork skills, and build and program ROBOTS to perform prescribed tasks against a field of competitors.
+It’s as close to “real-world” engineering as a student can get.
+Each January at an event known as “Kickoff,” a new, challenging game is introduced.
+These exciting competitions combine the practical application of science and technology with the fun, intense energy and
+excitement of a championship-style sporting event.
+Teams are encouraged to display Gracious Professionalism®, help other teams, and cooperate while competing.
+This is known as Coopertition®.
 In 2018, FIRST Robotics Competition will reach 90,000 high-school students representing more than
 3,600 teams. Teams come from nearly every state in the United States, as well as many other countries.
 FIRST Robotics Competition teams will participate in 63 Regional Competitions, 85 District Competitions,
@@ -46,9 +50,11 @@ control Robots. Teams on an Alliance work together to continue to control their 
 They can also trade in their Power Cubes for Power Ups. During the final 30 seconds, teams work
 together to Climb to Face the Boss.
 Control the Switches and the Scale. Robots collect Power Cubes and place them on
-Plates to control Switches or the Scale. When the Scale or their Switch is tipped in their favor, it is considered owned by that Alliance. Alliances work to have Ownership for as
-much time as possible.
-Earn Power Ups. Robots deliver Power Cubes to their humans who then place them into the Vault earning the Alliance Power Ups. Alliances use Power Ups to gain a temporary advantage during the Match. There are three Power Ups available to teams: Force, Boost, and Levitate.
+Plates to control Switches or the Scale. When the Scale or their Switch is tipped in their favor, it is considered owned by that Alliance.
+Alliances work to have Ownership for as much time as possible.
+Earn Power Ups. Robots deliver Power Cubes to their humans who then place them into the Vault earning the Alliance Power Ups.
+FRC alliances use Power Ups to gain a temporary advantage during the Match.
+There are three Power Ups available to teams: Force, Boost, and Levitate.
 Force gives the alliance ownership of the Switch, Scale, or both for a limited period of time
 Boost doubles the rate points are earned for a limited period of time
 Levitate gives a robot a free climb
@@ -57,3 +63,4 @@ Leave the POWER CUBES alone. Prior to the start of the MATCH, DRIVE TEAMS may no
 It doesn’t support you. Teams may not sit or stand on POWER CUBES.
 Don’t mess with the POWER CUBES. Teams may not modify POWER CUBES in any way
 COACHES, no POWER CUBES. During a MATCH, COACHES may not touch POWER CUBES
+Do not eat power cubes.
