@@ -6,15 +6,17 @@ exports.run = (bot, message, args) => {
     "Koalas have been taught to play many instruments, from the kazoo to the simple drums.",
     "Koala fur is often used for oven mitts because they’re resistant to bushfires.",
     "Like Australia, koalas were made up by the British",
-    "Did you know, there once used to be a koala olympics, where all koalas around the world competed for the chance to live in the biggest and best gum tree. However this was canceled after the first year when they realised that koalas only came from one country.",
-    "Did you know, a group of koalas is called a parachute, because they like to hug each other while falling off trees, creating a parachute with their fur prior to landing softly.",
-    "Did you know, koalas sleep so much because they steal the it from sleep-deprived HSC students for themselves",
+    "One power cube is designed to fit exactly two koalas, with no additional space remaining. This allows for easy transport of koala's between various destinations",
+    "There once used to be a koala olympics, where all koalas around the world competed for the chance to live in the biggest and best gum tree. However this was canceled after the first year when they realised that koalas only came from one country.",
+    "A group of koalas is called a parachute, because they like to hug each other while falling off trees, creating a parachute with their fur prior to landing softly.",
+    "Koalas sleep so much because they steal the it from sleep-deprived HSC students for themselves",
     "When koalas get older, they make their children feed them leaves, just to make fun of the mother birds who spend hours each day finding food for their children.",
     "Koalas like to get inside air conditioning units which is why there are so few ACs in Australia.",
 		"koalas were first hired by the aboriginals as tree house builders in 1325, and the service discontinued the following year due to insufficient sleep.",
-		"Did you know, koalas used to be able to breathe out fire, but this feature was disabled due to excessive bushfires during mating season, when the koalas were showing off their firebreathing skills.",
-		"Did you know, early koalas liked to hunt kangaroos, however they soon realised that their strong tails made them a formidable enemy. Ever since, they have passed down legends of the kangaroo slaying koalas, but have been too scared to try it themselves.",
-    "Did you know, koalas used to be amazing at running, until the British penal colony invaded their land. Ever since then, koalas have learned from this introduced and invasive species to procrastinate, which is why they now spend up to 22 hours a day sleeping in trees. Koalas are often known as the gods of procrastination, due to their natural habits involving only sleeping and eating.",
+		"Koalas used to be able to breathe out fire, but this feature was disabled due to excessive bushfires during mating season, when the koalas were showing off their firebreathing skills.",
+		"Early koalas liked to hunt kangaroos, however they soon realised that their strong tails made them a formidable enemy. Ever since, they have passed down legends of the kangaroo slaying koalas, but have been too scared to try it themselves.",
+    "Koalas used to be amazing at running, until the British penal colony invaded their land. Ever since then, koalas have learned from this introduced and invasive species to procrastinate, which is why they now spend up to 22 hours a day sleeping in trees. Koalas are often known as the gods of procrastination, due to their natural habits involving only sleeping and eating.",
+    "Koalas have been known to invade school grounds after bushfires, in search of school tables to find gum with the lack of accessible gum trees.",
   ];
 
   var msg = koalaFacts[Math.floor(Math.random() * koalaFacts.length)];
