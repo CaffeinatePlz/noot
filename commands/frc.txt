@@ -34,11 +34,10 @@ These exciting competitions combine the practical application of science and tec
 excitement of a championship-style sporting event.
 Teams are encouraged to display Gracious Professionalism®, help other teams, and cooperate while competing.
 This is known as Coopertition®.
-In 2018, FIRST Robotics Competition will reach 90,000 high-school students representing more than
-3,600 teams. Teams come from nearly every state in the United States, as well as many other countries.
-FIRST Robotics Competition teams will participate in 63 Regional Competitions, 85 District Competitions,
-and 10 District Championships. In addition, approximately 800 teams will qualify to go to one of the two
-FIRST Championships at the end of April, 2018.
+In 2018, FIRST Robotics Competition will reach 90,000 high-school students representing more than 3,600 teams.
+Teams come from nearly every state in the United States, as well as many other countries.
+FIRST Robotics Competition teams will participate in 63 Regional Competitions, 85 District Competitions, and 10 District Championships.
+In addition, approximately 800 teams will qualify to go to one of the two FIRST Championships at the end of April, 2018.
 This year’s game, and this manual, were presented at the 2018 FIRST Robotics Competition Kickoff on
 Saturday, January 6, 2018.
 At FIRST, Coopertition® is displaying unqualified kindness and respect in the face of fierce competition.

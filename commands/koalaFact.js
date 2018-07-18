@@ -17,6 +17,9 @@ exports.run = (bot, message, args) => {
 		"Early koalas liked to hunt kangaroos, however they soon realised that their strong tails made them a formidable enemy. Ever since, they have passed down legends of the kangaroo slaying koalas, but have been too scared to try it themselves.",
     "Koalas used to be amazing at running, until the British penal colony invaded their land. Ever since then, koalas have learned from this introduced and invasive species to procrastinate, which is why they now spend up to 22 hours a day sleeping in trees. Koalas are often known as the gods of procrastination, due to their natural habits involving only sleeping and eating.",
     "Koalas have been known to invade school grounds after bushfires, in search of school tables to find gum with the lack of accessible gum trees.",
+    "All the giant spiders in Australia have only one natural predator: the koala. But the koalas just can't be bothered to eat the darn things, and thus, koalas are the reason there are so many spiders in Australia.",
+    "Koalas are thought to have acquired their 20h sleep schedule by examining bored and tired prisoners during Australia's penal prison period.",
+    "Koalas naviagted roads on the left side so that they could easily high five a koala that they was going the other way. This precedence created by the Koalas is the reason why Australians drive on the left today.",
   ];
 
   var msg = koalaFacts[Math.floor(Math.random() * koalaFacts.length)];
