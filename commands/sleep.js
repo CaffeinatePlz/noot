@@ -9,7 +9,8 @@ exports.run = (bot, message, args) => {
   var sleeper = message.mentions.users.array()[0];
   var msg = responses[Math.floor(Math.random() * responses.length)];
   if (sleeper != null){
-    message.channel.send( msg + sleeper + "\nhttps://i.imgur.com/6tHfvIM.jpg");
+    message.channel.send( msg + sleeper + "\nhttps://cdn.discordapp.com/attachments/399740385221672974/469742325963292712/0jwZ3Cq.png");
+    //https://i.imgur.com/6tHfvIM.jpg
   } else {
     message.channel.send("please mention someone");
   }
