@@ -59,10 +59,18 @@ exports.run = (bot, message, args) => {
     "There are good things about community colleges. There are good things about ivies. Those are obviously very different qualities. Heck, there are good things about trade schools. What you want is what makes them the best, not some objective third-party who doesn't know you, looking in and rating course content and student life metrics.",
     "\"major in something useful you like, and something you love\" is a good strategy.",
     "Don't be a workaholic.",
+    "I think the best way to maximize people's potential is to show them that they can. I mean, there are so many people who just see hopelessness... [we need] to show them that glimmer of hope.",
+    "Uh, finding a girlfriend is hard. Dw about it and just focus on being awesome.",
+    "Don't fear what you don't know, or aren't good at; embrace it. That's the place where you learn the most.",
     "Apply. What's the worst that happens, they tell you no?",
     "A lot of things in academics are not about intelligence, but rule following. And it's a shame, because being taught to follow rules can be fine, but knowing how and when not to follow them is a valuable thing educated out of too many people.",
     "I would expect someone really really good at following rules to be less successful than someone who knows how, but critically when, to play the game. Do your best, but always be skeptical, especially of what the scores, and success metrics others give you really mean.",
     "Everyone around you is getting better. You really do need to run to stay in place.",
+    "You want to do this aspirational thing. Well, let's break it down. What's the first step? So you want to get here. What's two steps back? What's square one? Well, okay. Square one is stretching yourself a little bit.",
+    "Let's turn this impossible problem into two really hard problems.",
+    "The most beautiful thing in the world? I would have to say... that we are the universe's way of observing itself.",
+    "I think that young people have not only the passion and the excitement to do big things, but I think they increasingly have the power to do so.",
+    "I've met so many amazing young people who are doing things that others might not think that they could or 'should'.",
     "I would put DL this way: if you win, you've clearly done something to earn it. If you didn't, that doesn't say anything about your deservingness.",
   ];
 
@@ -129,21 +137,26 @@ exports.run = (bot, message, args) => {
   }
 */
 
+var otherQuotes = [
+  "https://www.instagram.com/p/BkvqyJCl2J7/?utm_source=ig_share_sheet&igshid=e3w6jxfnn0a1",
+  "\"Don’t do anything i wouldn’t do approve of.\" *-Jaci!*",
+]
 
 
-
-var x = Math.floor(Math.random() * (nickQuotes.length + taeQuotes.length + abbyQuotes.length));
+var x = Math.floor(Math.random() * (nickQuotes.length + taeQuotes.length + abbyQuotes.length + otherQuotes.length));
 if (x <= nickQuotes.length){
-  var msg = nickQuotes[x];
-  message.channel.send( "\""+ msg + "\"" + "\n*-THE Nick Hammes*");
+var msg = nickQuotes[x];
+message.channel.send( "\""+ msg + "\"" + "\n*-THE Nick Hammes*");
 }else if (x >nickQuotes.length && x<= (nickQuotes.length+taeQuotes.length)){
-  var msg = taeQuotes[(x-nickQuotes.length)];
-  message.channel.send( "\""+ msg + "\"" + "\n*-Tae!*");
+var msg = taeQuotes[(x-nickQuotes.length)];
+message.channel.send( "\""+ msg + "\"" + "\n*-Tae!*");
+}else if(x >(nickQuotes.length+taeQuotes.length) && x<= (nickQuotes.length+taeQuotes.length+abbyQuotes.length)){
+var msg = abbyQuotes[(x-(nickQuotes.length+taeQuotes.length))];
+message.channel.send( "\""+ msg + "\"" + "\n*-Abby!*");
 }else{
-  var msg = abbyQuotes[(x-(nickQuotes.length+taeQuotes.length))];
-  message.channel.send( "\""+ msg + "\"" + "\n*-Abby!*");
+var msg = otherQuotes[(x-(nickQuotes.length+taeQuotes.length+abbyQuotes.length))];
+message.channel.send( "\""+ msg + "\"");
 }
-};
 
 
 

@@ -6,6 +6,7 @@ exports.run = (bot, message, args) => {
     "Meet people around your age. If you like them, and they're single, let them know. Many of them will say no, and that's okay.",
     "[Rejection] gets less hard, not not hard.",
     "And sometimes it's not outright rejection. People joke about \"it's not you it's me\" being a fake excuse, but sometimes it's a legit thing. And if you're open and honest with them, and they're kind people with decent communication skills, you'll know which. And it's okay to feel sad about it too. Because if someone for whatever reason isn't in a place to be in a relationship with you, them saying yes anyway would be worse for both of you. And maybe both people feel sad about it. That's a thing.",
+    "I think the best way to maximize people's potential is to show them that they can. I mean, there are so many people who just see hopelessness... [we need] to show them that glimmer of hope.",
     "It doesn't have to be correct to be interesting",
     "Insight doesn't come easily. It's the child of experience. You get it, because it reflects what you've lived.",
     "You don't have to be great at calc to be a STEM major. I'm only passable. ~~too literally~~",
@@ -62,7 +63,14 @@ exports.run = (bot, message, args) => {
     "There are good things about community colleges. There are good things about ivies. Those are obviously very different qualities. Heck, there are good things about trade schools. What you want is what makes them the best, not some objective third-party who doesn't know you, looking in and rating course content and student life metrics.",
     "\"major in something useful you like, and something you love\" is a good strategy.",
     "Don't be a workaholic.",
+    "Uh, finding a girlfriend is hard. Dw about it and just focus on being awesome.",
+    "Don't fear what you don't know, or aren't good at; embrace it. That's the place where you learn the most.",
     "Everyone around you is getting better. You really do need to run to stay in place.",
+    "You want to do this aspirational thing. Well, let's break it down. What's the first step? So you want to get here. What's two steps back? What's square one? Well, okay. Square one is stretching yourself a little bit.",
+    "Let's turn this impossible problem into two really hard problems.",
+    "The most beautiful thing in the world? I would have to say... that we are the universe's way of observing itself.",
+    "I think that young people have not only the passion and the excitement to do big things, but I think they increasingly have the power to do so.",
+    "I've met so many amazing young people who are doing things that others might not think that they could or 'should'.",
     "I would put DL this way: if you win, you've clearly done something to earn it. If you didn't, that doesn't say anything about your deservingness.",
   ];
 

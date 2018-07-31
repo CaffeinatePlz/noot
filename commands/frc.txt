@@ -23,7 +23,6 @@ FRC Team 1254, Teh Chezy Cakes, from the FRC Couch Division
 FRC Team 1678 Citrus Circuits from Davis, California
 For FRC matches, please refer to The Blue Alliance
 The really cool thing about FRC is that all skill levels are welcomed and needed, technical or non-technical.
-Read more about team basics, time frame, commitment, and skills required.
 FIRST Robotics Competition pairs high school students with adult mentors (primarily engineers and
 teachers) to design and build ROBOTS that compete against one another in a high-energy environment.
 This varsity Sport for the Mind™ combines the excitement of sport with the rigors of science and technology.
@@ -46,8 +45,7 @@ with one another even as they compete. Coopertition involves learning from teamm
 Coopertition means competing always, but assisting and enabling others when you can.
 During the remaining 2 minutes and 15 seconds of the match, the Teleoperated period, student drivers
 control Robots. Teams on an Alliance work together to continue to control their Switch and the Scale.
-They can also trade in their Power Cubes for Power Ups. During the final 30 seconds, teams work
-together to Climb to Face the Boss.
+They can also trade in their Power Cubes for Power Ups. During the final 30 seconds, teams work together to Climb to Face the Boss.
 Control the Switches and the Scale. Robots collect Power Cubes and place them on
 Plates to control Switches or the Scale. When the Scale or their Switch is tipped in their favor, it is considered owned by that Alliance.
 Alliances work to have Ownership for as much time as possible.
