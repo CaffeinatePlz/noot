@@ -145,20 +145,19 @@ var otherQuotes = [
 
 var x = Math.floor(Math.random() * (nickQuotes.length + taeQuotes.length + abbyQuotes.length + otherQuotes.length));
 if (x <= nickQuotes.length){
-var msg = nickQuotes[x];
-message.channel.send( "\""+ msg + "\"" + "\n*-THE Nick Hammes*");
+  var msg = nickQuotes[x];
+  message.channel.send( "\""+ msg + "\"" + "\n*-THE Nick Hammes*");
 }else if (x >nickQuotes.length && x<= (nickQuotes.length+taeQuotes.length)){
-var msg = taeQuotes[(x-nickQuotes.length)];
-message.channel.send( "\""+ msg + "\"" + "\n*-Tae!*");
+  var msg = taeQuotes[(x-nickQuotes.length)];
+  message.channel.send( "\""+ msg + "\"" + "\n*-Tae!*");
 }else if(x >(nickQuotes.length+taeQuotes.length) && x<= (nickQuotes.length+taeQuotes.length+abbyQuotes.length)){
-var msg = abbyQuotes[(x-(nickQuotes.length+taeQuotes.length))];
-message.channel.send( "\""+ msg + "\"" + "\n*-Abby!*");
+  var msg = abbyQuotes[(x-(nickQuotes.length+taeQuotes.length))];
+  message.channel.send( "\""+ msg + "\"" + "\n*-Abby!*");
 }else{
-var msg = otherQuotes[(x-(nickQuotes.length+taeQuotes.length+abbyQuotes.length))];
-message.channel.send( "\""+ msg + "\"");
+  var msg = otherQuotes[(x-(nickQuotes.length+taeQuotes.length+abbyQuotes.length))];
+  message.channel.send( "\""+ msg + "\"");
 }
-
-
+};
 
 exports.conf = {
 	enabled: true,
