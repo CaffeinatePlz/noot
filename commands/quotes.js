@@ -169,7 +169,7 @@ exports.conf = {
 
 
 exports.help = {
-	name: 'quote',
+	name: 'quotes',
 	description: 'Enjoy, no need to ask questions.',
 	usage: 'quote'
 };
