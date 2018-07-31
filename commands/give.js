@@ -5,8 +5,11 @@ exports.run = (bot, message, args) => {
   var x = args.shift();
   const new_role = args.join(" ");
   let role = message.guild.roles.find("name", new_role);
-  member.addRole(role).catch(console.error);
-  message.channel.send( "Role given!");
+  member.addRole(role).then(() => {
+    message.channel.send( "Role given!");
+  }).catch(err => {
+    message.reply('I was unable to give the role');
+  });
 };
 
   exports.conf = {

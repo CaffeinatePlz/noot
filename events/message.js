@@ -1,14 +1,20 @@
-const jaredResponses = [
+const JARED_ID = '133350262420013056';
+const HAYL_ID = '338163785082601473';
+const HAYL_GUILD_ID = '374179059212484608';
+
+/*const jaredResponses = [
     "Omggg it's a cutie!",
     "Owo *notices a cutie*",
     "Cutie.",
     "Aaaaahhh you're so cute omg!",
     "Hai, reminder that hayl loves you!",
-];
+];*/
 
-const JARED_ID = '133350262420013056';
-const HAYL_ID = '338163785082601473';
-const HAYL_GUILD_ID = '374179059212484608';
+const noot_love = [
+  "you're awesome! :heart:",
+  "hey you, you're pretty cool!",
+  "I :clap: appreciate :clap: you!"
+]
 
 module.exports = async (bot, message) => {
     if (message.channel.type === "dm" && message.author.id != bot.user.id) {
@@ -33,7 +39,7 @@ module.exports = async (bot, message) => {
     const textMessage = message.content.toLowerCase();
 
     if(!textMessage.startsWith("+")) {
-        if (message.author.id === JARED_ID) {
+        /*if (message.author.id === JARED_ID) {
             if(textMessage.match(/om(g)+/) || textMessage === "heck" || textMessage === "oh my god" ||
                 textMessage === "stoppit" || textMessage === "darnit" || textMessage === ">:0" ||
                 textMessage === "frick" || textMessage === "ahem" || textMessage === "wah" ||
@@ -42,7 +48,7 @@ module.exports = async (bot, message) => {
                 let msg = jaredResponses[Math.floor(Math.random() * jaredResponses.length)];
                 message.channel.send("\"" + message.content + "\" \n" + msg);
             }
-        }
+        }*/
 
         if (textMessage === "sleep" || textMessage.includes("go to sleep") || textMessage.includes("need sleep") || textMessage.includes("needs sleep")) {
             message.channel.send("Go to sleep!");
@@ -61,11 +67,15 @@ module.exports = async (bot, message) => {
         if (textMessage.includes("gracious professionalism") || textMessage === "gp") {
             message.channel.send("*CLAP CLAP* WOOOOOO!!!!!");
         }
+        if ( textMessage === "oof") {
+            message.react('384494179683794944');
+        }
 
-        if (textMessage.match(/(n\s?o+|n\s?a\s?y+)([,.!*\s\n]+)(u|y\s?o\s?u|m\s?e|t\s?h\s?(e\s?){2,})\s?/)
+        if (textMessage.match(/(n\s?o+|n\s?a\s?y+|n\s?o\s?p\s?e)([,.!*\s\n]+)(u|y\s?o\s?u|m\s?e|t\s?h\s?(e\s?){2,})\s?/)
             || textMessage.includes("garbage") || textMessage == "nou" || textMessage.includes("trash")) {
             if (message.guild.id === HAYL_GUILD_ID) {
-              message.channel.send("**" + message.author.username + "**" + ", you're awesome! :heart:");
+              let msg = noot_love[Math.floor(Math.random() * noot_love.length)];
+              message.channel.send("**" + message.author.username + "**, " + msg);
             }
         }
     }
