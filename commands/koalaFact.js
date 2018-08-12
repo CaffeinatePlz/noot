@@ -20,7 +20,7 @@ exports.run = (bot, message, args) => {
     "All the giant spiders in Australia have only one natural predator: the koala. But the koalas just can't be bothered to eat the darn things, and thus, koalas are the reason there are so many spiders in Australia.",
     "Koalas are thought to have acquired their 20h sleep schedule by examining bored and tired prisoners during Australia's penal prison period.",
     "Koalas are hard to convince to care about anything, but if you manage to draw their ire, they're amongst nature's most savage predators. The last known aggravated koala killed 5 men in a rage before falling asleep.",
-    "Koalas jump from tree to tree in order to avoid the ground. This is due to the fact that they may fall asleep on the ground, causing some unsuspecting tourist to believe it is a rock and stand on it."
+    "Koalas jump from tree to tree in order to avoid the ground. This is due to the fact that they may fall asleep on the ground, causing some unsuspecting tourist to believe it is a rock and stand on it.",
     "Koalas navigated roads on the left side so that they could easily high five a koala that they was going the other way. This precedence created by the Koalas is the reason why Australians drive on the left today.",
   ];
 
