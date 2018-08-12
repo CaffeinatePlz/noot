@@ -70,6 +70,9 @@ module.exports = async (bot, message) => {
         if ( textMessage === "oof") {
             message.react('384494179683794944');
         }
+        if (textMessage.includes("noot") ) {
+            message.channel.send("Noot noot?");
+        }
 
         if (textMessage.match(/(n\s?o+|n\s?a\s?y+|n\s?o\s?p\s?e)([,.!*\s\n]+)(u|y\s?o\s?u|m\s?e|t\s?h\s?(e\s?){2,})\s?/)
             || textMessage.includes("garbage") || textMessage == "nou" || textMessage.includes("trash")) {
