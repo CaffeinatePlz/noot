@@ -75,7 +75,7 @@ module.exports = async (bot, message) => {
         }
 
         if (textMessage.match(/(n\s?o+|n\s?a\s?y+|n\s?o\s?p\s?e)([,.!*\s\n]+)(u|y\s?o\s?u|m\s?e|t\s?h\s?(e\s?){2,})\s?/)
-            || textMessage.includes("garbage") || textMessage == "nou" || textMessage.includes("trash")) {
+            || textMessage.includes("garbage") || textMessage == "nou" || textMessage == ":nou:" || textMessage.includes("trash")) {
             if (message.guild.id === HAYL_GUILD_ID) {
               let msg = noot_love[Math.floor(Math.random() * noot_love.length)];
               message.channel.send("**" + message.author.username + "**, " + msg);
