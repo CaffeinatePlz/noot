@@ -1,7 +1,6 @@
-const Discord = require('discord.js');
-const TBA = require('tba-api-storm');
-
 exports.run = (bot, message, args) => {
+  const Discord = require('discord.js');
+  const TBA = require('tba-api-storm');
   let tba = new TBA(TBA_TOKEN);
   var args = message.content.split(' ')[0];
   if (!isNaN(args)) {
@@ -21,6 +20,7 @@ exports.run = (bot, message, args) => {
     message.channel.sendMessage('Please mention a team (`+tba <team_number>`)');
   }
 };
+
 exports.conf = {
 	enabled: true,
 	guildOnly: false,
