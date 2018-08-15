@@ -32,7 +32,7 @@ exports.run = (bot, message, args) => {
             try {
               var num = op(op(op(a, b, s1), c, s2), d, s3);
               if (num == 10){
-                message.channel.send("((" + str(a) + s1 + str(b) + ")" + s2 + str(c) + ")" + s3 + str(d));
+                message.channel.send("((" + a + s1 + b + ")" + s2 + c + ")" + s3 + d);
               }
             } catch (e) {
           }
