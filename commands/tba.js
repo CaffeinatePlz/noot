@@ -21,3 +21,15 @@ exports.run = (bot, message, args) => {
     message.channel.sendMessage('Please mention a team (`+tba <team_number>`)');
   }
 };
+exports.conf = {
+	enabled: true,
+	guildOnly: false,
+	aliases: [],
+	botPerms: [],
+	memberPerms: []
+};
+exports.help = {
+	name: 'tba',
+	description: 'Displays info about a FRC team!',
+	usage: 'tba <team_number>'
+};
