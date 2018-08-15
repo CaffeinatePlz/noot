@@ -6,7 +6,7 @@ exports.run = (bot, message, args) => {
     var team_no = args;
     var info = new Discord.RichEmbed();
     tba.getTeam(team_no).then(a => {
-      info.setAuthor('FIRST® Robotics Competition Team ' + team_no, 'https://www.thebluealliance.com/team/' + team_no)
+      info.setAuthor('FIRST® Robotics Competition Team ' + team_no, bot.user.avatarURL, 'https://www.thebluealliance.com/team/' + team_no)
         .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
         .addField('Name', a.nickname, true)
         .addField('Rookie Year', a.rookie_year, true)
