@@ -25,6 +25,7 @@ exports.run = (bot, message, args) => {
   }
 
   function solve(a, b, c, d){
+    message.reply("solving with " + n1 + ", "+ n2 + ", "+ n3 + ", "+ n4);
     var symbols = ["+", "-", "*", "/"];
     for (var s1 in symbols){
       for (var s2 in symbols){
