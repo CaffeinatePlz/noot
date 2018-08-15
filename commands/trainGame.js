@@ -25,8 +25,9 @@ exports.run = (bot, message, args) => {
           return num1 / num2;
       }
   }
-  const symbols = ["+", "-", "*", "/"];
+
   function solve(a, b, c, d) {
+    const symbols = ["+", "-", "*", "/"];
       for (let s1 of symbols) {
           for (let s2 of symbols) {
               for (let s3 of symbols) {
