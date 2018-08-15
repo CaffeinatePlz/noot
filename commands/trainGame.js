@@ -1,5 +1,5 @@
 exports.run = (bot, message, args) => {
-	function operation(num1, num2, operation) {
+	function op(num1, num2, operation) {
     if (operation == "+"){
       return num1+num2;
     }else if (operation == "-"){
@@ -12,17 +12,16 @@ exports.run = (bot, message, args) => {
   }
 
   function solve(a, b, c, d){
-    symbols = ["+", "-", "*", "/"];
+    var symbols = ["+", "-", "*", "/"];
     for (var s1 in symbols){
       for (var s2 in symbols){
           for (var s3 in symbols){
             try {
-              num = operation(operation(operation(a, b, s1), c, s2), d, s3);
+              var num = op(op(op(a, b, s1), c, s2), d, s3);
               if (num == 10){
                 message.channel.send("((" + str(a) + s1 + str(b) + ")" + s2 + str(c) + ")" + s3 + str(d));
               }
             } catch (e) {
-              message.channel.sendMessage('```js\n'+e+"```");
           }
         }
       }
@@ -38,9 +37,6 @@ exports.run = (bot, message, args) => {
   } else {
     message.reply ("Please enter 4 numbers.");
   }
-
-
-
 
 };
 
