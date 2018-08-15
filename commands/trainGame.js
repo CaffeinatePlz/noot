@@ -13,7 +13,6 @@ exports.run = (bot, message, args) => {
 
 
   function op(num1, num2, operation) {
-    message.reply("2");
     if (operation == "+"){
       return num1+num2;
     }else if (operation == "-"){
@@ -26,9 +25,7 @@ exports.run = (bot, message, args) => {
   }
 
   function solve(a, b, c, d){
-    message.reply("solving with " + n1 + ", "+ n2 + ", "+ n3 + ", "+ n4);
     var symbols = ["+", "-", "*", "/"];
-    message.reply("1");
     for (var s1 in symbols){
       for (var s2 in symbols){
           for (var s3 in symbols){
