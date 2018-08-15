@@ -23,10 +23,13 @@ exports.run = (bot, message, args) => {
       else if (operation === "/") {
           return num1 / num2;
       }
+      else if (operation === "^") {
+          return pow(num1, num2);
+      }
   }
 
   function solve(a, b, c, d) {
-    const symbols = ["+", "-", "*", "/"];
+    const symbols = ["+", "-", "*", "/", "^"];
     var solutions = "";
       for (let s1 of symbols) {
           for (let s2 of symbols) {
