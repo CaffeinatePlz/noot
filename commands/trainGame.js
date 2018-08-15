@@ -26,12 +26,14 @@ exports.run = (bot, message, args) => {
 
   function solve(a, b, c, d){
     var symbols = ["+", "-", "*", "/"];
+    var solutions = "";
     for (var s1 in symbols){
       for (var s2 in symbols){
           for (var s3 in symbols){
             try {
               var num = op(op(op(a, b, s1), c, s2), d, s3);
               if (num == 10){
+                solutions += `((${a}${s1}${b})${s2}${c})${s3}${d}\n`;
                 message.channel.send("((" + a + s1 + b + ")" + s2 + c + ")" + s3 + d);
               }
             } catch (e) {
@@ -39,6 +41,7 @@ exports.run = (bot, message, args) => {
         }
       }
     }
+    message.channel.send(solutions);
   }
 
 
