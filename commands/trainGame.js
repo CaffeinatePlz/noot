@@ -34,12 +34,12 @@ exports.run = (bot, message, args) => {
     n2 = args[0].slice(1,2);
     n3 = args[0].slice(2,3);
     n4 = args[0].slice(3,4);
-
+    solve(n1, n2, n3, n4);
   } else {
     message.reply ("Please enter 4 numbers.");
   }
 
-  solve(n1, n2, n3, n4);
+
 
 
 };
