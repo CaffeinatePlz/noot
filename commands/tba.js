@@ -2,8 +2,7 @@ exports.run = (bot, message, args) => {
   const Discord = require('discord.js');
   const TBA = require('tba-api-storm');
   let tba = new TBA(process.env.TBA_TOKEN);
-  var args = message.content.split(' ')[0];
-  if (!isNaN(args)) {
+  if (!isNaN(args[0])) {
     var team_no = args;
     var info = new Discord.RichEmbed();
     tba.getTeam(team_no).then(a => {
