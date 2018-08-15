@@ -1,7 +1,7 @@
 exports.run = (bot, message, args) => {
 	const MarkovChain = require('markovchain');
 	const fs = require('fs');
-	const koalafacts = new MarkovChain(fs.readFileSync('./commands/frc.txt', 'utf8'));
+	const koalafacts = new MarkovChain(fs.readFileSync('../data/frc.txt', 'utf8'));
 	message.channel.send(`${koalafacts.start("FRC").end(" ").process()}`);
 };
 

@@ -12,21 +12,21 @@ bot.aliases = new Discord.Collection();
 const readdir = require('fs').readdir;
 
 readdir('./commands/', (err, files) => {
-    if (err) throw err;
-    console.log(`Loading ${files.length} commands!`);
-    files.forEach(f => {
-        try {
-          let commandFile = require(`./commands/${f}`);
-          //console.log(`${files.help.name} command is loading`);
-          bot.commands.set(commandFile.help.name, commandFile);
-          commandFile.conf.aliases.forEach(alias => {
-            bot.aliases.set(alias, commandFile.help.name);
-          });
-        } catch (e) {
-            console.log(`Unable to load command ${f}: ${e}`);
-        }
-    });
-    console.log(`Commands loaded!`);
+  if (err) throw err;
+  console.log(`Loading ${files.length} commands!`);
+  files.forEach(f => {
+    try {
+      let commandFile = require(`./commands/${f}`);
+      //console.log(`${files.help.name} command is loading`);
+      bot.commands.set(commandFile.help.name, commandFile);
+      commandFile.conf.aliases.forEach(alias => {
+        bot.aliases.set(alias, commandFile.help.name);
+      });
+    } catch (e) {
+        console.log(`Unable to load command ${f}: ${e}`);
+    }
+  });
+  console.log(`Commands loaded!`);
 });
 
 readdir('./events/', (err, files) => {
@@ -71,9 +71,9 @@ bot.on("message", async message => {
     var no = 1;
     var guilds = bot.guilds.array();
     for (var i = 0; i < guilds.length; i++) {
-        var guildname = guilds[i].name.replace('@', '@ ');
-        servers += `${no}. ${guildname}\n`;
-        no++;
+      var guildname = guilds[i].name.replace('@', '@ ');
+      servers += `${no}. ${guildname}\n`;
+      no++;
     }
     message.channel.send(servers);
   }
