@@ -1,11 +1,11 @@
 exports.run = (bot, message, args) => {
-  if (!isNaN(args[0]) && args[0].length ==4){
-    message.reply(" I have 4 numbers and I'm attempting to solve this.")
-    n1 = args[0].slice(0,1);
-    n2 = args[0].slice(1,2);
-    n3 = args[0].slice(2,3);
-    n4 = args[0].slice(3,4);
-    message.reply("solving with " + n1 + ", "+ n2 + ", "+ n3 + ", "+ n4);
+  if (!isNaN(args[0]) && args[0].length ==4 && !includes(".")){
+    //message.reply(" I have 4 numbers and I'm attempting to solve this.")
+    n1 = parseInt(args[0].slice(0,1));
+    n2 = parseInt(args[0].slice(1,2));
+    n3 = parseInt(args[0].slice(2,3));
+    n4 = parseInt(args[0].slice(3,4));
+    //message.reply("solving with " + n1 + ", "+ n2 + ", "+ n3 + ", "+ n4);
     solve(n1, n2, n3, n4);
   } else {
     message.reply ("Please enter 4 numbers.");
