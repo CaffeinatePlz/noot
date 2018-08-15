@@ -35,7 +35,6 @@ exports.run = (bot, message, args) => {
                   try {
                       if (operation(operation(operation(a, b, s1), c, s2), d, s3) === 10) {
                           solutions += `((${a}${s1}${b})${s2}${c})${s3}${d}\n`;
-                          message.channel.send("((" + a.toString() + s1 + b.toString() + ")" + s2 + c.toString() + ")" + s3 + d.toString());
                       }
                   }
                   catch (e) {
@@ -44,7 +43,11 @@ exports.run = (bot, message, args) => {
               }
           }
       }
-      message.channel.send("```" + solutions + "```");
+      if (solutions.length === 0){
+        message.channel.send("```No solutions found.```");
+      }else{
+        message.channel.send("```" + solutions + "```");
+      }
   }
 
 /*
