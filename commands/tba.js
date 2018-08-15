@@ -1,7 +1,7 @@
 exports.run = (bot, message, args) => {
   const Discord = require('discord.js');
   const TBA = require('tba-api-storm');
-  let tba = new TBA(TBA_TOKEN);
+  let tba = new TBA(tba_token);
   var args = message.content.split(' ')[0];
   if (!isNaN(args)) {
     var team_no = args;
