@@ -13,7 +13,7 @@ exports.run = (bot, message, args) => {
         .addField('Location', `${a.city}, ${a.state_prov}, ${a.country}`, true)
         .addField('Website', a.website, true);
       //if (a.motto !== null) { teaminfo.addField('Motto', a.motto, true); };
-      sendEmbed(info);
+      message.channel.send({embed: info});
     }).catch(e => { message.channel.sendMessage('```js\n'+e+"```"); message.channel.sendMessage('I cannot find this team. Does it exist?'); });
   } else {
     message.channel.sendMessage('Please mention a team (`+tba <team_number>`)');
