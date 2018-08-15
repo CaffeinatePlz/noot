@@ -28,11 +28,13 @@ exports.run = (bot, message, args) => {
 
   function solve(a, b, c, d) {
     const symbols = ["+", "-", "*", "/"];
+    var solutions = "";
       for (let s1 of symbols) {
           for (let s2 of symbols) {
               for (let s3 of symbols) {
                   try {
                       if (operation(operation(operation(a, b, s1), c, s2), d, s3) === 10) {
+                          solutions += `((${a}${s1}${b})${s2}${c})${s3}${d}\n`;
                           message.channel.send("((" + a.toString() + s1 + b.toString() + ")" + s2 + c.toString() + ")" + s3 + d.toString());
                       }
                   }
@@ -42,6 +44,7 @@ exports.run = (bot, message, args) => {
               }
           }
       }
+      message.channel.send("```" + solutions + "```");
   }
 
 /*
