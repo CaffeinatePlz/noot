@@ -1,5 +1,5 @@
 exports.run = (bot, message, args) => {
-  var koalaFacts = require('./data/koalafacts.txt');
+  var koalaFacts = require('./data/koalafacts.json');
 
   var msg = koalaFacts[Math.floor(Math.random() * koalaFacts.length)];
   message.channel.send( "\""+ msg + "\"");
