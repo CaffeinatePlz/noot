@@ -50,14 +50,16 @@ module.exports = async (bot, message) => {
             }
         }*/
 
-        if (textMessage === "sleep" || textMessage.includes("go to sleep") || textMessage.includes("need sleep") || textMessage.includes("needs sleep")) {
-            message.channel.send("Go to sleep!");
-        }
 
         if (textMessage.includes("hayl") || textMessage.includes("hayley")) {
             channel_ID = '400779864191401984';
             guild_ID = '356764662760472576';
             bot.guilds.get(guild_ID).channels.get(channel_ID).send(message.content + " [" + message.channel.name + ", " + message.author.username + "]" + " <@338163785082601473>");
+        }
+
+      if (message.guild.id === HAYL_GUILD_ID) {
+        if (textMessage === "sleep" || textMessage.includes("go to sleep") || textMessage.includes("need sleep") || textMessage.includes("needs sleep")) {
+            message.channel.send("Go to sleep!");
         }
 
         if (textMessage.includes("fight") || textMessage.includes("fite")) {
@@ -76,11 +78,10 @@ module.exports = async (bot, message) => {
 
         if (textMessage.match(/(n\s?o+|n\s?a\s?y+|n\s?o\s?p\s?e)([,.!*\s\n]+)(u|y\s?o\s?u|m\s?e|t\s?h\s?(e\s?){2,})\s?/)
             || textMessage.includes("garbage") || textMessage == "nou" || textMessage == ":nou:" || textMessage.includes("trash")) {
-            if (message.guild.id === HAYL_GUILD_ID) {
-              let msg = noot_love[Math.floor(Math.random() * noot_love.length)];
-              message.channel.send("**" + message.author.username + "**, " + msg);
-            }
+            let msg = noot_love[Math.floor(Math.random() * noot_love.length)];
+            message.channel.send("**" + message.author.username + "**, " + msg);
         }
+      }
     }
     bot.processMessage(message);
 };
