@@ -2,7 +2,7 @@ exports.run = (bot, message, args) => {
   if (message.member.hasPermission('MANAGE_MESSAGES') || message.author.id == '338163785082601473') {
     var num = args[0];
     if (!isNaN(num)) {
-      message.channel.bulkDelete(num+1);
+      message.channel.bulkDelete(parseInt(num)+1);
       message.reply( num + ' messages deleted!')
         .then(msg2 => setTimeout(() => {
           msg2.delete();
