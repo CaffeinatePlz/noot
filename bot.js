@@ -96,7 +96,9 @@ bot.on("message", async message => {
       message.delete();
     }
   }
-
+  if (command === ('git')||command === ('github')||command === ('gh')) {
+    message.channel.send("https://github.com/CaffeinatePlz/noot");
+  }
 
   if (command === ('invite')) {
     message.channel.send("https://discordapp.com/oauth2/authorize?client_id=438485530812874752&scope=bot&permissions=8");

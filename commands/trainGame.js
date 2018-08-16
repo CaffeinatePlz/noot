@@ -1,7 +1,6 @@
 exports.run = (bot, message, args) => {
   const math = require('mathjs');
   if (!isNaN(args[0]) && args[0].length == 4 && !args[0].includes(".")){
-    //message.reply(" I have 4 numbers and I'm attempting to solve this.")
     n1 = parseInt(args[0].slice(0,1));
     n2 = parseInt(args[0].slice(1,2));
     n3 = parseInt(args[0].slice(2,3));
