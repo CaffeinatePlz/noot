@@ -43,14 +43,14 @@ exports.run = (bot, message, args) => {
       if (x === "!") {
           return factorialize(num1);
       }
-      else if (operation === "a") {
+      else if (x === " ") {
           return num1;
       }
   }
 
   function solve(a, b, c, d) {
     const symbols = ["+", "-", "*", "/", "^"];
-    const x = ["!", "a"];
+    const x = ["!", " "];
     var solutions = "";
       for (let s1 of symbols) {
           for (let s2 of symbols) {
