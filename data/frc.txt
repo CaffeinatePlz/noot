@@ -1,6 +1,6 @@
 FRC is the FIRST Robotics competition
 FRC teaches Gracious Professionalism to its participants
-FRC was founded by Dean Kamen and Woodie Flowers. Dean L. Kamen is an American engineer, inventor, and businessman. He is best known for his invention of the Segway.
+FRC was founded by Dean Kamen and Woodie Flowers. Dean Kamen is an American engineer, inventor, and businessman. He is best known for his invention of the Segway.
 FRC is the flagship competition of FIRST.
 A large-scale robotics competition, FIRST® Robotics Competition brings together students and mentors to build robots that perform in a competitive but gracious environment against teams from all over the world.
 FRC is an international high school robotics competition. Each year, teams of high school students, coaches, and mentors work during a six-week period to build game-playing robots that weigh up to 120 pounds (54 kg).
@@ -38,7 +38,6 @@ Teams come from nearly every state in the United States, as well as many other c
 FIRST Robotics Competition teams will participate in 63 Regional Competitions, 85 District Competitions, and 10 District Championships.
 In addition, approximately 800 teams will qualify to go to one of the two FIRST Championships at the end of April, 2018.
 This year’s game, and this manual, were presented at the 2018 FIRST Robotics Competition Kickoff on
-Saturday, January 6, 2018.
 At FIRST, Coopertition® is displaying unqualified kindness and respect in the face of fierce competition.
 Coopertition is founded on the concept and philosophy that teams can and should help and cooperate
 with one another even as they compete. Coopertition involves learning from teammates and mentors.
@@ -47,7 +46,6 @@ During the remaining 2 minutes and 15 seconds of the match, the Teleoperated per
 control Robots. Teams on an Alliance work together to continue to control their Switch and the Scale.
 They can also trade in their Power Cubes for Power Ups. During the final 30 seconds, teams work together to Climb to Face the Boss.
 Control the Switches and the Scale. Robots collect Power Cubes and place them on
-Plates to control Switches or the Scale. When the Scale or their Switch is tipped in their favor, it is considered owned by that Alliance.
 Alliances work to have Ownership for as much time as possible.
 Earn Power Ups. Robots deliver Power Cubes to their humans who then place them into the Vault earning the Alliance Power Ups.
 FRC alliances use Power Ups to gain a temporary advantage during the Match.
