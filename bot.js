@@ -79,6 +79,19 @@ bot.on("message", async message => {
     message.channel.send(servers);
   }
 
+  if (command === ('boop')) {
+    if (message.author.id == '57506893358170112'||message.author.id == '338163785082601473'){
+      var boop = message.mentions.users.array()[0];
+      if (boop != null){
+        message.channel.send( boop + ", u have been booped by paramallamacorn!");
+      } else {
+        message.channel.send("please mention someone");
+      }
+    }else{
+      message.reply(", you dont have permission to do this!");
+    }
+  }
+
   if (command === ('dm')) {
     if (message.author.id != '338163785082601473' ) return message.reply("Are you Hayl? I don't think so. Shhhh child.");
     let person = message.mentions.users.first();
