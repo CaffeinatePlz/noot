@@ -80,7 +80,7 @@ exports.run = (bot, message, args) => {
       if (solutions.length === 0){
         message.channel.send("```No solutions found.```");
       }else{
-        var box = new Discord.RichEmbed();
+        /*var box = new Discord.RichEmbed();
         var x = 20;
         if (solutions.length > 20){
     			for (y=0; y<x; y++) {
@@ -94,7 +94,7 @@ exports.run = (bot, message, args) => {
           const msg = await message.channel.send({embed: box});
           await msg.react("arrow_forward");
 
-          /*const filter = (reaction, user) => reaction.emoji.name === 'arrow_forward' && user.id === message.author.id
+          const filter = (reaction, user) => reaction.emoji.name === 'arrow_forward' && user.id === message.author.id
           msg.awaitReactions(filter, { time: 15000 })
             .then(collected =>
               x+=20;
@@ -125,18 +125,18 @@ exports.run = (bot, message, args) => {
               msg.edit({embed: newEmbed}));
             .catch(console.error);
 
-          msg.clearReactions();*/
+          msg.clearReactions();
         }else{
     			for (y=0; y<x; y++) {
     				z = solutions[y];
-    				helpbox.addField(z);
+    				box.addField(z);
     			}
           box.setAuthor("Train Game Solutions for " + args[0] + `, displaying 1 to ${solutions.length} of ${solutions.length}`)
             .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)]);
     			message.channel.send({embed: box});
-        }
+        }*/
 
-        //message.channel.send("```" + solutions + "```");
+        message.channel.send("```" + solutions + "```");
       }
   }
 
