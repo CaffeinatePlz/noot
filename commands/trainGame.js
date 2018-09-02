@@ -61,6 +61,10 @@ exports.run = (bot, message, args) => {
                         try {
                             if (operation(operation(operation(z(a,x1), z(b,x2), s1), z(c,x3), s2), z(d,x4), s3) === 10) {
                                 solutions += `((${a}${x1}${s1} ${b}${x2}) ${s2} ${c}${x3}) ${s3} ${d}${x4}\n`;
+                            }else if (operation(operation(z(a,x1), operation(z(b,x2), z(c,x3), s2), s1), z(d,x4), s3) === 10) {
+                                solutions += `(${a}${x1}${s1} (${b}${x2} ${s2} ${c}${x3}) ${s3})${d}${x4}\n`;
+                            }else if (operation(z(a,x1), operation(z(b,x2), operation(z(c,x3), z(d,x4), s3), s2), s1) === 10) {
+                                solutions += `${a}${x1}${s1} (${b}${x2} ${s2} (${c}${x3} ${s3} ${d}${x4}))\n`;
                             }
                         }
                         catch (e) {
