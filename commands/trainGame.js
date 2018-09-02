@@ -94,7 +94,7 @@ exports.run = (bot, message, args) => {
           const msg = await message.channel.send({embed: box});
           await msg.react("arrow_forward");
 
-          const filter = (reaction, user) => reaction.emoji.name === 'arrow_forward' && user.id === message.author.id
+          /*const filter = (reaction, user) => reaction.emoji.name === 'arrow_forward' && user.id === message.author.id
           msg.awaitReactions(filter, { time: 15000 })
             .then(collected =>
               x+=20;
@@ -125,7 +125,7 @@ exports.run = (bot, message, args) => {
               msg.edit({embed: newEmbed}));
             .catch(console.error);
 
-          msg.clearReactions();
+          msg.clearReactions();*/
         }else{
     			for (y=0; y<x; y++) {
     				z = solutions[y];
