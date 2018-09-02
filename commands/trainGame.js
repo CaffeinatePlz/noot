@@ -80,7 +80,63 @@ exports.run = (bot, message, args) => {
       if (solutions.length === 0){
         message.channel.send("```No solutions found.```");
       }else{
-        message.channel.send("```" + solutions + "```");
+        var box = new Discord.RichEmbed();
+        var x = 20;
+        if (solutions.length > 20){
+    			for (y=0; y<x; y++) {
+    				var z += solutions[y];
+    			}
+          box.setAuthor("Train Game Solutions for " + args[0] + `, displaying 1 to 20 of ${solutions.length}`)
+            .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)]);
+          box.addField(z);
+
+
+          const msg = await message.channel.send({embed: box});
+          await msg.react("arrow_forward");
+
+          const filter = (reaction, user) => reaction.emoji.name === 'arrow_forward' && user.id === message.author.id
+          msg.awaitReactions(filter, { time: 15000 })
+            .then(collected =>
+              x+=20;
+              if (message.length>x){
+                var z = "";
+                for (y=20; y<x; y++) {
+          				z += solutions[y];
+          			}
+                const newEmbed = new Discord.RichEmbed({
+                  author:"Train Game Solutions for " + args[0] + `, displaying ${x-20} to ${x} of ${solutions.length}`,
+                  color: [Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)],
+                  fields: [ z ],
+                });
+              } else {
+                var z = "";
+                x = solution.length;
+                for (y=20; y<x; y++) {
+          				z += solutions[y];
+          			}
+                const newEmbed = new Discord.RichEmbed({
+                  author:"Train Game Solutions for " + args[0] + `, displaying ${x-20} to ${x} of ${solutions.length}`,
+                  color: [Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)],
+                  fields: [ z ],
+                });
+                msg.edit({embed: newEmbed}));
+                return;
+              }
+              msg.edit({embed: newEmbed}));
+            .catch(console.error);
+
+          msg.clearReactions();
+        }else{
+    			for (y=0; y<x; y++) {
+    				z = solutions[y];
+    				helpbox.addField(z);
+    			}
+          box.setAuthor("Train Game Solutions for " + args[0] + `, displaying 1 to ${solutions.length} of ${solutions.length}`)
+            .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)]);
+    			message.channel.send({embed: box});
+        }
+
+        //message.channel.send("```" + solutions + "```");
       }
   }
 
