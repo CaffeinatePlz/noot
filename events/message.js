@@ -2,13 +2,7 @@ const JARED_ID = '133350262420013056';
 const HAYL_ID = '338163785082601473';
 const HAYL_GUILD_ID = '374179059212484608';
 
-/*const jaredResponses = [
-    "Omggg it's a cutie!",
-    "Owo *notices a cutie*",
-    "Cutie.",
-    "Aaaaahhh you're so cute omg!",
-    "Hai, reminder that hayl loves you!",
-];*/
+
 
 const noot_love = [
   "you're awesome! :heart:",
@@ -39,17 +33,6 @@ module.exports = async (bot, message) => {
     const textMessage = message.content.toLowerCase();
 
     if(!textMessage.startsWith("+")) {
-        /*if (message.author.id === JARED_ID) {
-            if(textMessage.match(/om(g)+/) || textMessage === "heck" || textMessage === "oh my god" ||
-                textMessage === "stoppit" || textMessage === "darnit" || textMessage === ">:0" ||
-                textMessage === "frick" || textMessage === "ahem" || textMessage === "wah" ||
-                textMessage === "no u" || textMessage === "what"|| textMessage === "god dammit" ||
-                textMessage === "ack" || textMessage === "aack"||textMessage === "wha"||textMessage === "i swear to god") {
-                let msg = jaredResponses[Math.floor(Math.random() * jaredResponses.length)];
-                message.channel.send("\"" + message.content + "\" \n" + msg);
-            }
-        }*/
-
 
         if (textMessage.includes("hayl") || textMessage.includes("hayley")) {
             channel_ID = '400779864191401984';
