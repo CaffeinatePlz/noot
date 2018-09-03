@@ -1,34 +1,54 @@
+/**
+ * Set someone's nickname
+ * @param {module:discord.js.Client} bot
+ * @param {module:discord.js.Message} message
+ * @param {string[]} [args]
+ * @returns void
+ */
 exports.run = (bot, message, args) => {
-
-    let person = message.mentions.users.first();
-    let authorID = message.author.id;
-    var userID = args[0].replace('<@', '').replace('>', '').replace('!', '');
+    const person = message.mentions.users.first();
+    const authorID = message.author.id;
+    const userID = args[0].replace("<@", "").replace(">", "").replace("!", "");
     if (message.member.hasPermission("MANAGE_NICKNAMES")){
-      if (person != null){
-        var x = args.shift();
-        const new_name = args.join(" ");
-        console.log(person);
-        message.guild.members.get(userID).setNickname(new_name);
-        message.channel.send( "Nickname set!");
-      }else{
-        const new_name = args.join(" ");
-        message.guild.members.get(authorID).setNickname(new_name);
-      }
-    }else{
-      message.channel.send( "No no no *YOU'RE* not allowed to do that! " + message.author);
+        if (person !== null){
+            args.shift();
+            const newName = args.join(" ");
+            console.log(person);
+            message.guild.members.get(userID).setNickname(newName);
+            message.channel.send("Nickname set!");
+        } else {
+            const newName = args.join(" ");
+            message.guild.members.get(authorID).setNickname(newName);
+        }
+    } else {
+        message.channel.send("No no no *YOU'RE* not allowed to do that! " + message.author);
     }
-  };
+};
 
-  exports.conf = {
-  	enabled: true,
-  	guildOnly: false,
-  	aliases: [],
-  	botPerms: [],
-  	memberPerms: []
-  };
+/**
+ * Config for `setNick`
+ * Defaults:
+ * `enabled`: `true`
+ * `guildOnly`: `false`
+ * `aliases`: `[]`
+ * `botPerms`: `[]`
+ * `memberPerms`: `[]`
+ * @type {{enabled: boolean, guildOnly: boolean, aliases: Array, botPerms: Array, memberPerms: Array}}
+ */
+exports.conf = {
+    enabled: true,
+    guildOnly: false,
+    aliases: [],
+    botPerms: [],
+    memberPerms: []
+};
 
-  exports.help = {
-  	name: 'setnick',
-  	description: 'change someone else\'s nick',
-  	usage: 'setnick <user>'
-  };
+/**
+ * 
+ * @type {{name: string, description: string, usage: string}}
+ */
+exports.help = {
+    name: "setnick",
+    description: "change someone else's nick",
+    usage: "setnick <user>"
+};
