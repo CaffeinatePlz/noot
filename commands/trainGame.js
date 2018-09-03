@@ -82,9 +82,10 @@ exports.run = (bot, message, args) => {
       }else{
         /*var box = new Discord.RichEmbed();
         var x = 20;
+        let z = Object.assign({}, box.fields[0]);
         if (solutions.length > 20){
     			for (y=0; y<x; y++) {
-    				var z += solutions[y];
+    				z += solutions[y];
     			}
           box.setAuthor("Train Game Solutions for " + args[0] + `, displaying 1 to 20 of ${solutions.length}`)
             .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)]);
@@ -98,8 +99,9 @@ exports.run = (bot, message, args) => {
           msg.awaitReactions(filter, { time: 15000 })
             .then(collected =>
               x+=20;
+              let z = Object.assign({}, box.fields[0]);
               if (message.length>x){
-                var z = "";
+                z = "";
                 for (y=20; y<x; y++) {
           				z += solutions[y];
           			}
