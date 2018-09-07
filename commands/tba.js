@@ -54,7 +54,7 @@ exports.run = (bot, message, args) => {
       } else {
         var awardlist = new Discord.RichEmbed();
         let year = null;
-        tba.getTeamAwards(team_no, year).then(a => {
+        tba.getTeamAwards(team_no).then(a => {
             awardlist.setAuthor('Awards for FIRST® Robotics Competition Team ' + team_no)
               .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
             var awards = [''];
