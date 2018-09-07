@@ -58,9 +58,7 @@ exports.run = (bot, message, args) => {
           .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)]);
         var awards = [''];
         let rookie_year = 2018;
-        tba.getTeam(team_no).then(a => {
-          rookie_year = a.rookie_year;
-        });
+        rookie_year = rookieYear (team_no);
         for (var i = rookie_year; i < 2019; i++) {
           tba.getTeamAwards(team_no, rookie_year).then(a => {
               var n = 0;
@@ -87,7 +85,7 @@ exports.run = (bot, message, args) => {
                   }
               }
           }).catch(e => {
-              message.reply(e);
+              message.reply("Oops, it looks like an error occured. Maybe I couldn't find any awards.\n" + e);
           });
           rookie_year++;
         };
@@ -98,6 +96,12 @@ exports.run = (bot, message, args) => {
     message.channel.sendMessage('Please mention a team (`+tba <team_number>`)');
   }
 };
+
+function rookieYear(team_no){
+  tba.getTeam(team_no).then(a => {
+    return rookie_year = a.rookie_year;
+  });
+}
 
 exports.conf = {
 	enabled: true,
