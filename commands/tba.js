@@ -19,38 +19,73 @@ exports.run = (bot, message, args) => {
     if (args[0] === 'awards') {
       let year = args[2];
       let team_no = args[1];
-      if (isNaN(year)) { return message.reply("Please specify a year! E.g `+tba awards 3132 2017`")};
-      var awardlist = new Discord.RichEmbed();
-      tba.getTeamAwards(team_no, year).then(a => {
-          awardlist.setAuthor('Awards for FIRST® Robotics Competition Team ' + team_no)
-            .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
-          var awards = [''];
-          var n = 0;
-          for (var i = 0; i < a.length; i++) {
-              if ((awards[n] + '[' + a[i].event_key + '] ' + a[i].name).length >= 1024) {
-                  n++;
-              }
-              if (awards[n] == undefined) {
-                  awards[n] = '[' + a[i].event_key + '] ' + a[i].name + '\n';
-              } else {
-                  awards[n] += '['+ a[i].event_key + '] ' + a[i].name + '\n';
-              }
-          }
-          for (var b = 0; b < awards.length; b++) {
-              if (awards[b] !== undefined) {
-                  if (awards.length === 1) {
-                      awardlist.addField('Award List', awards[b]);
-                  } else {
-                      awardlist.addField('Award List Page ' + (b + 1), awards[b]);
-                  }
-              }
-              if (awardlist.fields.length === 4 || b === awards.length - 1) {
-                  message.channel.send({embed: awardlist});
-              }
-          }
-      }).catch(e => {
-          message.reply(e);
-      });
+      if (!isNaN(year)) {
+        var awardlist = new Discord.RichEmbed();
+        tba.getTeamAwards(team_no, year).then(a => {
+            awardlist.setAuthor('Awards for FIRST® Robotics Competition Team ' + team_no)
+              .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
+            var awards = [''];
+            var n = 0;
+            for (var i = 0; i < a.length; i++) {
+                if ((awards[n] + '[' + a[i].event_key + '] ' + a[i].name).length >= 1024) {
+                    n++;
+                }
+                if (awards[n] == undefined) {
+                    awards[n] = '[' + a[i].event_key + '] ' + a[i].name + '\n';
+                } else {
+                    awards[n] += '['+ a[i].event_key + '] ' + a[i].name + '\n';
+                }
+            }
+            for (var b = 0; b < awards.length; b++) {
+                if (awards[b] !== undefined) {
+                    if (awards.length === 1) {
+                        awardlist.addField('Award List', awards[b]);
+                    } else {
+                        awardlist.addField('Award List Page ' + (b + 1), awards[b]);
+                    }
+                }
+                if (awardlist.fields.length === 4 || b === awards.length - 1) {
+                    message.channel.send({embed: awardlist});
+                }
+            }
+        }).catch(e => {
+            message.reply(e);
+        });
+      } else {
+        var awardlist = new Discord.RichEmbed();
+        let year = null;
+        tba.getTeamAwards(team_no, year).then(a => {
+            awardlist.setAuthor('Awards for FIRST® Robotics Competition Team ' + team_no)
+              .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
+            var awards = [''];
+            var n = 0;
+            for (var i = 0; i < a.length; i++) {
+                if ((awards[n] + '[' + a[i].event_key + '] ' + a[i].name).length >= 1024) {
+                    n++;
+                }
+                if (awards[n] == undefined) {
+                    awards[n] = '[' + a[i].event_key + '] ' + a[i].name + '\n';
+                } else {
+                    awards[n] += '['+ a[i].event_key + '] ' + a[i].name + '\n';
+                }
+            }
+            for (var b = 0; b < awards.length; b++) {
+                if (awards[b] !== undefined) {
+                    if (awards.length === 1) {
+                        awardlist.addField('Award List', awards[b]);
+                    } else {
+                        awardlist.addField('Award List Page ' + (b + 1), awards[b]);
+                    }
+                }
+                if (awardlist.fields.length === 4 || b === awards.length - 1) {
+                    message.channel.send({embed: awardlist});
+                }
+            }
+        }).catch(e => {
+            message.reply(e);
+        });
+        //return message.reply("Please specify a year! E.g `+tba awards 3132 2017`")
+      };
     }
   } else {
     message.channel.sendMessage('Please mention a team (`+tba <team_number>`)');
