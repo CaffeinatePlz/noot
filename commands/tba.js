@@ -61,6 +61,7 @@ exports.run = (bot, message, args) => {
         tba.getTeam(team_no).then(a => {
           rookie_year = a.rookie_year;
         });
+        
         for (var i = rookie_year; i < 2019; i++) {
           tba.getTeamAwards(team_no, rookie_year).then(a => {
               var n = 0;
