@@ -60,33 +60,36 @@ exports.run = (bot, message, args) => {
         tba.getTeam(team_no).then(a => {
           var rookie_year = a.rookie_year;
         });
-        tba.getTeamAwards(team_no).then(a => {
-            var n = 0;
-            for (var i = 0; i < a.length; i++) {
-                if ((awards[n] + '[' + a[i].event_key + '] ' + a[i].name).length >= 1024) {
-                    n++;
-                }
-                if (awards[n] == undefined) {
-                    awards[n] = '[' + a[i].event_key + '] ' + a[i].name + '\n';
-                } else {
-                    awards[n] += '['+ a[i].event_key + '] ' + a[i].name + '\n';
-                }
-            }
-            for (var b = 0; b < awards.length; b++) {
-                if (awards[b] !== undefined) {
-                    if (awards.length === 1) {
-                        awardlist.addField('Award List', awards[b]);
-                    } else {
-                        awardlist.addField('Award List Page ' + (b + 1), awards[b]);
-                    }
-                }
-                if (awardlist.fields.length === 4 || b === awards.length - 1) {
-                    message.channel.send({embed: awardlist});
-                }
-            }
-        }).catch(e => {
-            message.reply(e);
-        });
+        for (var i = rookie_year; i < 2019; i++) {
+          tba.getTeamAwards(team_no, rookie_year).then(a => {
+              var n = 0;
+              for (var i = 0; i < a.length; i++) {
+                  if ((awards[n] + '[' + a[i].event_key + '] ' + a[i].name).length >= 1024) {
+                      n++;
+                  }
+                  if (awards[n] == undefined) {
+                      awards[n] = '[' + a[i].event_key + '] ' + a[i].name + '\n';
+                  } else {
+                      awards[n] += '['+ a[i].event_key + '] ' + a[i].name + '\n';
+                  }
+              }
+              for (var b = 0; b < awards.length; b++) {
+                  if (awards[b] !== undefined) {
+                      if (awards.length === 1) {
+                          awardlist.addField('Award List', awards[b]);
+                      } else {
+                          awardlist.addField('Award List Page ' + (b + 1), awards[b]);
+                      }
+                  }
+                  if (awardlist.fields.length === 4 || b === awards.length - 1) {
+                      message.channel.send({embed: awardlist});
+                  }
+              }
+          }).catch(e => {
+              message.reply(e);
+          });
+          rookie_year++;
+        };
         //return message.reply("Please specify a year! E.g `+tba awards 3132 2017`")
       };
     }
