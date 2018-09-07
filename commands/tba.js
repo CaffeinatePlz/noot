@@ -19,7 +19,7 @@ exports.run = (bot, message, args) => {
     if (args[0] === 'awards') {
       let year = args[2];
       let team_no = args[1];
-      if (isNaN(year)) { year = null; }
+      if (isNaN(year)) { return message.reply("Please specify a year! E.g `+tba awards 3132 2017`")};
       var awardlist = new Discord.RichEmbed();
       tba.getTeamAwards(team_no, year).then(a => {
           awardlist.setAuthor('Awards for FIRST® Robotics Competition Team ' + team_no)
@@ -67,5 +67,5 @@ exports.conf = {
 exports.help = {
 	name: 'tba',
 	description: 'Displays info about a FRC team!',
-	usage: 'tba <team_number>'
+	usage: 'tba <team_number> | tba awards <team_number> <year>'
 };
