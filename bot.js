@@ -5,7 +5,7 @@ const bot = new Discord.Client({
    tba_token: process.env.TBA_TOKEN,
    autorun: true
 });
-//const config = require("./config.json");
+// const config = require("./config.json");
 require("./functions.js")(bot);
 bot.commands = new Discord.Collection();
 bot.events = new Discord.Collection();
@@ -48,12 +48,12 @@ bot.on("ready", () => {
 
 bot.on("guildCreate", guild => {
   console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-  bot.user.setGame(`on ${bot.guilds.size} servers`);
+  bot.user.setGame(`on ${bot.guilds.size} servers | +`);
 });
 
 bot.on("guildDelete", guild => {
   console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-  bot.user.setGame(`on ${bot.guilds.size} servers`);
+  bot.user.setGame(`on ${bot.guilds.size} servers | +`);
 });
 
 bot.on("message", async message => {
