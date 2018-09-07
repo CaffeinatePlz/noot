@@ -57,8 +57,9 @@ exports.run = (bot, message, args) => {
         awardlist.setAuthor('Awards for FIRST® Robotics Competition Team ' + team_no)
           .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)]);
         var awards = [''];
+        let rookie_year = 0;
         tba.getTeam(team_no).then(a => {
-          var rookie_year = a.rookie_year;
+          rookie_year = a.rookie_year;
         });
         for (var i = rookie_year; i < 2019; i++) {
           tba.getTeamAwards(team_no, rookie_year).then(a => {
