@@ -58,7 +58,9 @@ exports.run = (bot, message, args) => {
           .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)]);
         var awards = [''];
         let rookie_year = 2018;
-        rookie_year = rookieYear (team_no);
+        tba.getTeam(team_no).then(a => {
+          rookie_year = a.rookie_year;
+        });
         for (var i = rookie_year; i < 2019; i++) {
           tba.getTeamAwards(team_no, rookie_year).then(a => {
               var n = 0;
@@ -95,14 +97,6 @@ exports.run = (bot, message, args) => {
   } else {
     message.channel.sendMessage('Please mention a team (`+tba <team_number>`)');
   }
-};
-
-function rookieYear(team_no){
-  const TBA = require('tba-api-storm');
-  let tba = new TBA(process.env.TBA_TOKEN);
-  tba.getTeam(team_no).then(a => {
-    return a.rookie_year;
-  });
 };
 
 exports.conf = {
