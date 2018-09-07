@@ -101,7 +101,7 @@ function rookieYear(team_no){
   const TBA = require('tba-api-storm');
   let tba = new TBA(process.env.TBA_TOKEN);
   tba.getTeam(team_no).then(a => {
-    return rookie_year = a.rookie_year;
+    return a.rookie_year;
   });
 };
 
