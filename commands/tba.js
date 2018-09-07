@@ -101,7 +101,7 @@ function rookieYear(team_no){
   tba.getTeam(team_no).then(a => {
     return rookie_year = a.rookie_year;
   });
-}
+};
 
 exports.conf = {
 	enabled: true,
