@@ -10,11 +10,47 @@ exports.run = (bot, message, args) => {
         .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
         .addField('Name', a.nickname, true)
         .addField('Rookie Year', a.rookie_year, true)
-        .addField('Location', `${a.city}, ${a.state_prov}, ${a.country}`, true)
-        .addField('Website', a.website, true);
+        .addField('Location', `${a.city}, ${a.state_prov}, ${a.country}`, true);
+      if (a.website !== null) { info.addField('Website', a.website, true); };
       if (a.motto !== null) { info.addField('Motto', a.motto, true); };
       message.channel.send({embed: info});
     }).catch(e => { message.channel.sendMessage('```js\n'+e+"```"); message.channel.sendMessage('I cannot find this team. Does it exist?'); });
+  } else if (!isNaN(args[1])) {
+    if (args[0] === 'awards') {
+      let year = args[2];
+      let team_no = args[1];
+      if (isNaN(year)) { year = null; }
+      var awardlist = new Discord.RichEmbed();
+      tba.getTeamAwards(team_no, year).then(a => {
+          awardlist.setAuthor('Awards for FIRST® Robotics Competition Team ' + team_no)
+            .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
+          var awards = [''];
+          var n = 0;
+          for (var i = 0; i < a.length; i++) {
+              if ((awards[n] + '[' + a[i].year + '] ' + a[i].name).length >= 1024) {
+                  n++;
+              }
+              if (awards[n] == undefined) {
+                  awards[n] = '[' + a[i].year + '] ' + a[i].name + '\n';
+              } else {
+                  awards[n] += '[' + a[i].year + '] ' + a[i].name + '\n';
+              }
+          }
+          for (var b = 0; b < awards.length; b++) {
+              if (awards[b] !== undefined) {
+                  if (awards.length === 1) {
+                      awardlist.addField('Award List', awards[b]);
+                  } else {
+                      awardlist.addField('Award List Page ' + (b + 1), awards[b]);
+                  }
+              }
+              if (awardlist.fields.length === 4 || b === awards.length - 1) {
+                  message.channel.send({embed: awardlist});
+              }
+          }
+      }).catch(e => {
+          message.reply(e);
+      });
   } else {
     message.channel.sendMessage('Please mention a team (`+tba <team_number>`)');
   }
