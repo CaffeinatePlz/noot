@@ -51,6 +51,7 @@ exports.run = (bot, message, args) => {
       }).catch(e => {
           message.reply(e);
       });
+    }
   } else {
     message.channel.sendMessage('Please mention a team (`+tba <team_number>`)');
   }
