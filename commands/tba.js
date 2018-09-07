@@ -27,13 +27,13 @@ exports.run = (bot, message, args) => {
           var awards = [''];
           var n = 0;
           for (var i = 0; i < a.length; i++) {
-              if ((awards[n] + '[' + a[i].year + " " + a[i].event '] ' + a[i].name).length >= 1024) {
+              if ((awards[n] + '[' + a[i].year + " " + a[i].event_key '] ' + a[i].name).length >= 1024) {
                   n++;
               }
               if (awards[n] == undefined) {
-                  awards[n] = '[' + a[i].year + " " + a[i].event '] ' + a[i].name + '\n';
+                  awards[n] = '[' + a[i].year + " " + a[i].event_key '] ' + a[i].name + '\n';
               } else {
-                  awards[n] += '[' + a[i].year + " " + a[i].event '] ' + a[i].name + '\n';
+                  awards[n] += '[' + a[i].year + " " + a[i].event_key '] ' + a[i].name + '\n';
               }
           }
           for (var b = 0; b < awards.length; b++) {
