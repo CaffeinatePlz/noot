@@ -54,10 +54,13 @@ exports.run = (bot, message, args) => {
       } else {
         var awardlist = new Discord.RichEmbed();
         let year = null;
+        awardlist.setAuthor('Awards for FIRST® Robotics Competition Team ' + team_no)
+          .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)]);
+        var awards = [''];
+        tba.getTeam(team_no).then(a => {
+          var rookie_year = a.rookie_year;
+        });
         tba.getTeamAwards(team_no).then(a => {
-            awardlist.setAuthor('Awards for FIRST® Robotics Competition Team ' + team_no)
-              .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
-            var awards = [''];
             var n = 0;
             for (var i = 0; i < a.length; i++) {
                 if ((awards[n] + '[' + a[i].event_key + '] ' + a[i].name).length >= 1024) {
