@@ -12,11 +12,11 @@ exports.run = (bot, message, args) => {
 //  var x = Math.floor(Math.random() * 5035);
   const body = request.get('http://explosm.net/comics/random');
   const $ = cheerio.load(body);
-  img = 'http:' + $('#main-comic').attr('src').toString();
+  img = $('#main-comic').attr('src');
   link = $('#permalink').attr('value');
   author = 'Cyanide and Happiness';
-
-
+message.channel.send(img);
+/*
   message.channel.send({ embed: new Discord.RichEmbed()
       .setAuthor(author)
       .setTitle(title)
@@ -24,7 +24,7 @@ exports.run = (bot, message, args) => {
       .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
       .setImage(img)
       .setDescription(description)
-    });
+    });*/
 };
 
 exports.conf = {
