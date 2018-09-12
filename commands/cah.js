@@ -18,7 +18,7 @@ exports.run = (bot, message, args) => {
 
 
   message.channel.send({ embed: new Discord.RichEmbed()
-      .setAuthor(author, 'https://i.imgur.com/jJl7FoT.jpg')
+      .setAuthor(author)
       .setTitle(title)
       .setURL(link)
       .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
