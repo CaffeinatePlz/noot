@@ -8,8 +8,9 @@ exports.run = (bot, message, args) => {
   let description = '';
   let author = '';
 
-  const body = await request.get('http://explosm.net/comics/random');
+  const body = request.get('http://explosm.net/comics/random');
   const $ = cheerio.load(body);
+
   img = $('#main-comic').attr('src').replace(/^\/\//, 'http://');
   link = $('#permalink').attr('value');
   author = 'Cyanide and Happiness';
@@ -20,7 +21,7 @@ exports.run = (bot, message, args) => {
       .setURL(link)
       .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
       .setImage(img)
-      .setDescription(description);
+      .setDescription(description)
     });
 };
 
