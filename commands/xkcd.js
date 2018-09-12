@@ -7,8 +7,6 @@ exports.run = (bot, message, args) => {
 
   if (!args[0]){
     xkcd(function (data) {
-      author = 'XKCD #' + data.num;
-      title = data.title;
       var box = new Discord.RichEmbed();
       box.setAuthor("XKCD")
       .setTitle("title")
