@@ -9,14 +9,14 @@ exports.run = (bot, message, args) => {
   let description = '';
   let author = '';
 
-  const body = await request.get('http://www.amazingsuperpowers.com/?randomcomic&nocache=1');
+  const body = request.get('http://www.amazingsuperpowers.com/?randomcomic&nocache=1');
         const $ = cheerio.load(body);
         img = $('#comic-1 img').attr('src');
         link = $('.post-title a').attr('href');
         title = $('.post-title a').text();
         description = $('.entry').text();
         author = 'AmazingSuperPowers';
-        
+
   message.channel.send({ embed: new Discord.RichEmbed()
       .setAuthor(author)
       .setTitle(title)
