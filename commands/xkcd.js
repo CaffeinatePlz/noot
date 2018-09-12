@@ -13,8 +13,6 @@ exports.run = (bot, message, args) => {
       box.setAuthor(author)
       .setTitle(title)
       .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
-      .setImage()
-      .setDescription();
       message.channel.send({ embed: box });
       message.reply(data.img + '\n*' + data.alt + '*');
       /*try {
