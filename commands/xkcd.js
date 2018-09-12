@@ -1,5 +1,5 @@
 exports.run = (bot, message, args) => {
-  const Discord = require("xkcd");
+  const xkcd = require("xkcd");
   let img = '';
   let title = '';
   let description = '';
