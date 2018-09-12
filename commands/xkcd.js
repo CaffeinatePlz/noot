@@ -7,15 +7,16 @@ exports.run = (bot, message, args) => {
 
   if (!args[0]){
     xkcd(function (data) {
-      message.reply('**XKCD #' + data.num + '**: "' + data.title + '"\n' + data.img + '\n*' + data.alt + '*');
+      message.channel.send({ embed: new Discord.RichEmbed()
+        .setAuthor('XKCD #' + data.num)
+        .setTitle(data.safe_title)
+        .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
+        .setImage(data.img)
+        .setDescription(data.alt)
+      });
+      message.reply(data.img + '\n*' + data.alt + '*');
       /*try {
-        message.channel.send({ embed: new Discord.RichEmbed()
-            .setAuthor('XKCD')
-            .setTitle(data.safe_title)
-            .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
-            .setImage(data.img)
-            .setDescription(data.alt)
-          });
+
       } catch (err) {
         message.channel.send(err);
       }*/
