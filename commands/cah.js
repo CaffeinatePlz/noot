@@ -15,7 +15,7 @@ exports.run = (bot, message, args) => {
   img = $('#main-comic').attr('src');
   link = $('#comic-social-link').attr('href');
   author = 'Cyanide and Happiness';
-message.channel.send();
+message.channel.send(link);
 /*
   message.channel.send({ embed: new Discord.RichEmbed()
       .setAuthor(author)
