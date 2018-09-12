@@ -9,13 +9,13 @@ exports.run = (bot, message, args) => {
     xkcd(function (data) {
       author = 'XKCD #' + data.num;
       title = data.title;
-      message.channel.send({ embed: new Discord.RichEmbed()
-        .setAuthor(author)
-        .setTitle(title)
-        .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
-        .setImage()
-        .setDescription()
-      });
+      var box = new Discord.RichEmbed();
+      box.setAuthor(author)
+      .setTitle(title)
+      .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
+      .setImage()
+      .setDescription();
+      message.channel.send({ embed: box });
       message.reply(data.img + '\n*' + data.alt + '*');
       /*try {
 
