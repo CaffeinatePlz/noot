@@ -16,7 +16,7 @@ exports.run = (bot, message, args) => {
             .setDescription(data.alt)
           });
       } catch (err) {
-          msg.channel.send(err);
+        message.channel.send(err);
       }
     });
   } else if (!isNaN(args[0])){
@@ -30,7 +30,7 @@ exports.run = (bot, message, args) => {
             .setDescription(data.alt)
           });
       } catch (err) {
-          msg.channel.send(err);
+          message.channel.send(err);
       }
     });
   } else {
