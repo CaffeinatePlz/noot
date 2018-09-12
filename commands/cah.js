@@ -9,18 +9,12 @@ exports.run = (bot, message, args) => {
   let description = '';
   let author = '';
 
-  /*const body = request.get('http://explosm.net/comics/random');
+  const body = await request.get('http://explosm.net/comics/random');
   const $ = cheerio.load(body);
 
   img = $('#main-comic').attr('src').replace(/^\/\//, 'http://');
   link = $('#permalink').attr('value');
-  author = 'Cyanide and Happiness';*/
-  const body = request.get('http://www.commitstrip.com/?random=1');
-        const $ = cheerio.load(body);
-        img = $('.entry-content img').attr('src');
-        link = $('link[rel="canonical"]').attr('href');
-        title = $('.entry-title').text();
-        author = 'CommitStrip';
+  author = 'Cyanide and Happiness';
 
   message.channel.send({ embed: new Discord.RichEmbed()
       .setAuthor(author)
