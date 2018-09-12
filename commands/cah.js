@@ -15,8 +15,7 @@ exports.run = (bot, message, args) => {
   img = $('#main-comic').attr('src');
   link = $('#comic-social-link').attr('href');
   author = 'Cyanide and Happiness';
-message.channel.send(link);
-/*
+
   message.channel.send({ embed: new Discord.RichEmbed()
       .setAuthor(author)
       .setTitle(title)
@@ -24,7 +23,7 @@ message.channel.send(link);
       .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
       .setImage(img)
       .setDescription(description)
-    });*/
+    });
 };
 
 exports.conf = {
