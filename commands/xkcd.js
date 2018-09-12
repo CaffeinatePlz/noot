@@ -10,11 +10,11 @@ exports.run = (bot, message, args) => {
       author = 'XKCD #' + data.num;
       title = data.title;
       var box = new Discord.RichEmbed();
-      box.setAuthor(author)
-      .setTitle(title)
+      box.setAuthor("XKCD")
+      .setTitle("title")
       .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
       message.channel.send({ embed: box });
-      message.reply(data.img + '\n*' + data.alt + '*');
+      message.channel.send('**XKCD #' + data.num + '**: "' + data.title + '"\n' + data.img);
       /*try {
 
       } catch (err) {
