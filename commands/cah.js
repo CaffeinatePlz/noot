@@ -14,13 +14,13 @@ exports.run = (bot, message, args) => {
   link = $('#permalink').attr('value');
   author = 'Cyanide and Happiness';
 
-  message.channel.send({ embed: new client.methods.Embed()
+  message.channel.send({ embed: new Discord.RichEmbed();
       .setAuthor(author)
       .setTitle(title)
       .setURL(link)
-      .setColor('DARK_RED')
+      .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
       .setImage(img)
-      .setDescription(description),
+      .setDescription(description);
     });
 };
 
