@@ -13,10 +13,7 @@ bot.aliases = new Discord.Collection();
 const readdir = require('fs').readdir;
 
 readdir('./commands/', (err, files) => {
-  channel_ID = '400779864191401984';
-  guild_ID = '356764662760472576';
   if (err) throw err;
-  bot.guilds.get(guild_ID).channels.get(channel_ID).send(`Loading ${files.length} commands!`);
   console.log(`Loading ${files.length} commands!`);
   files.forEach(f => {
     try {
@@ -27,11 +24,9 @@ readdir('./commands/', (err, files) => {
         bot.aliases.set(alias, commandFile.help.name);
       });
     } catch (e) {
-      bot.guilds.get(guild_ID).channels.get(channel_ID).send(`Unable to load command ${f}: ${e}`);
-        console.log(`Unable to load command ${f}: ${e}`);
+      console.log(`Unable to load command ${f}: ${e}`);
     }
   });
-  bot.guilds.get(guild_ID).channels.get(channel_ID).send(`Commands loaded!`);
   console.log(`Commands loaded!`);
 });
 
