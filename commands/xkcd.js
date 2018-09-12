@@ -7,7 +7,8 @@ exports.run = (bot, message, args) => {
 
   if (!args[0]){
     xkcd(function (data) {
-      try {
+      message.reply('**XKCD #' + data.num + '**: "' + data.title + '"\n' + data.img + '\n*' + data.alt + '*');
+      /*try {
         message.channel.send({ embed: new Discord.RichEmbed()
             .setAuthor('XKCD')
             .setTitle(data.safe_title)
@@ -17,21 +18,11 @@ exports.run = (bot, message, args) => {
           });
       } catch (err) {
         message.channel.send(err);
-      }
+      }*/
     });
   } else if (!isNaN(args[0])){
-    xkcd(532, function (data) {
-      try {
-        message.channel.send({ embed: new Discord.RichEmbed()
-            .setAuthor('XKCD')
-            .setTitle(data.safe_title)
-            .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
-            .setImage(data.img)
-            .setDescription(data.alt)
-          });
-      } catch (err) {
-          message.channel.send(err);
-      }
+    xkcd(args[0], function (data) {
+
     });
   } else {
     message.reply("Please use +xkcd <number>");
