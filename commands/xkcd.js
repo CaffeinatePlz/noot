@@ -7,12 +7,14 @@ exports.run = (bot, message, args) => {
 
   if (!args[0]){
     xkcd(function (data) {
+      author = 'XKCD #' + data.num;
+      title = data.title;
       message.channel.send({ embed: new Discord.RichEmbed()
-        .setAuthor('XKCD #' + data.num)
-        .setTitle(data.safe_title)
+        .setAuthor(author)
+        .setTitle(title)
         .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
-        .setImage(data.img)
-        .setDescription(data.alt)
+        .setImage()
+        .setDescription()
       });
       message.reply(data.img + '\n*' + data.alt + '*');
       /*try {
