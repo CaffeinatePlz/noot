@@ -14,7 +14,7 @@ exports.run = (bot, message, args) => {
   link = $('#permalink').attr('value');
   author = 'Cyanide and Happiness';
 
-  message.channel.send({ embed: new Discord.RichEmbed();
+  message.channel.send({ embed: new Discord.RichEmbed()
       .setAuthor(author)
       .setTitle(title)
       .setURL(link)
