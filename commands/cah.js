@@ -12,8 +12,8 @@ exports.run = (bot, message, args) => {
 //  var x = Math.floor(Math.random() * 5035);
   const body = request.get('http://explosm.net/comics/random');
   const $ = cheerio.load(body);
-  img = 'https:' + $('#main-comic').attr('src');
-  link = $('#comic-content','#comic-social-link').attr('href');
+  img = 'https:' + $('#comic-content','#main-comic').attr('src');
+  link = $('#comic-social-link').attr('href');
   author = 'Cyanide and Happiness';
 
   message.channel.send({ embed: new Discord.RichEmbed()
