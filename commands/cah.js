@@ -12,7 +12,7 @@ exports.run = (bot, message, args) => {
   const body = request.get('http://explosm.net/comics/random');
   const $ = cheerio.load(body);
 
-  img = $('#main-comic').attr('src').replace(/^\/\//, 'http://');
+  img = $('#main-comic').attr('src');
   link = $('#permalink').attr('value');
   author = 'Cyanide and Happiness';
 
