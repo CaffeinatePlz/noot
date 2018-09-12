@@ -1,4 +1,5 @@
 exports.run = (bot, message, args) => {
+  const Discord = require("discord.js");
   const request = require('request-promise-native');
   const cheerio = require('cheerio');
 
