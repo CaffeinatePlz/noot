@@ -4,7 +4,6 @@ exports.run = (bot, message, args) => {
   const cheerio = require('cheerio');
 
   let img = '';
-  let link = '';
   let title = '';
   let description = '';
   let author = '';
@@ -12,14 +11,12 @@ exports.run = (bot, message, args) => {
 //  var x = Math.floor(Math.random() * 5035);
   const body = request.get('http://explosm.net/comics/random');
   const $ = cheerio.load(body);
-  img = 'https:' + $('#comic-content','#main-comic').attr('src');
-  link = $('#comic-social-link').attr('href');
+  img = 'https:' + $('.off-canvas-wrap','#main-comic').attr('src');
   author = 'Cyanide and Happiness';
 
   message.channel.send({ embed: new Discord.RichEmbed()
       .setAuthor(author)
       .setTitle(title)
-      .setURL(link)
       .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
       .setImage(img)
       .setDescription(description)
