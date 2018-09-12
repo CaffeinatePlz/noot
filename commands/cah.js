@@ -1,4 +1,4 @@
-exports.run = (bot, message, args) => {
+/*exports.run = (bot, message, args) => {
   const Discord = require("discord.js");
   const request = require('request-promise-native');
   const cheerio = require('cheerio');
@@ -37,3 +37,4 @@ exports.help = {
 	description: 'posts a cyanide and happiness comic',
 	usage: '+cah'
 };
+*/
