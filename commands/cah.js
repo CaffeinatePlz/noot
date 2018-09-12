@@ -1,10 +1,27 @@
 exports.run = (bot, message, args) => {
-  let link = "http://explosm.net/rcg";
-	let res = await fetch(link);
-	message.channel.send(
-    "(" + link + ")",
-    { file: res.text.split('<meta property="og:image" content="').pop().split('">').shift()}
-  );
+  const request = require('request-promise-native');
+  const cheerio = require('cheerio');
+
+  let img = '';
+  let link = '';
+  let title = '';
+  let description = '';
+  let author = '';
+
+  const body = await request.get('http://explosm.net/comics/random');
+  const $ = cheerio.load(body);
+  img = $('#main-comic').attr('src').replace(/^\/\//, 'http://');
+  link = $('#permalink').attr('value');
+  author = 'Cyanide and Happiness';
+
+  message.channel.send({ embed: new client.methods.Embed()
+      .setAuthor(author)
+      .setTitle(title)
+      .setURL(link)
+      .setColor('DARK_RED')
+      .setImage(img)
+      .setDescription(description),
+    });
 };
 
 exports.conf = {

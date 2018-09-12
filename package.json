@@ -7,12 +7,14 @@
     "start": "node bot.js"
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
     "discord.js": "11.3.2",
     "heroku-logger": "0.3.0",
     "markovchain": "^1.0.2",
     "mathjs": "^5.1.0",
     "node-fetch": "^2.2.0",
     "request": "2.81.0",
+    "request-promise-native": "^1.0.5",
     "tba-api-storm": "^1.1.0"
   },
   "engines": {
