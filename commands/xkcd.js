@@ -1,4 +1,5 @@
 exports.run = (bot, message, args) => {
+  const Discord = require('discord.js');
   const xkcd = require("xkcd");
   let img = '';
   let title = '';
@@ -7,12 +8,13 @@ exports.run = (bot, message, args) => {
 
   if (!args[0]){
     xkcd(function (data) {
-      var box = new Discord.RichEmbed();
-      box.setAuthor("XKCD")
-      .setTitle("title")
-      .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
-      message.channel.send({ embed: box });
-      message.channel.send('**XKCD #' + data.num + '**: "' + data.title + '"\n' + data.img);
+      message.channel.send({ embed: new Discord.RichEmbed()
+        .setAuthor('XKCD #' + data.num)
+        .setTitle(data.safe_title)
+        .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
+        .setImage(data.img)
+        .setDescription(data.alt)
+      });
       /*try {
 
       } catch (err) {
