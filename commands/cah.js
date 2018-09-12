@@ -1,9 +1,9 @@
 exports.run = (bot, message, args) => {
   let link = "http://explosm.net/rcg";
 	let res = await fetch(link);
-	msg.channel.send(
-    "(" + msg.lang.commands.cyanidehappiness.from("$LINK", link) + ")",
-    {file: res.text.split('<meta property="og:image" content="').pop().split('">').shift()}
+	message.channel.send(
+    "(" + link + ")",
+    { file: res.text.split('<meta property="og:image" content="').pop().split('">').shift()}
   );
 };
 
