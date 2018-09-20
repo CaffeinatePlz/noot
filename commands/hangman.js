@@ -10,14 +10,14 @@ exports.run = async (bot, message, args) => {
 
   try {
 		const word = wordList[Math.floor(Math.random() * wordList.length)].toLowerCase();
-		let points = 0;
+		let mistakes = 0;
 		let displayText = null;
 		let guessed = false;
 		const confirmation = [];
 		const incorrect = [];
 		const display = new Array(word.length).fill('_');
 
-    while (word.length !== confirmation.length && points < 6) {
+    while (word.length !== confirmation.length && mistakes < 6) {
       message.channel.send(stripIndents`
 				${displayText === null ? 'Here we go!' : displayText ? 'Good job!' : 'Nope!'}
 				\`${display.join(' ')}\`. Which letter do you choose?
@@ -25,9 +25,9 @@ exports.run = async (bot, message, args) => {
 				\`\`\`
 				___________
 				|     |
-				|     ${points > 0 ? 'O' : ''}
-				|    ${points > 2 ? '—' : ' '}${points > 1 ? '|' : ''}${points > 3 ? '—' : ''}
-				|    ${points > 4 ? '/' : ''} ${points > 5 ? '\\' : ''}
+				|     ${mistakes > 0 ? 'O' : ''}
+				|    ${mistakes > 2 ? '—' : ' '}${mistakes > 1 ? '|' : ''}${mistakes > 3 ? '—' : ''}
+				|    ${mistakes > 4 ? '/' : ''} ${mistakes > 5 ? '\\' : ''}
 				===========
 				\`\`\`
 			`);
@@ -59,7 +59,7 @@ exports.run = async (bot, message, args) => {
 			} else {
 				displayText = false;
 				if (choice.length === 1) incorrect.push(choice);
-				points++;
+				mistakes++;
 			}
 		}
 
