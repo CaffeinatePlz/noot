@@ -1,11 +1,24 @@
 exports.run = async (bot, message, args) => {
 
   const { stripIndents } = require('common-tags');
-
+//make better list later
   var wordList = [
     'test',
     'hello',
     'world',
+    'discord',
+    'dictionary',
+    'apple',
+    'academic',
+    'ceremony',
+    'compromise',
+    'deliberate',
+    'extensive',
+    'impression',
+    'landscape',
+    'necessarily',
+    'profession',
+    'rhythm',
   ];
 
   try {
@@ -31,6 +44,7 @@ exports.run = async (bot, message, args) => {
 				===========
 				\`\`\`
 			`);
+      
 			const filter = res => {
 				const choice = res.content.toLowerCase();
 				return res.author.id === message.author.id && !confirmation.includes(choice) && !incorrect.includes(choice);
@@ -39,6 +53,7 @@ exports.run = async (bot, message, args) => {
 				max: 1,
 				time: 30000
 			});
+
       if (!guess.size) {
 				message.channel.send('Sorry, time is up!');
 				break;
