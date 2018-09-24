@@ -28,9 +28,7 @@ exports.run = (bot, message, args) => {
   if (isNaN(choice)){
     choice = Math.floor(Math.random() * 4);
   };
-  if (isNaN(number)){
-    number = Math.floor(Math.random() * 2000);
-  }
+
   post(choice, number);
 
   function post(choice, number){
@@ -87,7 +85,7 @@ exports.run = (bot, message, args) => {
               });
             });
           } else if (!isNaN(number)){
-            xkcd(args[0], function (data) {
+            xkcd(number, function (data) {
               try {
                 message.channel.send({ embed: new Discord.RichEmbed()
                   .setAuthor('XKCD #' + data.num)
