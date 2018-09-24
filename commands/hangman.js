@@ -44,7 +44,7 @@ exports.run = async (bot, message, args) => {
 				===========
 				\`\`\`
 			`);
-      
+
 			const filter = res => {
 				const choice = res.content.toLowerCase();
 				return res.author.id === message.author.id && !confirmation.includes(choice) && !incorrect.includes(choice);

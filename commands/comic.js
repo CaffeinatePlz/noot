@@ -122,5 +122,5 @@ exports.conf = {
 exports.help = {
 	name: 'comic',
 	description: 'posts a comic out of AmazingSuperPowers, CyanideAndHappiness, CommitStrip, and XKCD',
-	usage: '+comic [comic]'
+	usage: 'comic [comic]'
 };
