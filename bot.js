@@ -1,11 +1,11 @@
 const Discord = require("discord.js");
 //const logger = require('heroku-logger');
 const bot = new Discord.Client({
-   token: process.env.BOT_TOKEN,
-   tba_token: process.env.TBA_TOKEN,
-   autorun: true
+   //token: process.env.BOT_TOKEN,
+   //tba_token: process.env.TBA_TOKEN,
+   //autorun: true
 });
-//const config = require("./config.json");
+const config = require("./config.json");
 require("./functions.js")(bot);
 bot.commands = new Discord.Collection();
 bot.events = new Discord.Collection();
@@ -43,17 +43,17 @@ readdir('./events/', (err, files) => {
 bot.on("ready", () => {
   // This event will run if the bot starts, and logs in, successfully.
   console.log(`Bot has started, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} guilds.`);
-  bot.user.setGame(`on ${bot.guilds.size} servers | + `);
+  bot.user.setActivity(`on ${bot.guilds.size} servers | + `);
 });
 
 bot.on("guildCreate", guild => {
   console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-  bot.user.setGame(`on ${bot.guilds.size} servers | +`);
+  bot.user.setActivity(`on ${bot.guilds.size} servers | +`);
 });
 
 bot.on("guildDelete", guild => {
   console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-  bot.user.setGame(`on ${bot.guilds.size} servers | +`);
+  bot.user.setActivity(`on ${bot.guilds.size} servers | +`);
 });
 
 bot.on("message", async message => {
@@ -138,5 +138,5 @@ bot.on("message", async message => {
    }
   });
 
-bot.login(process.env.BOT_TOKEN);
-//bot.login(config.token);
+//bot.login(process.env.BOT_TOKEN);
+bot.login(config.token);

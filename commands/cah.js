@@ -11,7 +11,7 @@ exports.run = (bot, message, args) => {
       .setImage("https:" + $("#main-comic").attr("src"))
       .setURL(res.request.uri.href)
     });
-  });	
+  });
 };
 
 exports.conf = {
@@ -28,4 +28,3 @@ exports.help = {
 	description: 'posts a cyanide and happiness comic',
 	usage: '+cah'
 };
-
