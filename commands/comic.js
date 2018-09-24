@@ -18,7 +18,7 @@ exports.run = (bot, message, args) => {
 
   } else if (args[0] == "xkcd"){
     choice = 3;
-    if (!isNAN(args[1])){
+    if (!isNaN(args[1])){
       number = args[1];
     }
   } else {
@@ -27,11 +27,13 @@ exports.run = (bot, message, args) => {
 
   if (isNaN(choice)){
     choice = Math.floor(Math.random() * 4);
-    number = Math.floor(Math.random() * 2000);
   };
-  post(choice);
+  if (isNaN(number)){
+    number = Math.floor(Math.random() * 2000);
+  }
+  post(choice, number);
 
-  function post(choice){
+  function post(choice, number){
     switch(choice) {
       case 0:
           request.get('http://www.amazingsuperpowers.com/?randomcomic&nocache=1', (err, res, page) => {
