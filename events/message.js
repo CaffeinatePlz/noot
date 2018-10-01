@@ -1,4 +1,3 @@
-const JARED_ID = '133350262420013056';
 const HAYL_ID = '338163785082601473';
 const HAYL_GUILD_ID = '374179059212484608';
 
@@ -8,6 +7,16 @@ const noot_love = [
   "you're awesome! :heart:",
   "hey you, you're pretty cool!",
   "I :clap: appreciate :clap: you!"
+]
+
+const nick_appreciation = [
+  "Did someone say \"Nick Hammes\"? *THE ONE AND ONLY* NICK HAMMES? That dude is awesome.",
+  "Hey I hear you're talking about a 10/10 inspiring person and I would just like to say, I absolutely approve. Good job, kid.",
+  "I :clap: appreciate :clap: Nick!",
+  "Have you read this? If not you should. <https://docs.google.com/document/d/1XrremT6_RUHpCG0cMn0-ttmh6ZWlAVDEdUs1jX5wwtM/edit?usp=sharing>",
+  "Hi Nick is great. All in favour say aye.",
+  "*le gasp* omg Nick is great!",
+  "Nick and I have gone on some crazy adventures around the world together, and he was the one who brought me home after I got lost, so daaaaamn I love the dude so much and you should too!",
 ]
 
 module.exports = async (bot, message) => {
@@ -63,6 +72,11 @@ module.exports = async (bot, message) => {
             || textMessage.includes("garbage") || textMessage == "nou" || textMessage == ":nou:" || textMessage.includes("trash")) {
             let msg = noot_love[Math.floor(Math.random() * noot_love.length)];
             message.channel.send("**" + message.author.username + "**, " + msg);
+        }
+
+        if (textMessage.includes("nick hammes")){
+          let msg = nick_appreciation[Math.floor(Math.random() * nick_appreciation.length)];
+          message.channel.send(msg);
         }
       }
     }

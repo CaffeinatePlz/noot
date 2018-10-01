@@ -117,6 +117,10 @@ bot.on("message", async message => {
     message.channel.send("https://discordapp.com/oauth2/authorize?client_id=438485530812874752&scope=bot&permissions=8");
   }
 
+  if (command === ('music')) {
+    message.channel.send("https://open.spotify.com/user/12153980750/playlist/63vJJJTobWXaZtYWsrrpu6?si=PE5Da_I3TG2OCG9PU3xaPw");
+  }
+
   if (command === ('get_id')) {
     var userID = args[0].replace('<@', '').replace('>', '').replace('!', '');
     message.channel.send(userID);
