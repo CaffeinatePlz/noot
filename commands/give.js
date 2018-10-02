@@ -1,15 +1,10 @@
 exports.run = (bot, message, args) => {
+  if(!message.member.hasPermission("MANAGE_ROLES"))
+    return message.reply( "No no no *YOU'RE* not allowed to do that! ");
   let member = message.mentions.members.first();
   var x = args.shift();
   const new_role = args.join(" ");
   let role = message.guild.roles.find("name", new_role);
-
-  if(!message.member.hasPermission("MANAGE_ROLES")
-    && !(message.author.id = '57506893358170112' && new_role == "paramallamaccomplice")
-    && !(message.author.id = '392492179748290561' && new_role == "kboobooboo bestie")
-    )
-    return message.reply( "No no no *YOU'RE* not allowed to do that! ");
-
   member.addRole(role).then(() => {
     message.channel.send( "Role given!");
   }).catch(err => {
