@@ -6,7 +6,7 @@ exports.run = (bot, message, args) => {
 
   if(!message.member.hasPermission("MANAGE_ROLES")
  && !(message.author.id == '57506893358170112' && new_role == "Paramallamaccomplice")
- && !(message.author.id = '392492179748290561' && new_role == "kboobooboo bestie")
+ && !(message.author.id == '392492179748290561' && new_role == "kboobooboo bestie")
 )
     return message.reply( "No no no *YOU'RE* not allowed to do that! ");
 
