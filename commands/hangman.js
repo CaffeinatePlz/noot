@@ -2,24 +2,10 @@ exports.run = async (bot, message, args) => {
 
   const { stripIndents } = require('common-tags');
 //make better list later
-  var wordList = [
-    'test',
-    'hello',
-    'world',
-    'discord',
-    'dictionary',
-    'apple',
-    'academic',
-    'ceremony',
-    'compromise',
-    'deliberate',
-    'extensive',
-    'impression',
-    'landscape',
-    'necessarily',
-    'profession',
-    'rhythm',
-  ];
+
+    var fs = require("fs");
+    var text = fs.readFileSync("./data/hangman.txt", "utf-8");
+    var wordList = text.split("\n");
 
   try {
 		const word = wordList[Math.floor(Math.random() * wordList.length)].toLowerCase();
