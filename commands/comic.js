@@ -110,13 +110,14 @@ exports.run = (bot, message, args) => {
             console.log(num);
 
             if (num.length == 1) {
-
                 comic = "00" + num;
                 console.log (comic);
             } else if (num.length == 2) {
                 comic = "0" + num;
                 console.log (comic);
-            };
+            } else {
+              comic = num;
+            }
 
             var webPage = 'https://mangapark.me/manga/m5a7408ee20e0f/s1/c' + comic + '/1';
             request.get(webPage, (err, res, page) => {
