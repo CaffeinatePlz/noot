@@ -21,12 +21,14 @@ exports.run = (bot, message, args) => {
     if (!isNaN(args[1])){
       number = args[1];
     }
+  } else if (args[0] == "kyuuchan"){
+      choice = 4;
   } else {
     //
   };
 
   if (isNaN(choice)){
-    choice = Math.floor(Math.random() * 4);
+    choice = Math.floor(Math.random() * 5);
   };
 
   post(choice, number);
@@ -102,6 +104,32 @@ exports.run = (bot, message, args) => {
             message.reply("Please use +xkcd <number>");
           }
           break;
+        case 4:
+            var num = Math.floor(Math.random() * 190).toString();
+            var comic;
+            console.log(num);
+
+            if (num.length == 1) {
+
+                comic = "00" + num;
+                console.log (comic);
+            } else if (num.length == 2) {
+                comic = "0" + num;
+                console.log (comic);
+            };
+
+            var webPage = 'https://mangapark.me/manga/m5a7408ee20e0f/s1/c' + comic + '/1';
+            request.get(webPage, (err, res, page) => {
+                const $ = cheerio.load(page);
+                message.channel.send({
+                    embed: new Discord.RichEmbed()
+                        .setTitle(`Fushigi Neko no Kyuu chan (` + comic + `)`)
+                        .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
+                        .setImage($(".img-link img").attr("src"))
+                        .setURL(res.request.uri.href)
+                });
+            });
+            break;
       default:
           //
           break;
