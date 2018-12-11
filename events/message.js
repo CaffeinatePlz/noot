@@ -64,7 +64,7 @@ module.exports = async (bot, message) => {
         if ( textMessage === "oof") {
             message.react('384494179683794944');
         }
-        if (textMessage.includes("noot") ) {
+        if (textMessage.includes("noot noot") ) {
             message.channel.send("Noot noot?");
         }
 
