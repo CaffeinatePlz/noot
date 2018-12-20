@@ -1,6 +1,6 @@
 const HAYL_ID = '338163785082601473';
 const HAYL_GUILD_ID = '374179059212484608';
-
+const DREW_GUILD_ID = '479881805374160934';
 
 
 const noot_love = [
@@ -49,7 +49,7 @@ module.exports = async (bot, message) => {
             bot.guilds.get(guild_ID).channels.get(channel_ID).send(message.content + " [" + message.channel.name + ", " + message.author.username + "]" + " <@338163785082601473>");
         }
 
-      if (message.guild.id === HAYL_GUILD_ID) {
+      if (message.guild.id === HAYL_GUILD_ID || message.guild.id === DREW_GUILD_ID) {
         if (textMessage === "sleep" || textMessage.includes("go to sleep") || textMessage.includes("need sleep") || textMessage.includes("needs sleep")) {
             message.channel.send("Go to sleep!");
         }
