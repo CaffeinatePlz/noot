@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+//const logger = require('heroku-logger');
 const bot = new Discord.Client({
    token: process.env.BOT_TOKEN,
    tba_token: process.env.TBA_TOKEN,
@@ -9,19 +10,6 @@ require("./functions.js")(bot);
 bot.commands = new Discord.Collection();
 bot.events = new Discord.Collection();
 bot.aliases = new Discord.Collection();
-
-
-var admin = require('firebase-admin');
-admin.initializeApp({
-    credential: admin.credential.cert({
-        projectId: process.env.FB_PROJECT_ID,
-        clientEmail: 'foo@' + process.env.FB_PROJECT_ID + '.iam.gserviceaccount.com',
-        privateKey: '-----BEGIN PRIVATE KEY-----\n' + process.env.FB_PRIVATE_KEY + '\n-----END PRIVATE KEY-----\n'
-    }),
-    databaseURL: 'https://' + process.env.FB_DB_NAME + '.firebaseio.com'
-});
-
-
 const readdir = require('fs').readdir;
 
 readdir('./commands/', (err, files) => {
