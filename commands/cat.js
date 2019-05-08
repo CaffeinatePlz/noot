@@ -8,7 +8,7 @@ exports.run = (bot, message, args) => {
         message.channel.send({ embed: new Discord.RichEmbed()
                 .setTitle(`Cat`)
                 .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
-                .setImage($("#cat img").attr("src"))
+                .setImage($(" img").attr("src"))
                 .setURL(res.request.uri.href)
         });
     });
