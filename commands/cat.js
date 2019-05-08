@@ -1,16 +1,17 @@
 exports.run = (bot, message, args) => {
     const Discord = require('discord.js');
-    const { get } = require("node-fetch");
+    const request = require('request');
 
-    try {
-        get('https://aws.random.cat/meow').then(res => {
-            const embed = new Discord.RichEmbed()
-                .setImage(res.body.file)
-            return message.channel.send({embed});
+        request('http://edgecats.net/random', function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+                let emb = new Discord.RichEmbed()
+                    .setImage(body)
+                    .setColor("#00ff00")
+                    .setTitle("Random Cat")
+
+                message.channel.send(emb);
+            }
         });
-    } catch(err) {
-        return message.channel.send(error.stack);
-    }
 
 };
 
