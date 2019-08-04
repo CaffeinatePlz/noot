@@ -1,7 +1,6 @@
 exports.run = (bot, message, args) => {
     const Discord = require('discord.js');
 
-    let member = message.author;
     let new_role = args.join(" ");
     let role = message.guild.roles.find("name", new_role);
 
@@ -33,7 +32,7 @@ exports.run = (bot, message, args) => {
                 .setTimestamp()
             return message.channel.send({embed: listEmbed});
         } else if (TDUroles.includes(new_role)) {
-            member.addRole(role).then(() => {
+            message.member.addRole(role).then(() => {
                 message.channel.send("Role given!");
             }).catch(err => {
                 message.reply('I was unable to give the role');
