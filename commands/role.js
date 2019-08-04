@@ -15,7 +15,6 @@ exports.run = (bot, message, args) => {
         "Drivetrain",
     ];
 
-
     if (message.guild.id === TDU_ID){
         if (!command) {
             return message.channel.send('Please include a role to self assign using `+role give role_name`, ' +
@@ -33,7 +32,9 @@ exports.run = (bot, message, args) => {
                 .setTimestamp()
             return message.channel.send({embed: listEmbed});
         } else if (command == 'give'){
-            if (TDUroles.includes(new_role)) {
+            if (message.member.roles.find(r => r.name == new_role)) {
+                message.reply('You already have this role!');
+            } else if (TDUroles.includes(new_role)) {
                 message.member.addRole(role).then(() => {
                     message.channel.send("Role given!");
                 }).catch(err => {
@@ -45,8 +46,10 @@ exports.run = (bot, message, args) => {
             } else {
                 message.reply('This role either does not exist or cannot be self assigned.')
             }
-        } else if (command == 'remove'){
-            if (TDUroles.includes(new_role)) {
+        } else if (command == 'remove') {
+            if (!message.member.roles.find(r => r.name == new_role)) {
+                message.reply('You do not have this role!');
+            } else if (TDUroles.includes(new_role)) {
                 message.member.removeRole(role).then(() => {
                     message.channel.send("Role removed!");
                 }).catch(err => {
