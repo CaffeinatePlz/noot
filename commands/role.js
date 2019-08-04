@@ -41,42 +41,42 @@ exports.run = (bot, message, args) => {
                 });
             } else if (!new_role){
                 message.reply('Please use `+role list` for a list of self assignable roles, ' +
-                    '`+role give role_name` to receive a role and `+role take role_name` to remove a role!');
+                    '`+role give role_name` to receive a role and `+role remove role_name` to remove a role!');
             } else {
                 message.reply('This role either does not exist or cannot be self assigned.')
             }
-        } else if (command == 'take'){
+        } else if (command == 'remove'){
             if (TDUroles.includes(new_role)) {
                 message.member.removeRole(role).then(() => {
-                    message.channel.send("Role take!");
+                    message.channel.send("Role removed!");
                 }).catch(err => {
-                    message.reply('I was unable to take the role.');
+                    message.reply('I was unable to remove the role.');
                 });
             } else if (!new_role){
                 message.reply('Please use `+role list` for a list of self assignable roles, ' +
-                    '`+role give role_name` to receive a role and `+role take role_name` to remove a role!');
+                    '`+role give role_name` to receive a role and `+role remove role_name` to remove a role!');
             } else {
                 message.reply('This role either does not exist or cannot be self assigned.')
             }
         } else {
             message.reply('Invalid command. Please use `+role list` for a list of self assignable roles, ' +
-                '`+role give role_name` to receive a role and `+role take role_name` to remove a role!');
+                '`+role give role_name` to receive a role and `+role remove role_name` to remove a role!');
         }
     } else {
         return message.reply( "This server does not have any self-assignable roles right now.");
     }
 };
 
-  exports.conf = {
-  	enabled: true,
-  	guildOnly: false,
-  	aliases: [],
-  	botPerms: [],
-  	memberPerms: []
-  };
+exports.conf = {
+    enabled: true,
+    guildOnly: false,
+    aliases: [],
+    botPerms: [],
+    memberPerms: []
+};
 
-  exports.help = {
-  	name: 'role',
-  	description: 'Self assign a role',
-  	usage: 'role give/take <role>'
-  };
+exports.help = {
+    name: 'role',
+    description: 'Self assign a role',
+    usage: 'role give/remove <role>'
+};
