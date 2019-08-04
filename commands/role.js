@@ -11,8 +11,7 @@ exports.run = (bot, message, args) => {
         "Electrical",
         "Software",
         "Strategy",
-        "Scouting",
-        "Drivebase",
+        "Outreach",
         "Social",
     ];
 
