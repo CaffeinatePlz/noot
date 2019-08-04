@@ -12,7 +12,8 @@ exports.run = (bot, message, args) => {
         "Software",
         "Strategy",
         "Scouting",
-        "Drivetrain",
+        "Drivebase",
+        "Social",
     ];
 
     if (message.guild.id === TDU_ID){
