@@ -1,18 +1,23 @@
 exports.run = (bot, message, args) => {
     const Discord = require('discord.js');
     let command = args.shift();
-    let new_role = args.join(" ");
-    let role = message.guild.roles.find("name", new_role);
+    let new_role = args.join(" ").toLowerCase();
+    let role = message.guild.roles.find(r => r.name.toLowerCase() == new_role);
 
     const TDU_ID = '605683682493333507';
 
     const TDUroles = [
-        "Mechanical",
-        "Electrical",
-        "Software",
-        "Strategy",
-        "Outreach",
-        "Social",
+        "mechanical",
+        "electrical",
+        "software",
+        "strategy",
+        "outreach",
+        "social",
+        //"elec training",
+        //"software training",
+        //"tool training",
+        //"demo bot",
+        //"cad training",
     ];
 
     if (message.guild.id === TDU_ID){
@@ -22,17 +27,18 @@ exports.run = (bot, message, args) => {
         } else if (command == 'list') {
             let str = "";
             for (let i=0; i<TDUroles.length; i++){
-                str += `${TDUroles[i]} \n`
+                let rolename = message.guild.roles.find(r => r.name.toLowerCase() == TDUroles[i])
+                str += `${rolename.name} \n`
             };
             const listEmbed = new Discord.RichEmbed()
                 .setTitle("Self Assignable Roles")
                 .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
                 .setDescription(str)
-                .setFooter("Run +role give <role name> to self assign these roles!")
+                .setFooter("Run +role give role_name to self assign these roles!")
                 .setTimestamp()
             return message.channel.send({embed: listEmbed});
         } else if (command == 'give'){
-            if (message.member.roles.find(r => r.name == new_role)) {
+            if (message.member.roles.find(r => r.name.toLowerCase() == new_role)) {
                 message.reply('You already have this role!');
             } else if (TDUroles.includes(new_role)) {
                 message.member.addRole(role).then(() => {
@@ -47,7 +53,7 @@ exports.run = (bot, message, args) => {
                 message.reply('This role either does not exist or cannot be self assigned.')
             }
         } else if (command == 'remove') {
-            if (!message.member.roles.find(r => r.name == new_role)) {
+            if (!message.member.roles.find(r => r.name.toLowerCase() == new_role)) {
                 message.reply('You do not have this role!');
             } else if (TDUroles.includes(new_role)) {
                 message.member.removeRole(role).then(() => {

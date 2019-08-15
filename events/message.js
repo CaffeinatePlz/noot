@@ -30,7 +30,6 @@ module.exports = async (bot, message) => {
             let guild_ID = '374179059212484608';
             bot.guilds.get(guild_ID).members.get(userID).send("[DM] | " + message.channel.recipient.username + " | " + message.content);
         }
-
         return;
     }
 
@@ -80,5 +79,6 @@ module.exports = async (bot, message) => {
         }
       }
     }
+
     bot.processMessage(message);
 };
