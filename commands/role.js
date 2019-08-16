@@ -8,17 +8,17 @@ exports.run = (bot, message, args) => {
     const TDU_ID = '605683682493333507';
 
     const TDUroles = [
-        "Mechanical",
-        "Electrical",
-        "Software",
-        "Strategy",
-        "Outreach",
-        "Social",
-        "Elec Training",
-        "Software Training",
-        "Tool Training",
-        "Demo Bot",
-        "CAD Training",
+        "mechanical",
+        "electrical",
+        "software",
+        "strategy",
+        "outreach",
+        "social",
+        "elec training",
+        "software training",
+        "tool training",
+        "demo bot",
+        "cad training",
     ];
 
     if (message.guild.id === TDU_ID){
@@ -29,7 +29,8 @@ exports.run = (bot, message, args) => {
         } else if (command == 'list') {
             let str = "";
             for (let i=0; i<TDUroles.length; i++){
-                str += `${TDUroles[i]} \n`
+                let rolename = message.guild.roles.find(r => r.name.toLowerCase() == TDUroles[i])
+                str += `${rolename.name} \n`
             };
             const listEmbed = new Discord.RichEmbed()
                 .setTitle("Self Assignable Roles")
