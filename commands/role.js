@@ -54,7 +54,7 @@ exports.run = (bot, message, args) => {
                         couldnt += 1;
                         couldntNames += `${roleList[i]}\n`
                     } else if (role.comparePositionTo(message.guild.me.highestRole) < 0) {
-                        if (message.member.roles.find(role)) {
+                        if (message.member.roles.find(r => r.name == role.name)) {
                             alreadyHad += 1;
                             alreadyHadNames += `${roleList[i]}\n`
                         } else {
@@ -105,7 +105,7 @@ exports.run = (bot, message, args) => {
                         couldnt += 1;
                         couldntNames += `${roleList[i]}\n`
                     } else if (role.comparePositionTo(message.guild.me.highestRole) < 0) {
-                        if (!message.member.roles.find(role)) {
+                        if (!message.member.roles.find(r => r.name == role.name)) {
                             didntHave += 1;
                             didntHaveNames += `${roleList[i]}\n`
                         } else {
@@ -162,5 +162,5 @@ exports.conf = {
 exports.help = {
     name: 'role',
     description: 'Self assign a role',
-    usage: 'role give/remove <role>'
+    usage: 'role add/remove <role>'
 };
