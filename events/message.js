@@ -13,7 +13,7 @@ const nick_appreciation = [
   "Did someone say \"Nick Hammes\"? *THE ONE AND ONLY* NICK HAMMES? That dude is awesome.",
   "Hey I hear you're talking about a 10/10 inspiring person and I would just like to say, I absolutely approve. Good job, kid.",
   "I :clap: appreciate :clap: Nick!",
-  "Have you read this? If not you should. <https://docs.google.com/document/d/1XrremT6_RUHpCG0cMn0-ttmh6ZWlAVDEdUs1jX5wwtM/edit?usp=sharing>",
+  "Have you read this? If not you should. https://docs.google.com/document/d/1XrremT6_RUHpCG0cMn0-ttmh6ZWlAVDEdUs1jX5wwtM/edit?usp=sharing",
   "Hi Nick is great. All in favour say aye.",
   "*le gasp* omg Nick is great!",
   "Nick and I have gone on some crazy adventures around the world together, and he was the one who brought me home after I got lost, so daaaaamn I love the dude so much and you should too!",
@@ -47,6 +47,13 @@ module.exports = async (bot, message) => {
             channel_ID = '400779864191401984';
             guild_ID = '356764662760472576';
             bot.guilds.get(guild_ID).channels.get(channel_ID).send(message.content + " [" + message.channel.name + ", " + message.author.username + "]" + " <@338163785082601473>");
+        }
+
+        if (message.channel.id == "456362608702914560" || message.channel.id == "611844083190857748" ) {
+            var d = new Date();
+            if (d.getDay() != 2 && d.getDay() != 5) {
+                message.reply(`Please fill in this form to let us know about any absences. ${process.env.TDU_FORM}`);
+            }
         }
 
       if (message.guild.id === HAYL_GUILD_ID || message.guild.id === DREW_GUILD_ID || message.guild.id === HAWAII_GUILD_ID) {
