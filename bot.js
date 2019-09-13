@@ -11,14 +11,14 @@ bot.aliases = new Discord.Collection();
 
 
 const {google} = require('googleapis');
-/*const client = new google.auth.JWT(
+const client = new google.auth.JWT(
     'noot-846@noot-252512.iam.gserviceaccount.com',
     null,
     process.env.GS_PRIV_KEY,
     ['https://www.googleapis.com/auth/spreadsheets']
 );
 var names = "None";
-*/
+
 
 
 const readdir = require('fs').readdir;
@@ -78,7 +78,7 @@ bot.on("message", async message => {
     m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
   }
 
-/*
+
     if (command === ('attendance')){
         if (message.guild.id != '605683682493333507' && message.guild.id != '356764662760472576' ) return;
         if (!args[0]||!args[0].toLowerCase().match(/(fri(day)*|tue(s)*(day)*)/))
@@ -91,7 +91,7 @@ bot.on("message", async message => {
         try{ gsrun(client,meetingDay,message);}
         catch (err){ message.channel.sendMessage('```js\n'+err+"```");}
     }
-*/
+
 
 
   if (command === ('listservers')) {
@@ -179,7 +179,7 @@ bot.on("message", async message => {
   });
 
 
-/*
+
 async function gsrun(cl,day,msg){
     const gs = google.sheets({version:"v4", auth: cl});
     gs.spreadsheets.values.get({
@@ -224,7 +224,7 @@ async function gsrun(cl,day,msg){
         }
     });
 }
-*/
+
 
 
 
