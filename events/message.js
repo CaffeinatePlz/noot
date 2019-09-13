@@ -53,7 +53,7 @@ module.exports = async (bot, message) => {
             message.channel.fetchMessages({ limit: 5 }).then(messages => {
                 let arr = messages.array();
                 for (let i = 0; i < arr.length; i++) {
-                    if(arr[i].content.includes("Please fill in this form to let us know about any absences")){
+                    if(arr[i].content.includes(message.author.id)){
                         return;
                     };
                 }
