@@ -8,6 +8,19 @@ require("./functions.js")(bot);
 bot.commands = new Discord.Collection();
 bot.events = new Discord.Collection();
 bot.aliases = new Discord.Collection();
+
+
+const {google} = require('googleapis');
+const client = new google.auth.JWT(
+    'noot-846@noot-252512.iam.gserviceaccount.com',
+    null,
+    process.env.GS_PRIV_KEY,
+    ['https://www.googleapis.com/auth/spreadsheets']
+);
+var names = "None";
+
+
+
 const readdir = require('fs').readdir;
 
 readdir('./commands/', (err, files) => {
@@ -64,6 +77,22 @@ bot.on("message", async message => {
     const m = await message.channel.send("Ping?");
     m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
   }
+
+
+    if (command === ('attendance')){
+        if (message.guild.id != '605683682493333507' && message.guild.id != '356764662760472576' ) return;
+        if (!args[0]||!args[0].toLowerCase().match(/(fri(day)*|tue(s)*(day)*)/))
+            return message.channel.send("Please use +attendance tue/fri");
+        let meetingDay;
+
+        if (args[0].toLowerCase().includes('fri')){ meetingDay = "Fri"; }
+        else { meetingDay = "Tue"; }
+
+        try{ gsrun(client,meetingDay,message);}
+        catch (err){ message.channel.sendMessage('```js\n'+err+"```");}
+    }
+
+
 
   if (command === ('listservers')) {
     var servers = "";
@@ -132,6 +161,7 @@ bot.on("message", async message => {
 
       message.channel.send(str);
   }
+
   if (command === ('eval')) {
     if (message.author.id != '338163785082601473')
       return message.reply( "No no no *YOU'RE* not allowed to do that! ");
@@ -147,6 +177,56 @@ bot.on("message", async message => {
     }
    }
   });
+
+
+
+async function gsrun(cl,day,msg){
+    const gs = google.sheets({version:"v4", auth: cl});
+    gs.spreadsheets.values.get({
+        auth: cl,
+        spreadsheetId: process.env.TDU_SHEET,
+        range: `Overview ${day}`,
+    }, (err, response) => {
+        if (err) {
+            console.log('The API returned an error: ' + err);
+            return;
+        }
+        let rows = response.data.values;
+        if (rows.length) {
+            console.log('Name, attendance:');
+            let col;
+            if (day == "Tue"){
+                col = 3;
+            } else {
+                col = 2;
+            }
+            names = "";
+            rows.forEach(row => {
+                if(row[col].includes("Absent")){
+                    //console.log(`${row[0]}, ${row[col]}`);
+                    names += `${row[0]}\n`;
+                }
+            })
+            if(!names){
+                names = "No absences!"
+            }
+            console.log(names);
+
+            var listEmbed = new Discord.RichEmbed();
+            listEmbed.setAuthor(bot.user.username,bot.user.avatarURL)
+                .setTitle(`${day} Absences`)
+                .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
+                .setDescription(names);
+            msg.channel.send({embed: listEmbed})
+            console.log(listEmbed);
+        } else {
+            console.log('No data found.');
+        }
+    });
+}
+
+
+
 
 bot.login(process.env.BOT_TOKEN);
 //bot.login(config.token);

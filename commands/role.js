@@ -37,7 +37,7 @@ exports.run = (bot, message, args) => {
                 .setFooter("Run +role add role_name to self assign these roles!")
                 .setTimestamp()
             return message.channel.send({embed: listEmbed});
-        } else if (command == 'add'){
+        } else if (command == 'add' || command == 'give'){
             if (message.member.roles.find(r => r.name.toLowerCase() == new_role)) {
                 message.reply('You already have this role!');
             } else if (TDUroles.includes(new_role)) {
@@ -101,8 +101,6 @@ exports.help = {
 exports.run = (bot, message, args) => {
     const Discord = require('discord.js');
     let command = args.shift();
-    //let new_role = args.join(" ").toLowerCase();
-    //let role = message.guild.roles.find(r => r.name.toLowerCase() == new_role);
     let roleList = args.join(" ").toLowerCase().split(', ');
 
     const TDU_ID = '605683682493333507';
