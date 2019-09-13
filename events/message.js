@@ -50,8 +50,17 @@ module.exports = async (bot, message) => {
         }
 
         if (message.channel.id == "456362608702914560" || message.channel.id == "611844083190857748" ) {
-            var d = new Date();
-            if (d.getDay() != 2 && d.getDay() != 5) {
+            message.channel.fetchMessages({ limit: 5 }).then(messages => {
+                let arr = messages.array();
+                for (let i = 0; i < arr.length; i++) {
+                    if(arr[i].content.includes("Please fill in this form to let us know about any absences")){
+                        return;
+                    };
+                }
+            }).catch(console.error);
+            var aestTime = new Date().toLocaleString("en-US", {timeZone: "Australia/Sydney"});
+            aestTime = new Date(aestTime);
+            if (aestTime.getDay() != 2 && aestTime.getDay() != 5) {
                 message.reply(`Please fill in this form to let us know about any absences. ${process.env.TDU_FORM}`);
             }
         }
