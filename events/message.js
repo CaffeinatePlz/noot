@@ -57,12 +57,13 @@ module.exports = async (bot, message) => {
                         return;
                     };
                 }
+                var aestTime = new Date().toLocaleString("en-US", {timeZone: "Australia/Sydney"});
+                aestTime = new Date(aestTime);
+                if (aestTime.getDay() != 2 && aestTime.getDay() != 5) {
+                    message.reply(`Please fill in this form to let us know about any absences. ${process.env.TDU_FORM}`);
+                }
             }).catch(console.error);
-            var aestTime = new Date().toLocaleString("en-US", {timeZone: "Australia/Sydney"});
-            aestTime = new Date(aestTime);
-            if (aestTime.getDay() != 2 && aestTime.getDay() != 5) {
-                message.reply(`Please fill in this form to let us know about any absences. ${process.env.TDU_FORM}`);
-            }
+
         }
 
       if (message.guild.id === HAYL_GUILD_ID || message.guild.id === DREW_GUILD_ID || message.guild.id === HAWAII_GUILD_ID) {
