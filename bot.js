@@ -193,7 +193,6 @@ async function gsrun(cl,day,msg){
         }
         let rows = response.data.values;
         if (rows.length) {
-            console.log('Name, attendance:');
             let col;
             if (day == "Tue"){
                 col = 3;
@@ -213,8 +212,7 @@ async function gsrun(cl,day,msg){
             console.log(names);
 
             var listEmbed = new Discord.RichEmbed();
-            listEmbed.setAuthor(bot.user.username,bot.user.avatarURL)
-                .setTitle(`${day} Absences`)
+            listEmbed.setTitle(`${day} Absences`)
                 .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
                 .setDescription(names);
             msg.channel.send({embed: listEmbed})
