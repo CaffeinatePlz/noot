@@ -60,7 +60,8 @@ module.exports = async (bot, message) => {
                 var aestTime = new Date().toLocaleString("en-US", {timeZone: "Australia/Sydney"});
                 aestTime = new Date(aestTime);
                 if (aestTime.getDay() != 2 && aestTime.getDay() != 5) {
-                    message.reply(`Please fill in this form to let us know about any absences. ${process.env.TDU_FORM}`);
+                    message.reply(`This channel should only be used on Tuesday or Friday to let us know any last minute changes. \n
+                    Please fill in this form to let us know about any absences. ${process.env.TDU_FORM}`);
                 }
             }).catch(console.error);
 
