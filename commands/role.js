@@ -9,6 +9,8 @@ exports.run = (bot, message, args) => {
     const TDUroles = [
         "mechanical",
         "electrical",
+        "safety",
+        "media",
         "software",
         "strategy",
         "outreach",
