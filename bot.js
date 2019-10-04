@@ -67,6 +67,13 @@ bot.on("guildDelete", guild => {
   bot.user.setActivity(`on ${bot.guilds.size} servers | +`);
 });
 
+bot.on('guildMemberAdd', member => {
+    if (member.guild.id == '605683682493333507') {
+        member.guild.channels.get('606837991033405460').send("Welcome, <@" + member.user.id + ">! " +
+            "Please read the above instructions to gain access to the rest of the server.");
+    }
+});
+
 bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.content.indexOf("+") !== 0) return;
