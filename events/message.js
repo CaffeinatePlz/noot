@@ -46,7 +46,15 @@ module.exports = async (bot, message) => {
         if (textMessage.includes("hayl") || textMessage.includes("hayley")||textMessage.includes("caff") ) {
             channel_ID = '400779864191401984';
             guild_ID = '356764662760472576';
-            bot.guilds.get(guild_ID).channels.get(channel_ID).send(message.content + " [" + message.channel.name + ", " + message.author.username + "]" + " <@338163785082601473>");
+            bot.guilds.get(guild_ID).channels.get(channel_ID)
+                .send(message.content + " [" + message.channel.name + ", " + message.author.username + ", " + message.guild.name + "]" + " <@338163785082601473>");
+        }
+
+        if (textMessage.includes("mama") || textMessage.includes("sphynx")||textMessage.includes("marie") ) {
+            channel_ID = '646251544609685505';
+            guild_ID = '597934849747320852';
+            bot.guilds.get(guild_ID).channels.get(channel_ID)
+                .send(message.content + " [" + message.channel.name + ", " + message.author.username + ", " + message.guild.name + "]" + " <@564771150090207232>");
         }
 
         if (message.channel.id == "456362608702914560" || message.channel.id == "611844083190857748" ) {
