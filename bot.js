@@ -74,7 +74,7 @@ bot.on('guildMemberAdd', member => {
     } else if (member.guild.id == '606986694905823233') {
         member.addRole(member.guild.roles.find(role => role.name === "Alliance Partners"));
         member.guild.channels.get('657718621057056768').send("Welcome, <@" + member.user.id + ">! " +
-            "Please set your nickname with `+setnick name teamnumber`, for example `+setnick Anna 9999`, " +
+            "Please set your nickname with `+nick name teamnumber`, for example `+nick Anna 9999`, " +
             "to help everyone easily identify you. \n" +
             "__To access program specific channels:__\n" +
             "- Type in `+role list`\n" +
