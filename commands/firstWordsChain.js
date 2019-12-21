@@ -11,11 +11,12 @@ exports.conf = {
 	guildOnly: false,
 	aliases: ['frc', 'frcwords', 'whatisfrc'],
 	botPerms: [],
-	memberPerms: []
+	memberPerms: [],
+    servers: ['global','tdu','test']
 };
 
 exports.help = {
-	name: 'frcChain',
+	name: 'frcchain',
 	description: 'A Markov Chain for FRC',
-	usage: 'frcChain'
+	usage: 'frcchain'
 };

@@ -15,7 +15,7 @@ exports.run = (bot, message, args) => {
         message.guild.members.get(authorID).setNickname(new_name);
       }
     }else{
-      message.channel.send( "No no no *YOU'RE* not allowed to do that! " + message.author);
+      message.channel.send( "Only users with the MANAGE_NICKNAMES permission are allowed to use this command. " + message.author);
     }
   };
 
@@ -24,7 +24,8 @@ exports.run = (bot, message, args) => {
   	guildOnly: false,
   	aliases: [],
   	botPerms: [],
-  	memberPerms: []
+  	memberPerms: [],
+    servers: ['global','tca','tdu','cc','test']
   };
 
   exports.help = {

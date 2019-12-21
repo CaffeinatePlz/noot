@@ -164,7 +164,8 @@ exports.conf = {
 	guildOnly: false,
 	aliases: [ 'quotes'],
 	botPerms: [],
-	memberPerms: []
+	memberPerms: [],
+    servers: ['global','test']
 };
 
 

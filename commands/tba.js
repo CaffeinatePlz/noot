@@ -104,7 +104,8 @@ exports.conf = {
 	guildOnly: false,
 	aliases: [],
 	botPerms: [],
-	memberPerms: []
+	memberPerms: [],
+    servers: ['global','tca','tdu','cc','test']
 };
 exports.help = {
 	name: 'tba',

@@ -22,7 +22,8 @@ exports.conf = {
 	guildOnly: false,
 	aliases: ['slep', 'gosleep'],
 	botPerms: [],
-	memberPerms: []
+	memberPerms: [],
+    servers: ['global','tdu','test']
 };
 
 

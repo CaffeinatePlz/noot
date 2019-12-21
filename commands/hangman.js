@@ -78,7 +78,8 @@ exports.run = async (bot, message, args) => {
   	guildOnly: false,
   	aliases: [],
   	botPerms: [],
-  	memberPerms: []
+  	memberPerms: [],
+  	servers: ['global','tdu','test']
   };
 
 

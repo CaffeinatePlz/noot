@@ -15,7 +15,8 @@ exports.run = (bot, message, args) => {
   	guildOnly: false,
   	aliases: [],
   	botPerms: [],
-  	memberPerms: []
+  	memberPerms: [],
+    servers: ['global','tca','tdu','cc','test']
   };
 
   exports.help = {

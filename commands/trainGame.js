@@ -80,63 +80,7 @@ exports.run = (bot, message, args) => {
       if (solutions.length === 0){
         message.channel.send("```No solutions found.```");
       }else{
-        /*var box = new Discord.RichEmbed();
-        var x = 20;
-        let z = Object.assign({}, box.fields[0]);
-        if (solutions.length > 20){
-    			for (y=0; y<x; y++) {
-    				z += solutions[y];
-    			}
-          box.setAuthor("Train Game Solutions for " + args[0] + `, displaying 1 to 20 of ${solutions.length}`)
-            .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)]);
-          box.addField(z);
 
-
-          const msg = await message.channel.send({embed: box});
-          await msg.react("arrow_forward");
-
-          const filter = (reaction, user) => reaction.emoji.name === 'arrow_forward' && user.id === message.author.id
-          msg.awaitReactions(filter, { time: 15000 })
-            .then(collected =>
-              x+=20;
-              let z = Object.assign({}, box.fields[0]);
-              if (message.length>x){
-                z = "";
-                for (y=20; y<x; y++) {
-          				z += solutions[y];
-          			}
-                const newEmbed = new Discord.RichEmbed({
-                  author:"Train Game Solutions for " + args[0] + `, displaying ${x-20} to ${x} of ${solutions.length}`,
-                  color: [Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)],
-                  fields: [ z ],
-                });
-              } else {
-                var z = "";
-                x = solution.length;
-                for (y=20; y<x; y++) {
-          				z += solutions[y];
-          			}
-                const newEmbed = new Discord.RichEmbed({
-                  author:"Train Game Solutions for " + args[0] + `, displaying ${x-20} to ${x} of ${solutions.length}`,
-                  color: [Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)],
-                  fields: [ z ],
-                });
-                msg.edit({embed: newEmbed}));
-                return;
-              }
-              msg.edit({embed: newEmbed}));
-            .catch(console.error);
-
-          msg.clearReactions();
-        }else{
-    			for (y=0; y<x; y++) {
-    				z = solutions[y];
-    				box.addField(z);
-    			}
-          box.setAuthor("Train Game Solutions for " + args[0] + `, displaying 1 to ${solutions.length} of ${solutions.length}`)
-            .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)]);
-    			message.channel.send({embed: box});
-        }*/
 
         message.channel.send("```" + solutions + "```");
       }
@@ -152,7 +96,8 @@ exports.conf = {
 	guildOnly: false,
 	aliases: ['tg'],
 	botPerms: [],
-	memberPerms: []
+	memberPerms: [],
+    servers: ['global','tdu','test']
 };
 
 exports.help = {
@@ -161,64 +106,3 @@ exports.help = {
 	usage: 'traingame XXXX'
 };
 
-
-/*
-exports.run = (bot, message, args) => {
-  const math = require('mathjs');
-  if (!isNaN(args[0]) && args[0].length == 4 && !args[0].includes(".")){
-    //message.reply(" I have 4 numbers and I'm attempting to solve this.")
-    n1 = parseInt(args[0].slice(0,1));
-    n2 = parseInt(args[0].slice(1,2));
-    n3 = parseInt(args[0].slice(2,3));
-    n4 = parseInt(args[0].slice(3,4));
-    solve(n1, n2, n3, n4);
-  } else {
-    message.reply ("Please enter 4 numbers.");
-  }
-
-  function operation(num1, num2, operation) {
-      if (operation === "+") {
-          return num1 + num2;
-      }
-      else if (operation === "-") {
-          return num1 - num2;
-      }
-      else if (operation === "*") {
-          return num1 * num2;
-      }
-      else if (operation === "/") {
-          return num1 / num2;
-      }
-      else if (operation === "^") {
-          return math.pow(num1, num2);
-      }
-  }
-
-  function solve(a, b, c, d) {
-    const symbols = ["+", "-", "*", "/", "^"];
-    const x = ["!", "-"];
-    var solutions = "";
-      for (let s1 of symbols) {
-          for (let s2 of symbols) {
-              for (let s3 of symbols) {
-                  try {
-                      if (operation(operation(operation(a, b, s1), c, s2), d, s3) === 10) {
-                          solutions += `((${a}${s1}${b})${s2}${c})${s3}${d}\n`;
-                      }
-                  }
-                  catch (e) {
-                      //do nothing
-                  }
-              }
-          }
-      }
-      if (solutions.length === 0){
-        message.channel.send("```No solutions found.```");
-      }else{
-        message.channel.send("```" + solutions + "```");
-      }
-  }
-
-
-
-};*/

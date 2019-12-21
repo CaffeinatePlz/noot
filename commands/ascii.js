@@ -209,7 +209,8 @@ exports.conf = {
 	guildOnly: false,
 	aliases: ['face', 'asciiface'],
 	botPerms: [],
-	memberPerms: []
+	memberPerms: [],
+    servers: ['global']
 };
 
 exports.help = {

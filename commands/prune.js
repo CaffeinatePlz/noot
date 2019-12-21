@@ -21,7 +21,8 @@ exports.run = (bot, message, args) => {
   	guildOnly: false,
   	aliases: ["purge", "delete"],
   	botPerms: [],
-  	memberPerms: []
+  	memberPerms: [],
+    servers: ['global','tca','tdu','cc','test']
   };
 
 

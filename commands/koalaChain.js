@@ -11,7 +11,9 @@ exports.conf = {
 	guildOnly: false,
 	aliases: ['koalachains', 'kc'],
 	botPerms: [],
-	memberPerms: []
+	memberPerms: [],
+    servers: ['global','tdu','test']
+
 };
 
 exports.help = {

@@ -34,7 +34,8 @@ exports.conf = {
 	guildOnly: false,
 	aliases: ['koalafacts', 'koalafunfact', 'kf'],
 	botPerms: [],
-	memberPerms: []
+	memberPerms: [],
+    servers: ['global','tdu','test']
 };
 
 exports.help = {
