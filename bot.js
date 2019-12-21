@@ -76,7 +76,6 @@ bot.on('guildMemberAdd', member => {
             "Please set your nickname with `+setnick name teamnumber`, for example `+setnick Anna 9999`, " +
             "to help everyone easily identify you. \n" +
             "__To access program specific channels:__\n" +
-            "- Head to #bot-commands \n" +
             "- Type in `+role list`\n" +
             "- Pick a role that you want to add, and type `+role add rolename` where rolename is the role you would like.");
     }
