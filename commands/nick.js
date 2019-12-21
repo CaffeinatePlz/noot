@@ -21,6 +21,6 @@ exports.run = (bot, message, args) => {
 
   exports.help = {
   	name: 'nick',
-  	description: 'set your nickname',
+  	description: 'Set your nickname',
   	usage: 'nick <new nick>'
   };

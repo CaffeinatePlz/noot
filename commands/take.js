@@ -19,6 +19,6 @@ exports.run = (bot, message, args) => {
 
   exports.help = {
   	name: 'take',
-  	description: 'take a role from someone',
+  	description: 'Moderation Tool: Takes a role from a server member',
   	usage: 'take <user> <role>'
   };

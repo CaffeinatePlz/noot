@@ -26,6 +26,6 @@ exports.run = (bot, message, args) => {
 
   exports.help = {
   	name: 'ban',
-  	description: 'swing the ban hammer',
+  	description: 'Moderation Tool: Bans a server member',
   	usage: 'ban <member> <reason>'
   };

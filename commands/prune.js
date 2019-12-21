@@ -28,6 +28,6 @@ exports.run = (bot, message, args) => {
 
   exports.help = {
   	name: 'prune',
-  	description: 'Delete a number of messages.',
+  	description: 'Moderation Tool: Deletes a number of messages.',
   	usage: 'prune <number>'
   };

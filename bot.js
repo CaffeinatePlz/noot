@@ -155,6 +155,18 @@ bot.on("message", async message => {
     message.channel.send("https://open.spotify.com/user/12153980750/playlist/63vJJJTobWXaZtYWsrrpu6?si=PE5Da_I3TG2OCG9PU3xaPw");
   }
 
+  if(command === ('say')){
+      if (message.author.id == '338163785082601473' ){
+          var channel_ID = args[0].replace('<#', '').replace('>', '').replace('!', '');
+          var x = args.shift();
+          const sayMessage = args.join(" ");
+          message.delete();
+          message.guild.channels.get(channel_ID).send(sayMessage);
+      } else {
+          message.channel.send( "No no no *YOU'RE* not allowed to do that! " + message.author);
+      }
+  }
+
   if (command === ('get_id')) {
     var userID = args[0].replace('<@', '').replace('>', '').replace('!', '');
     message.channel.send(userID);

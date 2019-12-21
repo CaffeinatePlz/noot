@@ -30,6 +30,6 @@ exports.run = (bot, message, args) => {
 
   exports.help = {
   	name: 'setnick',
-  	description: 'change someone else\'s nick',
+  	description: 'Moderation Tool: Changes a server member\'s nickname',
   	usage: 'setnick <user>'
   };

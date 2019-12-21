@@ -26,6 +26,6 @@ exports.run = (bot, message, args) => {
 
   exports.help = {
   	name: 'kick',
-  	description: 'kicking ppl',
+    description: 'Moderation Tool: Kicks a server member',
   	usage: 'kick <member> <reason>'
   };
