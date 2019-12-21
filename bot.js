@@ -77,7 +77,8 @@ bot.on('guildMemberAdd', member => {
             "to help everyone easily identify you. \n" +
             "__To access program specific channels:__\n" +
             "- Type in `+role list`\n" +
-            "- Pick a role that you want to add, and type `+role add rolename` where rolename is the role you would like.");
+            "- Pick a role that you want to add, and type `+role add rolename` where rolename is the role you would like.\n" +
+            "If there is anything you need help with, ping <@338163785082601473> and she'll be around ASAP.");
     }
 });
 
