@@ -24,7 +24,6 @@ exports.run = (bot, message, args) => {
     ];
 
     const TCAroles = [
-        "alliance partners",
         "call center",
         "hear for you",
         "help hubs",

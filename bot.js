@@ -72,6 +72,7 @@ bot.on('guildMemberAdd', member => {
         member.guild.channels.get('606837991033405460').send("Welcome, <@" + member.user.id + ">! " +
             "Please read the above instructions to gain access to the rest of the server.");
     } else if (member.guild.id == '606986694905823233') {
+        member.addRole(member.guild.roles.find(role => role.name === "Alliance Partners"));
         member.guild.channels.get('657718621057056768').send("Welcome, <@" + member.user.id + ">! " +
             "Please set your nickname with `+setnick name teamnumber`, for example `+setnick Anna 9999`, " +
             "to help everyone easily identify you. \n" +
