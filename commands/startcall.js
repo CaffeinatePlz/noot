@@ -78,6 +78,6 @@ exports.conf = {
 
 exports.help = {
     name: 'startcall',
-    description: 'Starts a private chat with our call centre staff!',
-    usage: '+startcall teamnumber (e.g. +startcall 3132)'
+    description: 'Starts a private chat with our call centre staff, using "+startcall yourteamnumber"!',
+    usage: 'startcall yourteamnumber (e.g. +startcall 1234)'
 };

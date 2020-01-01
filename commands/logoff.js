@@ -8,7 +8,7 @@ exports.run = (bot, message, args) => {
 
     let role = message.guild.roles.find(r => r.name.toLowerCase() == "online");
 
-    if (!message.member.roles.find(r => r.name.toLowerCase() == "call centre team")){
+    if (!message.member.roles.find(r => r.name.toLowerCase() == "call centre staff")){
         message.reply('This command can only be used by a Call Center host team.')
     } else if (!message.member.roles.find(r => r.name.toLowerCase() == "online")) {
         message.reply('You do not have this role!');
