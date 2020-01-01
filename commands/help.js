@@ -12,11 +12,14 @@ exports.run = (bot, message, args) => {
                 .setTitle("Command List")
                 .setDescription(`Use +help <commandname> for details`)
                 .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)]);
-            if (i==Math.floor(bot.commands.size/24)){
+            /*if (i==Math.floor(bot.commands.size/24)){
                 x = bot.commands.size%24;
             } else {
                 x = 20;
-            }
+            }*/
+            x = 25;
+            i = 0
+
             for (y=0; y<x; y++) {
                 c = bot.commands.array()[i*24+y];
                 if (
