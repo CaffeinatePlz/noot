@@ -2,6 +2,10 @@ const HAYL_ID = '338163785082601473';
 const HAYL_GUILD_ID = '374179059212484608';
 const DREW_GUILD_ID = '479881805374160934';
 const HAWAII_GUILD_ID = '446777348042391553';
+const INCOMING_CATEGORY = '655241137212096553';
+const ARCHIVED_CATEGORY = '656077269260828682';
+const HOST_ROLE = '655240553931341824';
+const ONLINE_ROLE = '656078383595126794';
 
 const noot_love = [
   "you're awesome! :heart:",
@@ -57,6 +61,21 @@ module.exports = async (bot, message) => {
                 .send(message.content + " [" + message.channel.name + ", " + message.author.username + ", " + message.guild.name + "]" + " <@564771150090207232>");
         }
 
+        //CALL CENTRE
+        if (message.guild.id == '655240399136358420' && message.channel.parentID == ARCHIVED_CATEGORY){
+            let channel = message.channel;
+            channel.setParent(INCOMING_CATEGORY).then( channel => {
+                    channel.overwritePermissions(message.author, {
+                        VIEW_CHANNEL: true
+                    })
+                        .then( channel => {
+                            channel.send("<@&" + ONLINE_ROLE + "> , a call has been started by <@" + message.author.id + ">");
+                        })
+                }
+            );
+        }
+
+        // TDU
         if (message.channel.id == "456362608702914560" || message.channel.id == "611844083190857748" ) {
             message.channel.fetchMessages({ limit: 5 }).then(messages => {
                 let arr = messages.array();
