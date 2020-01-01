@@ -6,20 +6,17 @@ const TEST_GUILD_ID = "356764662760472576";
 exports.run = (bot, message, args) => {
     const Discord = require('discord.js');
     if (!args[0]) {
-        //for (i=0; i<=Math.floor(bot.commands.size/24); i++) {
+        for (i=0; i<=Math.floor(bot.commands.size/24); i++) {
             var helpbox = new Discord.RichEmbed();
             helpbox.setAuthor(bot.user.username,bot.user.avatarURL)
                 .setTitle("Command List")
                 .setDescription(`Use +help <commandname> for details`)
                 .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)]);
-            /*if (i==Math.floor(bot.commands.size/24)){
+            if (i==Math.floor(bot.commands.size/24)){
                 x = bot.commands.size%24;
             } else {
                 x = 20;
-            }*/
-            x = 25;
-            i = 0
-
+            }
             for (y=0; y<x; y++) {
                 c = bot.commands.array()[i*24+y];
                 if (
@@ -35,7 +32,7 @@ exports.run = (bot, message, args) => {
                 }
             }
             message.channel.send({embed: helpbox})
-        //}
+        }
     } else {
         let command = '';
         if (bot.commands.has(args[0])) {
