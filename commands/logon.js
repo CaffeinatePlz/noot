@@ -14,7 +14,7 @@ exports.run = (bot, message, args) => {
         message.reply('You already have this role!');
     } else {
         message.member.addRole(role).then(() => {
-            message.channel.send("Role added!");
+            message.channel.send("Online role added. You will now be pinged for incoming questions.");
         }).catch(err => {
             message.reply('I was unable to add the role.');
         });

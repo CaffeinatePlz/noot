@@ -33,6 +33,6 @@ exports.conf = {
 
 exports.help = {
     name: 'logoff',
-    description: 'Removes the Online role. Staff only!',
+    description: 'Staff only: Removes the Online role.',
     usage: '+logoff'
 };
