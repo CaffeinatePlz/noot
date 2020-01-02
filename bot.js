@@ -83,7 +83,7 @@ bot.on('guildMemberAdd', member => {
     } else if (member.guild.id == '655240399136358420'){
         member.guild.channels.get('655241972411531274').send("Welcome, <@" + member.user.id + ">! " +
             "Please set your nickname with `+nick name teamnumber`, for example `+nick Anna 9999`, " +
-            "to help everyone easily identify you. \n" +
+            "to help everyone easily identify you. If you are a call center staff, your role will be assigned soon.\n" +
             "__To start  a private chat with our call center staff:__\n" +
             "- Type in `+start teamnumber`, for example `+start 9999`\n" +
             "If there is anything you need help with, ping <@338163785082601473> and she'll be around ASAP.");
