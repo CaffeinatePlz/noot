@@ -234,10 +234,8 @@ async function gsrun(cl,col,msg){
         if (rows.length) {
             names = "";
             rows.forEach(row => {
-                if(row[col].includes("Absent")){
-                    //console.log(`${row[0]}, ${row[col]}`);
-                    names += `${row[0]}\n`;
-                }
+                    names += `${row[col]}\n`;
+
             })
             if(!names){
                 names = "No absences!"
@@ -245,7 +243,8 @@ async function gsrun(cl,col,msg){
             console.log(names);
 
             var listEmbed = new Discord.RichEmbed();
-            listEmbed.setTitle(`${day} Absences`)
+            //listEmbed.setTitle(`${day} Absences`)
+            listEmbed.setTitle(`Absences`)
                 .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
                 .setDescription(names);
             msg.channel.send({embed: listEmbed})
