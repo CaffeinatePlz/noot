@@ -105,7 +105,7 @@ bot.on("message", async message => {
     if (command === ('absence')){
         if (message.guild.id != '605683682493333507' && message.guild.id != '356764662760472576' ) return;
         if (!args[0]||!args[0].toLowerCase().match(/(mon(day)*|tue(s)*(day)*)|(wed(nes)*(day)*|thu(r)*(day)*)|(fri(day)*|sat(ur)*(day)*)|(sun(day)*)/))
-            return message.channel.send("Please use +attendance mon/tue/wed/thu/fri/sat/sun");
+            return message.channel.send("Please use +absence mon/tue/wed/thu/fri/sat/sun");
         let col;
 
         if (args[0].toLowerCase().includes('mon')){
