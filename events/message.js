@@ -76,7 +76,7 @@ module.exports = async (bot, message) => {
         }
 
         // TDU
-        if (message.channel.id == "456362608702914560" || message.channel.id == "611844083190857748" ) {
+        /*if (message.channel.id == "456362608702914560" || message.channel.id == "611844083190857748" ) {
             message.channel.fetchMessages({ limit: 5 }).then(messages => {
                 let arr = messages.array();
                 for (let i = 0; i < arr.length; i++) {
@@ -91,7 +91,7 @@ module.exports = async (bot, message) => {
                 }
             }).catch(console.error);
 
-        }
+        }*/
 
       if (message.guild.id === HAYL_GUILD_ID || message.guild.id === DREW_GUILD_ID || message.guild.id === HAWAII_GUILD_ID) {
         if (textMessage === "sleep" || textMessage.includes("go to sleep") || textMessage.includes("need sleep") || textMessage.includes("needs sleep")) {
