@@ -8,19 +8,7 @@ exports.run = (bot, message, args) => {
     const TCA_GUILD_ID = "606986694905823233";
 
     const TDUroles = [
-        "mechanical",
-        "electrical",
-        "safety",
-        "media",
-        "software",
-        "strategy",
-        "outreach",
         "social",
-        "elec training",
-        "software training",
-        "tool training",
-        "demo bot",
-        "cad training",
     ];
 
     const TCAroles = [
