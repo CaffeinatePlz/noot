@@ -17,8 +17,8 @@ rule.minute = 0;
 rule.hour = 22;
 schedule.scheduleJob(rule, function () {
     bot.guilds.get('605683682493333507').channels.get('611844083190857748')
-        .send(`This channel should only be used to let us know any last minute changes on the day of the meeting. ` +
-            `\nPlease fill in this form to let us know about any absences. ${process.env.TDU_FORM}`)
+        .send(`Daily 10pm reminder: This channel should be used to let us know any last minute attendance changes on the day of the meeting. ` +
+            `\nPlease fill in this form to let us know about any absences, late arrivals, or early leaves. ${process.env.TDU_FORM}`)
 });
 
 
@@ -114,10 +114,10 @@ bot.on("message", async message => {
   }
 
 
-    if (command === ('absence')){
+    if (command === ('attendance')||command === ('absence')){
         if (message.guild.id != '605683682493333507' && message.guild.id != '356764662760472576' ) return;
         if (!args[0]||!args[0].toLowerCase().match(/(mon(day)*|tue(s)*(day)*)|(wed(nes)*(day)*|thu(r)*(day)*)|(fri(day)*|sat(ur)*(day)*)|(sun(day)*)/))
-            return message.channel.send("Please use +absence mon/tue/wed/thu/fri/sat/sun");
+            return message.channel.send("Please use +attendance mon/tue/wed/thu/fri/sat/sun");
         let col;
 
         if (args[0].toLowerCase().includes('mon')){
