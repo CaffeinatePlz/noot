@@ -75,6 +75,8 @@ module.exports = async (bot, message) => {
             );
         }
 
+
+
         // TDU
         /*if (message.channel.id == "456362608702914560" || message.channel.id == "611844083190857748" ) {
             message.channel.fetchMessages({ limit: 5 }).then(messages => {

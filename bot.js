@@ -9,6 +9,18 @@ bot.commands = new Discord.Collection();
 bot.events = new Discord.Collection();
 bot.aliases = new Discord.Collection();
 
+var schedule = require('node-schedule');
+let rule = new schedule.RecurrenceRule();
+rule.tz = 'Australia/Sydney';
+rule.second = 0;
+//rule.minute = 0;
+//rule.hour = 0;
+schedule.scheduleJob(rule, function () {
+    bot.guilds.get('356764662760472576').channels.get('456362608702914560')
+        .send("This channel should only be used to let us know any last minute changes on the day of the meeting. " +
+            "\\nPlease fill in this form to let us know about any absences. ${process.env.TDU_FORM}")
+});
+
 
 const {google} = require('googleapis');
 const client = new google.auth.JWT(
