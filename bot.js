@@ -109,19 +109,19 @@ bot.on("message", async message => {
         let col;
 
         if (args[0].toLowerCase().includes('mon')){
-            col = 0;
-        } else if (args[0].toLowerCase().includes('tue')){
             col = 1;
-        } else if (args[0].toLowerCase().includes('wed')){
+        } else if (args[0].toLowerCase().includes('tue')){
             col = 2;
-        } else if (args[0].toLowerCase().includes('thu')){
+        } else if (args[0].toLowerCase().includes('wed')){
             col = 3;
-        } else if (args[0].toLowerCase().includes('fri')){
+        } else if (args[0].toLowerCase().includes('thu')){
             col = 4;
-        } else if (args[0].toLowerCase().includes('sat')){
+        } else if (args[0].toLowerCase().includes('fri')){
             col = 5;
-        } else {
+        } else if (args[0].toLowerCase().includes('sat')){
             col = 6;
+        } else {
+            col = 0;
         }
 
         try{ gsrun(client,col,message);}
