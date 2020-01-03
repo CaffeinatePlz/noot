@@ -102,16 +102,29 @@ bot.on("message", async message => {
   }
 
 
-    if (command === ('attendance')){
+    if (command === ('absence')){
         if (message.guild.id != '605683682493333507' && message.guild.id != '356764662760472576' ) return;
-        if (!args[0]||!args[0].toLowerCase().match(/(fri(day)*|tue(s)*(day)*)/))
-            return message.channel.send("Please use +attendance tue/fri");
-        let meetingDay;
+        if (!args[0]||!args[0].toLowerCase().match(/(mon(day)*|tue(s)*(day)*)|(wed(nes)*(day)*|thu(r)*(day)*)|(fri(day)*|sat(ur)*(day)*)|(sun(day)*)/))
+            return message.channel.send("Please use +attendance mon/tue/wed/thu/fri/sat/sun");
+        let col;
 
-        if (args[0].toLowerCase().includes('fri')){ meetingDay = "Fri"; }
-        else { meetingDay = "Tue"; }
+        if (args[0].toLowerCase().includes('mon')){
+            col = 0;
+        } else if (args[0].toLowerCase().includes('tue')){
+            col = 1;
+        } else if (args[0].toLowerCase().includes('wed')){
+            col = 2;
+        } else if (args[0].toLowerCase().includes('thu')){
+            col = 3;
+        } else if (args[0].toLowerCase().includes('fri')){
+            col = 4;
+        } else if (args[0].toLowerCase().includes('sat')){
+            col = 5;
+        } else {
+            col = 6;
+        }
 
-        try{ gsrun(client,meetingDay,message);}
+        try{ gsrun(client,col,message);}
         catch (err){ message.channel.sendMessage('```js\n'+err+"```");}
     }
 
@@ -206,12 +219,12 @@ bot.on("message", async message => {
 
 
 
-async function gsrun(cl,day,msg){
+async function gsrun(cl,col,msg){
     const gs = google.sheets({version:"v4", auth: cl});
     gs.spreadsheets.values.get({
         auth: cl,
         spreadsheetId: process.env.TDU_SHEET,
-        range: `Overview ${day}`,
+        range: `Nootable`,
     }, (err, response) => {
         if (err) {
             console.log('The API returned an error: ' + err);
@@ -219,12 +232,6 @@ async function gsrun(cl,day,msg){
         }
         let rows = response.data.values;
         if (rows.length) {
-            let col;
-            if (day == "Tue"){
-                col = 3;
-            } else {
-                col = 2;
-            }
             names = "";
             rows.forEach(row => {
                 if(row[col].includes("Absent")){
