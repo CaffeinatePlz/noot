@@ -60,13 +60,14 @@ exports.run = (bot, message, args) => {
 
             }
         }
-        /*let x;
-        message.guild.channels.get('662842188748816389').fetchMessages({ limit: 1 }).then(messages => {
+        let x;
+        let logChannel = message.guild.channels.get('662842188748816389');
+        logChannel.fetchMessages({ limit: 1 }).then(messages => {
             let lastMessage = messages.first();
             x = parseInt(lastMessage.content) + 1;
+            logChannel.send(x);
         });
-        message.guild.channels.get('662842188748816389').bulkDelete(1);
-        message.guild.channels.get('662842188748816389').send(x);*/
+        logChannel.bulkDelete(1);
     }
     else {
         message.channel.send("Attempt failed, are you entering a valid team number?")
