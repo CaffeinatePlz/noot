@@ -98,7 +98,7 @@ bot.on('guildMemberAdd', member => {
             "to help everyone easily identify you. If you are a call center staff, your role will be assigned soon.\n" +
             "__To start  a private chat with our call center staff:__\n" +
             "- Type in `+start teamnumber`, for example `+start 9999`\n" +
-            "If there is anything you need help with, ping <@338163785082601473> and she'll be around ASAP.");
+            "If there is anything you need help with, ping Hayley @ CaffeinatePlz#2727 and she'll be around ASAP.");
     }
 });
 
