@@ -246,8 +246,9 @@ async function gsrun(cl,col,msg){
         if (rows.length) {
             names = "";
             rows.forEach(row => {
+                if(row[col]) {
                     names += `${row[col]}\n`;
-
+                }
             })
             if(!names){
                 names = "No absences!"
