@@ -15,6 +15,8 @@ rule.tz = 'Australia/Sydney';
 rule.second = 0;
 rule.minute = 0;
 rule.hour = 22;
+rule.dayOfWeek = [new schedule.Range(0,2), new schedule.Range(4, 6)];
+
 schedule.scheduleJob(rule, function () {
     bot.guilds.get('605683682493333507').channels.get('611844083190857748')
         .send(`Daily 10pm reminder: This channel should be used to let us know any last minute attendance changes on the day of the meeting. ` +
