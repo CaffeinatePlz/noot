@@ -76,7 +76,7 @@ module.exports = async (bot, message) => {
         }
 
         if (message.channel.id == "456362608702914560" || message.channel.id == "611844083190857748" ) {
-            if ((message.includes("late")||message.includes("miss")) && (message.includes("bus")||message.includes("train"))){
+            if ((textMessage.includes("late")||textMessage.includes("miss")) && (textMessage.includes("bus")||textMessage.includes("train"))){
                 message.channel.send("*psssst* you should try to use tripview more");
             }
 
