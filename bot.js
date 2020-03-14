@@ -15,7 +15,7 @@ rule.tz = 'Australia/Sydney';
 rule.second = 0;
 rule.minute = 0;
 rule.hour = 22;
-rule.dayOfWeek = [new schedule.Range(0,2), new schedule.Range(4, 6)];
+rule.dayOfWeek = [1, 4, 5];
 
 schedule.scheduleJob(rule, function () {
     bot.guilds.get('605683682493333507').channels.get('611844083190857748')
