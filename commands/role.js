@@ -9,7 +9,8 @@ exports.run = (bot, message, args) => {
 
     const TDUroles = [
         "social",
-        "outreach"
+        "outreach",
+        "app design training"
     ];
 
     const TCAroles = [
