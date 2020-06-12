@@ -216,7 +216,7 @@ bot.on("message", async message => {
   }
 
   if (command === ('eval')) {
-    if (message.author.id != '338163785082601473')
+    if (message.author.id != '338163785082601473' && message.author.id != '326313419613536256')
       return message.reply( "No no no *YOU'RE* not allowed to do that! ");
     try {
       let code = args.join(" ");
