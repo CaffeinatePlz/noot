@@ -9,19 +9,19 @@ bot.commands = new Discord.Collection();
 bot.events = new Discord.Collection();
 bot.aliases = new Discord.Collection();
 
-// var schedule = require('node-schedule');
-// let rule = new schedule.RecurrenceRule();
-// rule.tz = 'Australia/Sydney';
-// rule.second = 0;
-// rule.minute = 0;
-// rule.hour = 22;
-// rule.dayOfWeek = [1, 4, 5];
-//
-// schedule.scheduleJob(rule, function () {
-//     bot.guilds.get('605683682493333507').channels.get('611844083190857748')
-//         .send(`Daily 10pm reminder: This channel should be used to let us know any last minute attendance changes on the day of the meeting. ` +
-//             `\nPlease fill in this form to let us know about any absences, late arrivals, or early leaves. ${process.env.TDU_FORM}`)
-// });
+var schedule = require('node-schedule');
+let rule = new schedule.RecurrenceRule();
+rule.tz = 'Australia/Sydney';
+rule.second = 0;
+rule.minute = 0;
+rule.hour = 22;
+rule.dayOfWeek = [0, 1, 4];
+
+schedule.scheduleJob(rule, function () {
+    bot.guilds.get('605683682493333507').channels.get('611844083190857748')
+        .send(`10pm reminder: This channel should be used to let us know any last minute attendance changes on the day of the meeting. ` +
+            `\nPlease fill in this form to let us know about any absences, late arrivals, or early leaves. ${process.env.TDU_FORM}`)
+});
 
 
 const {google} = require('googleapis');
