@@ -126,7 +126,7 @@ module.exports = async (bot, message) => {
                     .setTitle("Spam Detection: Muted author + Deleted the following message")
                     .setDescription("Type: " + type)
                     .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)]);
-                logEmbed.addField("From: " + message.author.id + message.author(), textMessage);
+                logEmbed.addField("From: " + message.author.id + " | " + message.author.tag, textMessage);
                 message.guild.channels.get(log_cID).send("<@338163785082601473>" + {embed: logEmbed});
             }
 
