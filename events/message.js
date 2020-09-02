@@ -127,7 +127,9 @@ module.exports = async (bot, message) => {
                     .setDescription("Type: " + type)
                     .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)]);
                 logEmbed.addField("From: " + message.author.id + " | " + message.author.tag, textMessage);
-                message.guild.channels.get(log_cID).send("<@338163785082601473>" + {embed: logEmbed});
+                message.guild.channels.get(log_cID).send("<@338163785082601473>");
+                message.guild.channels.get(log_cID).send({embed: logEmbed});
+
             }
 
         }
