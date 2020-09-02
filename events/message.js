@@ -92,7 +92,7 @@ module.exports = async (bot, message) => {
             // spam detection
 
             let numSimilar = 1;
-            message.channel.fetchMessages({ limit: 10 }).then(messages => {
+            message.channel.fetchMessages({ limit: 5 }).then(messages => {
                 let arr = messages.array();
                 for (let i = 1; i < arr.length; i++) {
                     if(arr[i].author != message.author){
