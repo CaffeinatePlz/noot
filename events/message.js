@@ -13,7 +13,11 @@ const noot_love = [
   "I :clap: appreciate :clap: you!"
 ]
 
+const Discord = require('discord.js');
+var stringSimilarity = require('string-similarity');
+
 module.exports = async (bot, message) => {
+
     if (message.channel.type === "dm" && message.author.id != bot.user.id) {
         console.log("[DM] " + message.channel.recipient.username + " | " + message.channel.recipient.id + " | " + message.content);
         /*channel_ID = '400779864191401984';
@@ -50,11 +54,90 @@ module.exports = async (bot, message) => {
             bot.guilds.get(guild_ID).channels.get(channel_ID)
                 .send(message.content + " [" + message.channel.name + ", " + message.author.username + ", " + message.guild.name + "]" + " <@564771150090207232>");
         }
+
         //OCTANE MESSAGE FILTER
-        if (message.guild.id == '655240399136358420'){
+        const MAX_PINGS = 5;
+        const SIMILARITY_THRESHHOLD = 0.8;
+        const MAX_SPAM = 3;
+        const SPAM_TIME = 5000; //ms
+        // const FILTERED_CONTENT = [ //TODO:
+        //     "",
+        //     ""
+        // ];
 
+        if (message.guild.id == '356764662760472576'){ //testing
+        //if (message.guild.id == '655240399136358420'){ //octane
+                var log_cID = "750662588102082571"; //#logs //TODO
+                var spam = 0;
+                var type = "";
+                // spam ping
+                var numPings = message.mentions.users.array().length + message.mentions.roles.array().length;
+                if (numPings >= MAX_PINGS) {
+                    spam = 1;
+                    type = "Spam Pinging " + numPings + " users/roles";
+                }
 
+                // filter words
+                // for(let i = 0; i < FILTERED_CONTENT.length; i++) {
+                //     if (message.includes(FILTERED_CONTENT[i])) {
+                //         spam = 1;
+                //         if (type != "") {
+                //             type += " | ";
+                //         }
+                //         type += "Tripped word filter";
+                //         break;
+                //     }
+                // }
+
+                // spam detection
+
+                let numSimilar = 1;
+                message.channel.fetchMessages({ limit: 10 }).then(messages => {
+                    let arr = messages.array();
+                    for (let i = 1; i < arr.length; i++) {
+                        if(arr[i].author != message.author){
+                            continue;
+                        };
+                        if(message.createdAt - arr[i].createdAt > SPAM_TIME) {
+                            break;
+                        }
+                        var similarity = stringSimilarity.compareTwoStrings(textMessage, arr[i].content.toLowerCase());
+                        if(similarity > SIMILARITY_THRESHHOLD){
+                            numSimilar++;
+                        };
+                    }
+                }).catch(console.error);
+
+                if (numSimilar >= MAX_SPAM){
+                    spam = 1;
+                    if (type != "") {
+                        type += " | ";
+                    }
+                    type += "Message spam";
+                }
+
+                // log
+                if (spam == 1) {
+                    let role = message.guild.roles.find("name", "Muted");
+                    message.author.addRole(role);
+                    message.delete();
+                    var logEmbed = new Discord.RichEmbed();
+                    logEmbed.setAuthor(bot.user.username,bot.user.avatarURL)
+                        .setTitle("Spam Detection: Muted author + Deleted the following message")
+                        .setDescription("Type: " + type)
+                        .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)]);
+                    logEmbed.addField("From: " + message.author.id + message.author(), textMessage);
+                    message.guild.channels.get(log_cID).send("<@338163785082601473>" + {embed: logEmbed});
+                }
+
+            }
         }
+
+        //OCTANE MESSAGE FILTER
+        // if (message.guild.id == '655240399136358420'){
+        //     var similarity = stringSimilarity.compareTwoStrings(textMessage, '');
+        //
+        // }
 
 
             //CALL CENTRE
