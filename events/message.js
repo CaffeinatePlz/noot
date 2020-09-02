@@ -119,7 +119,7 @@ module.exports = async (bot, message) => {
             // log
             if (spam == 1) {
                 let role = message.guild.roles.find("name", "Muted");
-                message.author.addRole(role);
+                message.member.addRole(role);
                 message.delete();
                 var logEmbed = new Discord.RichEmbed();
                 logEmbed.setAuthor(bot.user.username,bot.user.avatarURL)
