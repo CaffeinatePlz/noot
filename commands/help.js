@@ -33,7 +33,7 @@ exports.run = (bot, message, args) => {
 
                 }
             }
-            let user = message.author();
+            let user = message.author;
             user.sendMessage({embed: helpbox});
         }
     } else {
@@ -53,7 +53,7 @@ exports.run = (bot, message, args) => {
         if (command.conf.aliases != "") {
             helpCommand.addField('Aliases', `${command.conf.aliases.join(', ')}`)
         }
-        let user = message.author();
+        let user = message.author;
         user.sendMessage({embed: helpCommand});
     };
 };
