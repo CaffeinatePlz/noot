@@ -105,7 +105,7 @@ exports.conf = {
 	aliases: [],
 	botPerms: [],
 	memberPerms: [],
-    servers: ['global','tca','tdu','cc','test']
+    servers: ['personal','tca','tdu','cc','test']
 };
 exports.help = {
 	name: 'tba',

@@ -3,6 +3,7 @@ const TDU_GUILD_ID = "605683682493333507";
 const CC_GUILD_ID = "655240399136358420";
 const TCA_GUILD_ID = "606986694905823233";
 const TEST_GUILD_ID = "356764662760472576";
+const PERSONAL_GUILD_ID = "374179059212484608";
 
 module.exports = (bot) => {
     bot.processMessage = function(message) {
@@ -22,7 +23,8 @@ module.exports = (bot) => {
             if (x == TDU_GUILD_ID && !command_name.conf.servers.includes('tdu')) return;
             if (x == TCA_GUILD_ID && !command_name.conf.servers.includes('tca')) return;
             if (x == CC_GUILD_ID && !command_name.conf.servers.includes('cc')) return;
-			if (x != TDU_GUILD_ID && x!= CC_GUILD_ID && x != TCA_GUILD_ID && x!= TEST_GUILD_ID && !command_name.conf.servers.includes('global')) return;
+            if (x == PERSONAL_GUILD_ID && !command_name.conf.servers.includes('personal')) return;
+			if (x != TDU_GUILD_ID && x!= CC_GUILD_ID && x != TCA_GUILD_ID && x!= TEST_GUILD_ID && x!= PERSONAL_GUILD_ID && !command_name.conf.servers.includes('global')) return;
 
             if (command_name.conf.enabled) {
                 try {

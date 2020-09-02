@@ -12,7 +12,7 @@ exports.conf = {
 	aliases: ['koalachains', 'kc'],
 	botPerms: [],
 	memberPerms: [],
-    servers: ['global','tdu','test']
+    servers: ['tdu','test']
 
 };
 

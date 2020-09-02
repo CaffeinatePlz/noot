@@ -23,7 +23,7 @@ exports.conf = {
 	aliases: ['slep', 'gosleep'],
 	botPerms: [],
 	memberPerms: [],
-    servers: ['global','tdu','test']
+    servers: ['personal','tdu','test']
 };
 
 

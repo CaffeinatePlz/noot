@@ -2,6 +2,7 @@ const TDU_GUILD_ID = "605683682493333507";
 const CC_GUILD_ID = "655240399136358420";
 const TCA_GUILD_ID = "606986694905823233";
 const TEST_GUILD_ID = "356764662760472576";
+const PERSONAL_GUILD_ID = "374179059212484608";
 
 exports.run = (bot, message, args) => {
     const Discord = require('discord.js');
@@ -24,7 +25,8 @@ exports.run = (bot, message, args) => {
                     || (message.guild.id == TCA_GUILD_ID && c.conf.servers.includes('tca'))
                     || (message.guild.id == CC_GUILD_ID && c.conf.servers.includes('cc'))
                     || (message.guild.id == TEST_GUILD_ID && c.conf.servers.includes('test'))
-                    || (message.guild.id != TDU_GUILD_ID && message.guild.id != TCA_GUILD_ID && message.guild.id != CC_GUILD_ID && c.conf.servers.includes('global'))
+                    || (message.guild.id == PERSONAL_GUILD_ID && c.conf.servers.includes('test'))
+                    || (message.guild.id != TDU_GUILD_ID && message.guild.id != TCA_GUILD_ID && message.guild.id != CC_GUILD_ID && message.guild.id != PERSONAL_GUILD_ID && c.conf.servers.includes('global'))
                 ) {
                     helpbox.addField(c.help.name, c.help.description);
                 }  else {

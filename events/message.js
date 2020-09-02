@@ -13,16 +13,6 @@ const noot_love = [
   "I :clap: appreciate :clap: you!"
 ]
 
-const nick_appreciation = [
-  "Did someone say \"Nick Hammes\"? *THE ONE AND ONLY* NICK HAMMES? That dude is awesome.",
-  "Hey I hear you're talking about a 10/10 inspiring person and I would just like to say, I absolutely approve. Good job, kid.",
-  "I :clap: appreciate :clap: Nick!",
-  "Have you read this? If not you should. https://docs.google.com/document/d/1XrremT6_RUHpCG0cMn0-ttmh6ZWlAVDEdUs1jX5wwtM/edit?usp=sharing",
-  "Hi Nick is great. All in favour say aye.",
-  "*le gasp* omg Nick is great!",
-  "Nick and I have gone on some crazy adventures around the world together, and he was the one who brought me home after I got lost, so daaaaamn I love the dude so much and you should too!",
-]
-
 module.exports = async (bot, message) => {
     if (message.channel.type === "dm" && message.author.id != bot.user.id) {
         console.log("[DM] " + message.channel.recipient.username + " | " + message.channel.recipient.id + " | " + message.content);
@@ -60,20 +50,26 @@ module.exports = async (bot, message) => {
             bot.guilds.get(guild_ID).channels.get(channel_ID)
                 .send(message.content + " [" + message.channel.name + ", " + message.author.username + ", " + message.guild.name + "]" + " <@564771150090207232>");
         }
+        //OCTANE MESSAGE FILTER
+        if (message.guild.id == '655240399136358420'){
 
-        //CALL CENTRE
-        if (message.guild.id == '655240399136358420' && message.channel.parentID == ARCHIVED_CATEGORY){
-            let channel = message.channel;
-            channel.setParent(INCOMING_CATEGORY).then( channel => {
-                    channel.overwritePermissions(message.author, {
-                        VIEW_CHANNEL: true
-                    })
-                        .then( channel => {
-                            channel.send("<@&" + ONLINE_ROLE + "> , a call has been started by <@" + message.author.id + ">");
-                        })
-                }
-            );
+
         }
+
+
+            //CALL CENTRE
+        // if (message.guild.id == '655240399136358420' && message.channel.parentID == ARCHIVED_CATEGORY){
+        //     let channel = message.channel;
+        //     channel.setParent(INCOMING_CATEGORY).then( channel => {
+        //             channel.overwritePermissions(message.author, {
+        //                 VIEW_CHANNEL: true
+        //             })
+        //                 .then( channel => {
+        //                     channel.send("<@&" + ONLINE_ROLE + "> , a call has been started by <@" + message.author.id + ">");
+        //                 })
+        //         }
+        //     );
+        // }
 
         if (message.channel.id == "456362608702914560" || message.channel.id == "611844083190857748" ) {
             if ((textMessage.includes("late")||textMessage.includes("miss")) && (textMessage.includes("bus")||textMessage.includes("train"))){
@@ -109,9 +105,6 @@ module.exports = async (bot, message) => {
             message.channel.send("(ง'̀-'́)ง");
         }
 
-        if (textMessage.includes("gracious professionalism") || textMessage === "gp") {
-            message.channel.send("*CLAP CLAP* WOOOOOO!!!!!");
-        }
         if ( textMessage === "oof") {
             message.react('384494179683794944');
         }

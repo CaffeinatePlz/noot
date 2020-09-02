@@ -33,8 +33,6 @@ const client = new google.auth.JWT(
 );
 var names = "None";
 
-
-
 const readdir = require('fs').readdir;
 
 readdir('./commands/', (err, files) => {
@@ -170,7 +168,7 @@ bot.on("message", async message => {
   }
 
   if (command === ('dm')) {
-    if (message.author.id != '338163785082601473' ) return message.reply("Are you Hayl? I don't think so. Shhhh child.");
+    if (message.author.id != '338163785082601473' ) return message.reply(", you do not have permission to do this.");
     let person = message.mentions.users.first();
     if (person != null){
       var userID = args[0].replace('<@', '').replace('>', '').replace('!', '');
@@ -186,16 +184,12 @@ bot.on("message", async message => {
       message.delete();
     }
   }
-  if (command === ('git')||command === ('github')||command === ('gh')) {
-    message.channel.send("https://github.com/CaffeinatePlz/noot");
-  }
+  // if (command === ('git')||command === ('github')||command === ('gh')) {
+  //   message.channel.send("https://github.com/CaffeinatePlz/noot");
+  // }
 
   if (command === ('invite')) {
     message.channel.send("https://discordapp.com/oauth2/authorize?client_id=438485530812874752&scope=bot&permissions=8");
-  }
-
-  if (command === ('music')) {
-    message.channel.send("https://open.spotify.com/user/12153980750/playlist/63vJJJTobWXaZtYWsrrpu6?si=PE5Da_I3TG2OCG9PU3xaPw");
   }
 
   if(command === ('say')){
