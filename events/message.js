@@ -58,7 +58,7 @@ module.exports = async (bot, message) => {
         //OCTANE MESSAGE FILTER
         //if (message.guild.id == '356764662760472576'){ //testing
         if (message.guild.id == '655240399136358420'){ //octane // TODO:
-
+            console.log("checking");
             const MAX_PINGS = 5;
             const SIMILARITY_THRESHHOLD = 0.8;
             const MAX_SPAM = 3;
