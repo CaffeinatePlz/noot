@@ -141,7 +141,7 @@ module.exports = async (bot, message) => {
                         arr[i].delete();
                     }
                     arr[0].delete();
-                    message.guild.channels.get(log_cID).send("<@338163785082601473>, please review the above messages from user: " + message.author);
+                    message.guild.channels.get(log_cID).send("<@338163785082601473> <@272198104608931840> <@668338373089558529> <@327987563430150144>, please review the above messages from user: " + message.author);
                     let user = message.author;
                     user.sendMessage("You have been muted in the Octane Discord for: " + type + ". Please contact a staff member if you believe this is a mistake!");
                 }
