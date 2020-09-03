@@ -4,7 +4,7 @@ const bot = new Discord.Client({
     tba_token: process.env.TBA_TOKEN,
     autorun: true
 });
-// const config = require("./config.json");
+const config = require("./config.json");
 
 require("./functions.js")(bot);
 bot.commands = new Discord.Collection();
