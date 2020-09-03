@@ -57,12 +57,12 @@ module.exports = async (bot, message) => {
 
         //OCTANE MESSAGE FILTER
         if (message.guild.id == '356764662760472576'){ //testing
-        //if (message.guild.id == '655240399136358420'){ //octane
+        //if (message.guild.id == '655240399136358420'){ //octane // TODO:
 
             const MAX_PINGS = 5;
             const SIMILARITY_THRESHHOLD = 0.8;
             const MAX_SPAM = 3;
-            const SPAM_TIME = 5000; //ms
+            const SPAM_TIME = 10000; //ms
             // const FILTERED_CONTENT = [ //TODO:
             //     "",
             //     ""
@@ -75,6 +75,17 @@ module.exports = async (bot, message) => {
             if (numPings >= MAX_PINGS) {
                 spam = 1;
                 type = "Spam Pinging " + numPings + " users/roles";
+                var logEmbed = new Discord.RichEmbed();
+                logEmbed.setAuthor(bot.user.username,bot.user.avatarURL)
+                    .setTitle("Spam Detection: Muted author + Deleted the following message")
+                    .setDescription("Type: " + type)
+                    .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)]);
+                logEmbed.addField("USERID: " + message.author.id + " | " + message.author.tag + " | msg ID: " + message.id, textMessage);
+                message.guild.channels.get(log_cID).send({embed: logEmbed});
+                message.delete();
+                message.guild.channels.get(log_cID).send("<@338163785082601473>, please review the above messages from user: " + message.author);
+                let user = message.author;
+                user.sendMessage("You have been muted in the Octane Discord for: " + type + ". Please contact a staff member if you believe this is a mistake!");
             }
 
             // filter words
@@ -99,38 +110,56 @@ module.exports = async (bot, message) => {
                         continue;
                     };
                     if(message.createdAt - arr[i].createdAt > SPAM_TIME) {
-                        break;
+                        continue;
                     }
                     var similarity = stringSimilarity.compareTwoStrings(textMessage, arr[i].content.toLowerCase());
+
                     if(similarity > SIMILARITY_THRESHHOLD){
                         numSimilar++;
                     };
                 }
+
+                if (numSimilar >= MAX_SPAM){
+                    spam = 1;
+                    if (type != "") {
+                        type += " | ";
+                    }
+                    type += "Message spam";
+                }
+
+                // log
+                if (spam == 1) {
+                    if (message.member.roles.find(r => r.name.toLowerCase() == "muted")) {
+                        return;
+                    }
+                    let role = message.guild.roles.find("name", "Muted");
+                    message.member.addRole(role);
+
+                    for (let i = 1; i < arr.length; i++) {
+                        if(arr[i].author != message.author){
+                            continue;
+                        };
+                        if(message.createdAt - arr[i].createdAt > SPAM_TIME) {
+                            continue;
+                        }
+
+                        var logEmbed = new Discord.RichEmbed();
+                        logEmbed.setAuthor(bot.user.username,bot.user.avatarURL)
+                            .setTitle("Spam Detection: Muted author + Deleted the following message")
+                            .setDescription("Type: " + type)
+                            .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)]);
+                        logEmbed.addField("USERID: " + message.author.id + " | " + message.author.tag + " | msg ID: " + message.id, textMessage);
+                        message.guild.channels.get(log_cID).send({embed: logEmbed});
+                        arr[i].delete();
+                    }
+                    arr[0].delete();
+                    message.guild.channels.get(log_cID).send("<@338163785082601473>, please review the above messages from user: " + message.author);
+                    let user = message.author;
+                    user.sendMessage("You have been muted in the Octane Discord for: " + type + ". Please contact a staff member if you believe this is a mistake!");
+                }
+
             }).catch(console.error);
 
-            if (numSimilar >= MAX_SPAM){
-                spam = 1;
-                if (type != "") {
-                    type += " | ";
-                }
-                type += "Message spam";
-            }
-
-            // log
-            if (spam == 1) {
-                let role = message.guild.roles.find("name", "Muted");
-                message.member.addRole(role);
-                message.delete();
-                var logEmbed = new Discord.RichEmbed();
-                logEmbed.setAuthor(bot.user.username,bot.user.avatarURL)
-                    .setTitle("Spam Detection: Muted author + Deleted the following message")
-                    .setDescription("Type: " + type)
-                    .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)]);
-                logEmbed.addField("From: " + message.author.id + " | " + message.author.tag, textMessage);
-                message.guild.channels.get(log_cID).send("<@338163785082601473>");
-                message.guild.channels.get(log_cID).send({embed: logEmbed});
-
-            }
 
         }
 

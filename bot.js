@@ -1,9 +1,11 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client({
-   token: process.env.BOT_TOKEN,
+    token: process.env.BOT_TOKEN,
    tba_token: process.env.TBA_TOKEN,
    autorun: true
 });
+// const config = require("./config.json");
+
 require("./functions.js")(bot);
 bot.commands = new Discord.Collection();
 bot.events = new Discord.Collection();
@@ -265,7 +267,5 @@ async function gsrun(cl,col,msg){
 }
 
 
-
-
 bot.login(process.env.BOT_TOKEN);
-//bot.login(config.token);
+// bot.login(config.token);
