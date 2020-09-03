@@ -193,6 +193,7 @@ bot.on("message", async message => {
   // }
 
   if (command === ('invite')) {
+      if (message.guild.id == "657434856413855784") return;
     message.channel.send("https://discordapp.com/oauth2/authorize?client_id=438485530812874752&scope=bot&permissions=8");
   }
 
