@@ -1,4 +1,5 @@
 exports.run = (bot, message, args) => {
+    if (message.guild.id == "657434856413855784") return;
   var responses = [
     "GO TO SLEEP! ",
     "IT'S TIME TO SLEEP! ",

@@ -1,4 +1,5 @@
 exports.run = (bot, message, args) => {
+    if (message.guild.id == "657434856413855784") return;
     const Discord = require('discord.js');
     let command = args.shift();
     let new_role = args.join(" ").toLowerCase();

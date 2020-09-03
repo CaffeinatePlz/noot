@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client({
     token: process.env.BOT_TOKEN,
-   tba_token: process.env.TBA_TOKEN,
-   autorun: true
+    tba_token: process.env.TBA_TOKEN,
+    autorun: true
 });
 // const config = require("./config.json");
 

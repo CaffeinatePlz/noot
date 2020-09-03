@@ -1,4 +1,5 @@
 exports.run = (bot, message, args) => {
+    if (message.guild.id == "657434856413855784") return;
 	const MarkovChain = require('markovchain');
 	const fs = require('fs');
 	const koalafacts = new MarkovChain(fs.readFileSync('./data/koalafacts.txt', 'utf8'));

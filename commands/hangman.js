@@ -1,5 +1,5 @@
 exports.run = async (bot, message, args) => {
-
+	if (message.guild.id == "657434856413855784") return;
   const { stripIndents } = require('common-tags');
 //make better list later
 
@@ -79,7 +79,7 @@ exports.run = async (bot, message, args) => {
   	aliases: [],
   	botPerms: [],
   	memberPerms: [],
-  	servers: ['global','tdu','test']
+  	servers: ['personal','tdu','test']
   };
 
 

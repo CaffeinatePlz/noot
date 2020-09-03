@@ -1,4 +1,5 @@
 exports.run = (bot, message, args) => {
+    if (message.guild.id == "657434856413855784") return;
   const math = require('mathjs');
   if (!isNaN(args[0]) && args[0].length == 4 && !args[0].includes(".")){
     n1 = parseInt(args[0].slice(0,1));
