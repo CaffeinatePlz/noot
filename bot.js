@@ -145,7 +145,9 @@ bot.on("message", async message => {
 
 
   if (command === ('listservers')) {
-    var servers = "";
+      if (message.guild.id == "657434856413855784") return;
+
+      var servers = "";
     var no = 1;
     var guilds = bot.guilds.array();
     for (var i = 0; i < guilds.length; i++) {

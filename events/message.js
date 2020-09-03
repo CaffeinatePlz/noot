@@ -56,19 +56,16 @@ module.exports = async (bot, message) => {
         }
 
         //OCTANE MESSAGE FILTER
-        //if (message.guild.id == '356764662760472576'){ //testing
-        if (message.guild.id == '655240399136358420'){ //octane // TODO:
+        if (message.guild.id == '356764662760472576'){ //testing
+        //if (message.guild.id == '655240399136358420'){ //octane // TODO:
 
             const MAX_PINGS = 5;
             const SIMILARITY_THRESHHOLD = 0.8;
             const MAX_SPAM = 3;
             const SPAM_TIME = 10000; //ms
-            // const FILTERED_CONTENT = [ //TODO:
-            //     "",
-            //     ""
-            // ];
-            // var log_cID = "750662588102082571"; //#logs //TODO
-            var log_cID = "702343552650313748"; //#logs //TODO
+
+            var log_cID = "750662588102082571"; //testing #logs //TODO
+            //var log_cID = "702343552650313748"; //octane #logs //TODO
 
 
             var spam = 0;
@@ -91,17 +88,6 @@ module.exports = async (bot, message) => {
                 user.sendMessage("You have been muted in the Octane Discord for: " + type + ". Please contact a staff member if you believe this is a mistake!");
             }
 
-            // filter words
-            // for(let i = 0; i < FILTERED_CONTENT.length; i++) {
-            //     if (message.includes(FILTERED_CONTENT[i])) {
-            //         spam = 1;
-            //         if (type != "") {
-            //             type += " | ";
-            //         }
-            //         type += "Tripped word filter";
-            //         break;
-            //     }
-            // }
 
             // spam detection
 

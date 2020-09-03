@@ -1,4 +1,5 @@
 exports.run = (bot, message, args) => {
+    if (message.guild.id == "657434856413855784") return;
     const Discord = require("discord.js");
     const request = require('request-promise-native');
     const cheerio = require('cheerio');
