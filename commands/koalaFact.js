@@ -36,7 +36,7 @@ exports.conf = {
 	aliases: ['koalafacts', 'koalafunfact', 'kf'],
 	botPerms: [],
 	memberPerms: [],
-    servers: ['tdu','test']
+    servers: ['personal','tdu','test']
 };
 
 exports.help = {

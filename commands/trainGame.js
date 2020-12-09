@@ -98,7 +98,7 @@ exports.conf = {
 	aliases: ['tg'],
 	botPerms: [],
 	memberPerms: [],
-    servers: ['global','tdu','test']
+    servers: ['personal','tdu','test']
 };
 
 exports.help = {

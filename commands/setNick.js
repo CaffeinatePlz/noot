@@ -12,7 +12,7 @@ exports.run = (bot, message, args) => {
         message.channel.send( "Nickname set!");
       }else{
         const new_name = args.join(" ");
-        message.guild.members.get(authorID).setNickname(new_name);
+        message.guild.members.get(authorID).setNickname(new_name); 
       }
     }else{
       message.channel.send( "Only users with the MANAGE_NICKNAMES permission are allowed to use this command. " + message.author);
