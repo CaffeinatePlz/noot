@@ -1,8 +1,8 @@
 exports.run = (bot, message, args) => {
-      let person = message.mentions.users.first();
+      var member = message.guild.member(message.mentions.users.first()) || await message.channel.guild.members.fetch(args[0]).catch((err) => message.reply("Error: " + err));
       let authorID = message.author.id;
       const new_name = args.join(" ");
-      if (person != null || !message.author.hasPermission("CHANGE_NICKNAME")){
+      if (member != null || !message.author.hasPermission("CHANGE_NICKNAME")){
             message.channel.send( "You do not have permissions to do this " + message.author);
       }else{
             message.guild.members.get(authorID).setNickname(new_name);

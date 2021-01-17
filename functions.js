@@ -8,7 +8,7 @@ const PERSONAL_GUILD_ID = "374179059212484608";
 module.exports = (bot) => {
     bot.processMessage = function(message) {
         if (message.author.bot) return;
-        if (message.isMentioned(bot.user)) {
+        if (message.mentions.has(bot.user)) {
             if (message.content.toLowerCase().includes("what's your prefix") || message.content.toLowerCase().includes("whats your prefix")) {
                 message.reply(`my prefix for ${message.guild.name} is \`+\`!`);
             }

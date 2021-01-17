@@ -8,7 +8,7 @@ exports.run = (bot, message, args) => {
     const Discord = require('discord.js');
     if (!args[0]) {
         for (i=0; i<=Math.floor(bot.commands.size/24); i++) {
-            var helpbox = new Discord.RichEmbed();
+            var helpbox = new Discord.MessageEmbed();
             helpbox.setAuthor(bot.user.username,bot.user.avatarURL)
                 .setTitle("Command List")
                 .setDescription(`Use +help <commandname> for details`)
@@ -34,7 +34,7 @@ exports.run = (bot, message, args) => {
                 }
             }
             let user = message.author;
-            user.sendMessage({embed: helpbox});
+            user.send({embed: helpbox});
         }
     } else {
         let command = '';
@@ -44,7 +44,7 @@ exports.run = (bot, message, args) => {
             command = bot.commands.get(bot.aliases.get(args[0]));
         };
         if (!command) return message.reply(`Are you sure that command exists?`);
-        var helpCommand = new Discord.RichEmbed();
+        var helpCommand = new Discord.MessageEmbed();
         helpCommand.setAuthor(bot.user.username,bot.user.avatarURL)
             .setTitle(command.help.name)
             .addField('Description', `${command.help.description}`)
@@ -54,8 +54,9 @@ exports.run = (bot, message, args) => {
             helpCommand.addField('Aliases', `${command.conf.aliases.join(', ')}`)
         }
         let user = message.author;
-        user.sendMessage({embed: helpCommand});
+        user.send({embed: helpCommand});
     };
+    message.react('✉️');
 };
 exports.conf = {
     enabled: true,

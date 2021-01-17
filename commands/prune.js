@@ -8,10 +8,10 @@ exports.run = (bot, message, args) => {
           msg2.delete();
         }, 5000));
     } else {
-      message.reply ("Please let me know how many messages you would like to delete!");
+      message.channel.send ("Please let me know how many messages you would like to delete!");
     }
   }else {
-    message.reply("You do not have permission to do this!");
+    return message.channel.send("Invalid Permissions");
   }
 
 };
