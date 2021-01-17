@@ -166,7 +166,7 @@ bot.on("message", async message => {
 
     if(command === "ping") {
         const m = await message.channel.send("Ping?");
-        m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
+        m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ws.ping)}ms`);
     }
     if (command === "nick") {
         var member = await message.channel.guild.members.fetch(message.author.id).catch((err) => message.reply("Error: " + err));
@@ -304,8 +304,7 @@ async function gsrun(cl,col,msg){
             listEmbed.setTitle(`Absences`)
                 .setColor([Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)])
                 .setDescription(names);
-            msg.channel.send({embed: listEmbed})
-            console.log(listEmbed);
+            msg.channel.send({embed: listEmbed});
         } else {
             console.log('No data found.');
         }
