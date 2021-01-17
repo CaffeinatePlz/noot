@@ -85,6 +85,7 @@ bot.on("message", async message => {
     var logGuild = process.env.FIVEUP_GUILD_ID;
     var logChannel = process.env.FIVEUP_LOG_CHANNEL_ID;
     if (message.guild.id != logGuild) return;
+    if (message.channel.parentID == '774475186212569129') return;
     var logChannel = await bot.guilds.fetch(logGuild).then(guild => guild.channels.cache.get(logChannel)).catch(err => console.log(err));
     if (!logChannel) return;
     if (!logChannel.permissionsFor(message.guild.me).has("SEND_MESSAGES")) return;
@@ -124,6 +125,7 @@ bot.on("messageDelete", async message => {
   var logChannel = process.env.FIVEUP_LOG_CHANNEL_ID;
 
     if (message.guild.id != logGuild) return;
+    if (message.channel.parentID == '774475186212569129') return;
     var logChannel = await bot.guilds.fetch(logGuild).then(guild => guild.channels.cache.get(logChannel)).catch(err => console.log(err));
     if (!logChannel) return;
     if (!logChannel.permissionsFor(message.guild.me).has("SEND_MESSAGES")) return;
