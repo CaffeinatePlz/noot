@@ -82,8 +82,8 @@ bot.on('guildMemberAdd', member => {
 bot.on("message", async message => {
 
     const textMessage = message.content.toLowerCase();
-    var logGuild = '356764662760472576';
-    var logChannel = '400779864191401984';
+    var logGuild = process.env.FIVEUP_GUILD_ID;
+    var logChannel = process.env.FIVEUP_LOG_CHANNEL_ID;
     if (message.guild.id != logGuild) return;
     var logChannel = await bot.guilds.fetch(logGuild).then(guild => guild.channels.cache.get(logChannel)).catch(err => console.log(err));
     if (!logChannel) return;
@@ -120,8 +120,8 @@ bot.on("message", async message => {
 
 bot.on("messageDelete", async message => {
 
-    var logGuild = '356764662760472576';
-    var logChannel = '400779864191401984';
+  var logGuild = process.env.FIVEUP_GUILD_ID;
+  var logChannel = process.env.FIVEUP_LOG_CHANNEL_ID;
 
     if (message.guild.id != logGuild) return;
     var logChannel = await bot.guilds.fetch(logGuild).then(guild => guild.channels.cache.get(logChannel)).catch(err => console.log(err));
