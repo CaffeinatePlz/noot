@@ -24,7 +24,8 @@ module.exports = (bot) => {
             if (x == TCA_GUILD_ID && !command_name.conf.servers.includes('tca')) return;
             if (x == CC_GUILD_ID && !command_name.conf.servers.includes('cc')) return;
             if (x == PERSONAL_GUILD_ID && !command_name.conf.servers.includes('personal')) return;
-			if (x != TDU_GUILD_ID && x!= CC_GUILD_ID && x != TCA_GUILD_ID && x!= TEST_GUILD_ID && x!= PERSONAL_GUILD_ID && !command_name.conf.servers.includes('global')) return;
+            if (x == process.env.FIVEUP_GUILD_ID && !command_name.conf.servers.includes('5up')) return;
+			if (x != process.env.FIVEUP_GUILD_ID && x != TDU_GUILD_ID && x!= CC_GUILD_ID && x != TCA_GUILD_ID && x!= TEST_GUILD_ID && x!= PERSONAL_GUILD_ID && !command_name.conf.servers.includes('global')) return;
 
             if (command_name.conf.enabled) {
                 try {

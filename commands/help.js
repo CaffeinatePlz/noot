@@ -26,7 +26,8 @@ exports.run = (bot, message, args) => {
                     || (message.guild.id == CC_GUILD_ID && c.conf.servers.includes('cc'))
                     || (message.guild.id == TEST_GUILD_ID && c.conf.servers.includes('test'))
                     || (message.guild.id == PERSONAL_GUILD_ID && c.conf.servers.includes('test'))
-                    || (message.guild.id != TDU_GUILD_ID && message.guild.id != TCA_GUILD_ID && message.guild.id != CC_GUILD_ID && message.guild.id != PERSONAL_GUILD_ID && c.conf.servers.includes('global'))
+                    || (message.guild.id == process.env.FIVEUP_GUILD_ID && c.conf.servers.includes('5up'))
+                    || (message.guild.id != process.env.FIVEUP_GUILD_ID && message.guild.id != TDU_GUILD_ID && message.guild.id != TCA_GUILD_ID && message.guild.id != CC_GUILD_ID && message.guild.id != PERSONAL_GUILD_ID && c.conf.servers.includes('global'))
                 ) {
                     helpbox.addField(c.help.name, c.help.description);
                 }  else {
