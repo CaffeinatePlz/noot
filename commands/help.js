@@ -65,7 +65,7 @@ exports.conf = {
     aliases: ['h', 'halp'],
     botPerms: [],
     memberPerms: [],
-    servers: ['global','tdu','tca','cc','test']
+    servers: ['global','tdu','tca','cc','test','5up']
 };
 exports.help = {
     name: 'help',

@@ -29,7 +29,7 @@ exports.run = async(bot, message, args) => {
   	aliases: [],
   	botPerms: [],
   	memberPerms: [],
-    servers: ['global','tca','tdu','cc','test']
+    servers: ['global','tca','tdu','cc','test','5up']
   };
 
   exports.help = {

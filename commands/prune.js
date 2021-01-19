@@ -22,7 +22,7 @@ exports.run = (bot, message, args) => {
   	aliases: ["purge", "delete"],
   	botPerms: [],
   	memberPerms: [],
-    servers: ['global','tca','tdu','cc','test']
+    servers: ['global','tca','tdu','cc','test','5up']
   };
 
 
