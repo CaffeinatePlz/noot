@@ -102,25 +102,25 @@ bot.on("messageReactionAdd", async (messageReaction, user) => {
     if (message.id == SERVER_RULE_ID) {        
         let role = message.guild.roles.cache.find(role => role.name == "Member");
         if(member.roles.cache.find(role => role.name === "Member")) return;
-        user.roles.add(role).catch(err => {
+        member.roles.add(role).catch(err => {
             console.log(err)
         });
     } else if (message.id == AU_RULE_ID) {
         let role = message.guild.roles.cache.find(role => role.name == "Among");
         if(member.roles.cache.find(role => role.name === "Among")) return;
-        user.roles.add(role).catch(err => {
+        member.roles.add(role).catch(err => {
             console.log(err)
         });
     } else if (message.id == MC_RULE_ID) {
         let role = message.guild.roles.cache.find(role => role.name == "Minecraft");
         if(member.roles.cache.find(role => role.name === "Minecraft")) return;
-        user.roles.add(role).catch(err => {
+        member.roles.add(role).catch(err => {
             console.log(err)
         });
     } else if (message.id == PARTY_RULE_ID) {
         let role = message.guild.roles.cache.find(role => role.name == "Party Games");
         if(member.roles.cache.find(role => role.name === "Party Games")) return;
-        user.roles.add(role).catch(err => {
+        member.roles.add(role).catch(err => {
             console.log(err)
         });
     }
