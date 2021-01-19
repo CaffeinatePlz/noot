@@ -18,7 +18,7 @@ module.exports = async (bot, messageReaction, user) => {
 	// var emoji = msg.guild.emojis.cache.get(e => e.id == EMOTE_ID);
     // if (!emoji) return console.log("2d");
 
-    limit = 20;
+    limit = 10;
 	if (limit == 0) return;
 	if (messageReaction.emoji.id == EMOTE_ID && messageReaction.count >= limit) {
 		//msg.react(emoji.id);
