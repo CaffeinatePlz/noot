@@ -14,11 +14,14 @@ module.exports = async (bot, messageReaction, user) => {
     var HallOfFame = msg.guild.channels.cache.get(ART_HOF_ID);
 	if (!HallOfFame) return;
 	if (!HallOfFame.permissionsFor(msg.guild.me).has("SEND_MESSAGES")) return;
-	if (messageReaction.me) return console.log("hello art chat");
+	if (messageReaction.me) return console.log("hi");
+	if (messageReaction.users.cache.has(bot.user.id)) return console.log("hello art chat pt 2: electric boogaloo");
+
 
     limit = 4;
 	if (limit == 0) return;
 	if (messageReaction.emoji.id == EMOTE_ID && messageReaction.count >= limit) {
+		msg.reactions.cache.foreach(user => {if (user = bot.user.id) return});
 		msg.react(EMOTE_ID);
 		const HoF = new Discord.MessageEmbed();
 		HoF.setColor(`${msg.member.displayHexColor}`)
