@@ -52,6 +52,7 @@ exports.run = async (bot, message, args) => {
 	collector.on('collect', m => {
 		if (m.content.toLowerCase() == 'y' && m.author.id == message.author.id) {
 			m.react('👍');
+			msg.react(EMOTE_ID);
 			HallOfFame.send({embed: HoF});
 			message.channel.send("Message successfully added to the hall of fame!");
 			collector.stop();
