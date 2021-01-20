@@ -17,11 +17,14 @@ module.exports = async (bot, messageReaction, user) => {
 	if (messageReaction.me) return console.log("hi");
 	if (messageReaction.users.cache.has(bot.user.id)) return console.log("hello art chat pt 2: electric boogaloo");
 
-
     limit = 4;
 	if (limit == 0) return;
 	if (messageReaction.emoji.id == EMOTE_ID && messageReaction.count >= limit) {
-		msg.reactions.cache.foreach(user => {if (user = bot.user.id) return});
+		try {
+			msg.reactions.cache.foreach(user => {if (user == bot.user.id) return});
+		} catch (err) {
+			console.log(err);
+		}
 		msg.react(EMOTE_ID);
 		const HoF = new Discord.MessageEmbed();
 		HoF.setColor(`${msg.member.displayHexColor}`)
