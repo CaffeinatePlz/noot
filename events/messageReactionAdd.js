@@ -17,7 +17,7 @@ module.exports = async (bot, messageReaction, user) => {
 	if (messageReaction.me) return console.log("hi");
 	if (messageReaction.users.cache.has(bot.user.id)) return console.log("hello art chat pt 2: electric boogaloo");
 
-    limit = 4;
+    limit = 20;
 	if (limit == 0) return;
 	if (messageReaction.emoji.id == EMOTE_ID && messageReaction.count >= limit) {
 		try {
