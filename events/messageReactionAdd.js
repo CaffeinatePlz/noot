@@ -3,7 +3,7 @@ module.exports = async (bot, messageReaction, user) => {
     
     const ART_CATEGORY_ID = '777329113588432916';
     const ART_HOF_ID = '800875067415855154';
-    const EMOTE_ID = '767115090503270441';
+	const EMOTE_ID = '801242047671173123';
 
 	let msg = messageReaction.message;
     if (msg.channel.type === "dm") return;
@@ -14,14 +14,12 @@ module.exports = async (bot, messageReaction, user) => {
     var HallOfFame = msg.guild.channels.cache.get(ART_HOF_ID);
 	if (!HallOfFame) return;
 	if (!HallOfFame.permissionsFor(msg.guild.me).has("SEND_MESSAGES")) return;
-	if (messageReaction.me) return;
-	// var emoji = msg.guild.emojis.cache.get(e => e.id == EMOTE_ID);
-    // if (!emoji) return console.log("2d");
+	if (messageReaction.me) return console.log("hello art chat");
 
-    limit = 10;
+    limit = 4;
 	if (limit == 0) return;
 	if (messageReaction.emoji.id == EMOTE_ID && messageReaction.count >= limit) {
-		//msg.react(emoji.id);
+		msg.react(EMOTE_ID);
 		const HoF = new Discord.MessageEmbed();
 		HoF.setColor(`${msg.member.displayHexColor}`)
 			.setTitle('Hall of Fame 🏆')
