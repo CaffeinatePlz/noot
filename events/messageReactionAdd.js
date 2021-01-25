@@ -5,6 +5,22 @@ module.exports = async (bot, messageReaction, user) => {
     const ART_HOF_ID = '800875067415855154';
 	const EMOTE_ID = '801242047671173123';
 
+	if (messageReaction.partial) {
+		try {
+			await messageReaction.fetch();
+		} catch (error) {
+			console.log('Something went wrong when fetching the reaction: ', error);
+		}
+	}
+	if (messageReaction.message.partial) {
+		// If the message was removed the fetching might result in an API error, which we need to handle
+		try {
+			await messageReaction.message.fetch();
+		} catch (error) {
+			console.log('Something went wrong when fetching the message: ', error);
+		}
+	}
+
 	let msg = messageReaction.message;
     if (msg.channel.type === "dm") return;
     if (msg.guild.id != process.env.FIVEUP_GUILD_ID) return;
