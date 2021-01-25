@@ -4,7 +4,7 @@ const bot = new Discord.Client({
     token: process.env.DISCORD_TOKEN,
     tba_token: process.env.TBA_TOKEN,
     ws: { intents: Discord.Intents.ALL},
-    partials: [ "REACTION", "MESSAGE", "USER" ],
+    partials: [ 'MESSAGE', 'USER', 'REACTION','CHANNEL' ],
     autorun: true
 });
 require('dotenv').config();
