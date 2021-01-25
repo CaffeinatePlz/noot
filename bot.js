@@ -3,6 +3,8 @@ const bot = new Discord.Client({
     disableMentions: 'everyone',
     token: process.env.DISCORD_TOKEN,
     tba_token: process.env.TBA_TOKEN,
+    ws: { intents: Discord.Intents.ALL},
+    partials: [ "REACTION", "MESSAGE", "USER" ],
     autorun: true
 });
 require('dotenv').config();
