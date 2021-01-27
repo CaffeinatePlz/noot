@@ -54,8 +54,7 @@ exports.run = (bot, message, args) => {
         if (command.conf.aliases != "") {
             helpCommand.addField('Aliases', `${command.conf.aliases.join(', ')}`)
         }
-        let user = message.author;
-        user.send({embed: helpCommand});
+        message.channel.send({embed: helpCommand});
     };
     message.react('✉️');
 };
