@@ -129,6 +129,7 @@ bot.on("messageReactionAdd", async (messageReaction, user) => {
 })
 
 bot.on("message", async message => {
+    if (message.channel.type === "dm") return;
 
     const textMessage = message.content.toLowerCase();
     var logGuild = process.env.FIVEUP_GUILD_ID;
@@ -169,6 +170,7 @@ bot.on("message", async message => {
 })
 
 bot.on("messageDelete", async message => {
+    if (message.channel.type === "dm") return;
 
   var logGuild = process.env.FIVEUP_GUILD_ID;
   var logChannel = process.env.FIVEUP_LOG_CHANNEL_ID;

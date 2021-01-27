@@ -4,7 +4,7 @@ exports.run = async (bot, message, args) => {
     const ART_HOF_ID = '800875067415855154';
 	const EMOTE_ID = '767115090503270441';
 	
-	if (message.author.id != process.env.OWNER_ID) return;
+	if (message.author.id != process.env.OWNER_ID && !message.member.hasPermission("MANAGE_MESSAGES")) return;
 
 	if (args[1]){
 		chanarg = message.guild.channels.cache.get(args[1]);
@@ -19,16 +19,19 @@ exports.run = async (bot, message, args) => {
     const msg = messages.first();
     if (!msg) return message.channel.send('Message not found! Make sure the arguements for the message ID/channel ID are correct!');
     
-    var HallOfFame = msg.guild.channels.cache.get(ART_HOF_ID);
+	var HallOfFame = msg.guild.channels.cache.get(ART_HOF_ID);
+	if (msg.guild.id != process.env.FIVEUP_GUILD_ID) return;
+
 	if (!HallOfFame) return;
 	if (!HallOfFame.permissionsFor(msg.guild.me).has("SEND_MESSAGES")) return;
 
 	const HoF = new Discord.MessageEmbed();
+	const msgLink = `https://discord.com/channels/${msg.guild.id}/${msg.channel.id}/${msg.id}`;
 	HoF.setColor(`${msg.member.displayHexColor}`)
 		.setTitle('Hall of Fame 🏆')
-		.setURL(`http://discordapp.com/channels/${msg.guild.id}/${msg.channel.id}/${msg.id}`)
-		.setFooter('Hall of Fame 🏆')
+		.setFooter(`Message ID: ${msg.id}`)
 		.setTimestamp()
+		.setDescription(`→ [original message](${msgLink})`);
 	if (msg.member.nickname == null) {
 		HoF.addField('User', `${msg.author}`, true)
 	} else {

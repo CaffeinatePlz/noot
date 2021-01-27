@@ -17,6 +17,7 @@ module.exports = async (bot, message) => {
         }
         return;
     }
+    if (message.channel.type === "dm") return;
     // Don't do anything in any of these cases
     if (!message.channel.permissionsFor(message.guild.me).has("SEND_MESSAGES")) return;
     if (!message.channel.type === "text" || !message.guild) return;
