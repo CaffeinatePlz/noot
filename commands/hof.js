@@ -2,7 +2,7 @@ exports.run = async (bot, message, args) => {
     const Discord = require('discord.js');
     const ART_CATEGORY_ID = '777329113588432916';
     const ART_HOF_ID = '800875067415855154';
-	const EMOTE_ID = '767115090503270441';
+	const EMOTE_ID = '801242047671173123';
 	
 	if (message.author.id != process.env.OWNER_ID && !message.member.hasPermission("MANAGE_MESSAGES")) return;
 
