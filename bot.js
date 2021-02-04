@@ -74,7 +74,7 @@ bot.on("ready", () => {
     bot.user.setActivity(`+help | CaffeinatePlz#2727`);
     const SERVER_RULE_ID = '795757925745950761';
     const AU_RULE_ID = '757664518938689649';
-    const MC_RULE_ID = '780688420204314677';
+    const MC_RULE_ID = '806337843546161172';
     const PARTY_RULE_ID = '800129679730147410';
     var guild = bot.guilds.cache.get(process.env.FIVEUP_GUILD_ID);
     guild.channels.cache.get('771189259134566430').messages.fetch(SERVER_RULE_ID).catch(err => console.log(err));
@@ -96,7 +96,7 @@ bot.on("messageReactionAdd", async (messageReaction, user) => {
     if (message.guild.id != process.env.FIVEUP_GUILD_ID) return;
     const SERVER_RULE_ID = '795757925745950761';
     const AU_RULE_ID = '757664518938689649';
-    const MC_RULE_ID = '780688420204314677';
+    const MC_RULE_ID = '806337843546161172';
     const PARTY_RULE_ID = '800129679730147410';
     
     let member = message.guild.members.cache.get(user.id);
