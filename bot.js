@@ -23,9 +23,38 @@ rule.hour = 22;
 rule.dayOfWeek = [1, 2, 4, 5];
 
 schedule.scheduleJob(rule, function () {
-    bot.guilds.get('605683682493333507').channels.get('611844083190857748')
+    var guild = bot.guilds.cache.get('605683682493333507');
+    guild.channels.cache.get('611844083190857748')
         .send(`10pm reminder: This channel should be used to let us know any last minute attendance changes on the day of the meeting. ` +
             `\nPlease fill in this form to let us know about any absences, late arrivals, or early leaves. ${process.env.TDU_FORM}`)
+});
+
+let mentorNotice = new schedule.RecurrenceRule();
+mentorNotice.tz = 'Australia/Sydney';
+mentorNotice.second = 0;
+mentorNotice.minute = 0;
+mentorNotice.hour = 8;
+mentorNotice.dayOfWeek = [4];
+
+schedule.scheduleJob(mentorNotice, function () {
+    var guild = bot.guilds.cache.get('605683682493333507');
+    guild.channels.cache.get('605687904983056384')
+        .send(`<@&605687041228800030> There will be a mentor meeting tomorrow.` +
+            `\nPlease put any agenda items in this document. ${process.env.TDU_MENTOR_DOC}`)
+});
+
+let mentorNotice2 = new schedule.RecurrenceRule();
+mentorNotice2.tz = 'Australia/Sydney';
+mentorNotice2.second = 0;
+mentorNotice2.minute = 0;
+mentorNotice2.hour = 8;
+mentorNotice2.dayOfWeek = [5];
+
+schedule.scheduleJob(mentorNotice2, function () {
+    var guild = bot.guilds.cache.get('605683682493333507');
+    guild.channels.cache.get('605687904983056384')
+        .send(`<@&605687041228800030> There will be a mentor meeting today.` +
+            `\nPlease ensure that you have read the agenda. ${process.env.TDU_MENTOR_DOC}`)
 });
 
 
