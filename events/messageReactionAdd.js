@@ -37,7 +37,7 @@ module.exports = async (bot, messageReaction, user) => {
 	if (messageReaction.me) return console.log("hi");
 	if (messageReaction.users.cache.has(bot.user.id)) return console.log("hello art chat pt 2: electric boogaloo");
 
-    limit = 15;
+    limit = 20;
 	if (limit == 0) return;
 
 	const dateDiff = (new Date()) - messageReaction.message.createdAt;
