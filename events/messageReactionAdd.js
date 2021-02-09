@@ -25,6 +25,7 @@ module.exports = async (bot, messageReaction, user) => {
     if (msg.channel.type === "dm") return;
     if (msg.guild.id != process.env.FIVEUP_GUILD_ID) return;
     if (msg.channel.parentID != ART_CATEGORY_ID) return;
+    if (msg.channel.id != '754094474979704862') return;
     if (msg.attachments.size == 0) return;
 
     var HallOfFame = msg.guild.channels.cache.get(ART_HOF_ID);
