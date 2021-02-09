@@ -159,6 +159,16 @@ bot.on("messageReactionAdd", async (messageReaction, user) => {
 
 bot.on("message", async message => {
     if (message.channel.type === "dm") return;
+    if (message.guild.id != process.env.FIVEUP_GUILD_ID) return;
+    if (message.channel.id != '800134128196124672') return;
+    if (!message.mentions) return;
+
+    message.react('👍');
+    message.react('👎');
+})
+
+bot.on("message", async message => {
+    if (message.channel.type === "dm") return;
 
     const textMessage = message.content.toLowerCase();
     var logGuild = process.env.FIVEUP_GUILD_ID;
