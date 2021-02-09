@@ -162,9 +162,7 @@ bot.on("message", async message => {
     if (message.guild.id != process.env.FIVEUP_GUILD_ID) return;
     if (message.channel.id != '800134128196124672') return;
     if (!message.mentions) return;
-    if (!message.mentions.users.first()) {
-        message.channel.send("hi");
-    }
+    if (!message.mentions.users.first()) return;
 
     message.react('👍');
     message.react('👎');
