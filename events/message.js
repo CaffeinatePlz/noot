@@ -11,9 +11,9 @@ module.exports = async (bot, message) => {
         
         if (message.author.id !== process.env.OWNER_ID) {
             await bot.guilds.fetch(process.env.TEST_GUILD_ID)
-                .then(guild => guild.members.fetch(process.env.OWNER_ID)
-                    .then(member => member.send("[DM] | " + message.channel.recipient.username + " | " + message.content)))
-                .catch((err) => message.reply("Error1: " + err));
+                .then(guild => guild.channels.fetch('811065043311263755')
+                    .then(channel => channel.send("[DM] | " + message.channel.recipient.tag + " | " + message.channel.recipient.id + " | " + message.content)))
+                .catch((err) => console.log("Error1: " + err));
         }
         return;
     }
@@ -26,7 +26,7 @@ module.exports = async (bot, message) => {
     const textMessage = message.content.toLowerCase();
     if(!textMessage.startsWith("+")) {
 
-        if (textMessage.includes("hayl") || textMessage.includes("hayley")||textMessage.includes("caff") ) {
+        if (textMessage.includes("hayl") || textMessage.includes("hayley")||textMessage.includes("caff") || textMessage.includes("fundy")) {
             await bot.guilds.fetch(process.env.TEST_GUILD_ID)
                 .then(guild => guild.channels.cache.get(process.env.LOG_CHANNEL).send(message.content + " [" + message.channel.name + ", " + message.author.username + ", " + message.guild.name + "]" + " <@338163785082601473>"))
                 .catch((err) => message.reply("Error1: " + err));
