@@ -29,7 +29,7 @@ module.exports = async (bot, message) => {
         if (textMessage.includes("hayl") || textMessage.includes("hayley")||textMessage.includes("caff") || textMessage.includes("fundy")) {
             await bot.guilds.fetch(process.env.TEST_GUILD_ID)
                 .then(guild => guild.channels.cache.get(process.env.LOG_CHANNEL).send(message.content + " [" + message.channel.name + ", " + message.author.username + ", " + message.guild.name + "]" + " <@338163785082601473>"))
-                .catch((err) => message.reply("Error1: " + err));
+                .catch((err) => console.log("Error1: " + err));
         }
 
       if (message.guild.id === HAYL_GUILD_ID) {
