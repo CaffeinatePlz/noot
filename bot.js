@@ -174,16 +174,14 @@ bot.on("message", async message => {
     if (message.guild.id != process.env.FIVEUP_GUILD_ID) return;
     if (message.channel.id != '800875067415855154') return;
     // if message doesn't have a link or attachment, delete 
-    console.log("hi")
-    if (msg.attachments.size == 0) {
-        console.log("hi1")
+    if (message.attachments.size == 0) {
 
         try {
-            msg.author.send("Your recent message has been deleted. The 5up server art gallery is only used for posting artworks, not for chatting. If you are posting a piece, make sure to have the art posted as an attachment, not using links.")
+            message.author.send("Your recent message has been deleted. The 5up server art gallery is only used for posting artworks, not for chatting. If you are posting a piece, make sure to have the art posted as an attachment, not using links.")
         } catch(err) {
             console.log(err)
         }
-        msg.delete();
+        message.delete();
     }
 })
 
