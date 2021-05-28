@@ -168,6 +168,15 @@ bot.on("message", async message => {
     message.react('👎');
 })
 
+bot.on("message", async message => {
+    if (message.channel.type === "dm") return;
+    if (message.guild.id != process.env.FIVEUP_GUILD_ID) return;
+    if (message.channel.id != '847351549335306240') return;
+
+    message.react('👍');
+    message.react('👎');
+})
+
 // Art Gallery
 bot.on("message", async message => {
     if (message.channel.type === "dm") return;
