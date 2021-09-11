@@ -14,6 +14,7 @@ bot.commands = new Discord.Collection();
 bot.events = new Discord.Collection();
 bot.aliases = new Discord.Collection();
 
+/*
 var schedule = require('node-schedule');
 let rule = new schedule.RecurrenceRule();
 rule.tz = 'Australia/Sydney';
@@ -56,7 +57,7 @@ schedule.scheduleJob(mentorNotice2, function () {
         .send(`<@&605687041228800030> There will be a mentor meeting today.` +
             `\nPlease ensure that you have read the agenda. ${process.env.TDU_MENTOR_DOC}`)
 });
-
+*/
 
 const {google} = require('googleapis');
 const client = new google.auth.JWT(
